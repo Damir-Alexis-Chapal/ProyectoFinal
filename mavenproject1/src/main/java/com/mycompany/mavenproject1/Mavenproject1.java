@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.mavenproject1;
-//CUARTA PRUEBA SOY SANTIAGO
+
 
 import javax.swing.JOptionPane;
 
@@ -16,13 +16,7 @@ public class Mavenproject1 {
         JOptionPane.showMessageDialog(null, "hola mundo");
         //POR FAVOR NO MODIFICAR EL NOMBRE DE ESTE ARCHIVO PORQUE
         //EL PROGRAMA EXPLOTA
-        //TERCERA PRUEBA EN CONJUNTO CON SANTIAGO
-        
-        //CUARTA PRUEBA
-
-        //ESTA ES LA TERCERA PRUEBA SOY SANTIAGO
-        
-        //CUARTA PRUEBA X2
+       
     }
     
 }
