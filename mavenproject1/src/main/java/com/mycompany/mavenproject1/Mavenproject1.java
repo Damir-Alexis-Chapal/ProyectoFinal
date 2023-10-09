@@ -5,18 +5,24 @@
 package com.mycompany.mavenproject1;
 
 
+import com.mycompany.mavenproject1.Ventanas.InterfazPrincipal;
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author Alexis Chapal
+ * @author Alexis Chapal & Santiago Navarro ;)
  */
 public class Mavenproject1 {
     public static void main (String [] args){
-        JOptionPane.showMessageDialog(null, "hola mundo");
-        //POR FAVOR NO MODIFICAR EL NOMBRE DE ESTE ARCHIVO PORQUE
-        //EL PROGRAMA EXPLOTA
-       
+        //POR FAVOR NO MODIFICAR EL NOMBRE DE ESTE ARCHIVO PORQUE EL PROGRAMA EXPLOTA
+        
+        
+        //Se ejecuta la interfaz principal
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new InterfazPrincipal().setVisible(true);
+            }
+        });
     }
     
 }
