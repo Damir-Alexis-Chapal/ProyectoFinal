@@ -15,7 +15,7 @@ public class Mavenproject1 {
         JOptionPane.showMessageDialog(null, "hola mundo");
         //POR FAVOR NO MODIFICAR EL NOMBRE DE ESTE ARCHIVO PORQUE
         //EL PROGRAMA EXPLOTA
-        //ESTA ES LA SEGUNDA PRUEBA SOY SANTIAGO
+        //ESTA ES LA TERCERA PRUEBA SOY SANTIAGO
     }
     
 }
