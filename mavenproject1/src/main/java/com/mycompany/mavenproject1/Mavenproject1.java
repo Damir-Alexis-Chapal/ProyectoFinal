@@ -13,6 +13,8 @@ import javax.swing.JOptionPane;
 public class Mavenproject1 {
     public static void main (String [] args){
         JOptionPane.showMessageDialog(null, "hola mundo");
+        //POR FAVOR NO MODIFICAR EL NOMBRE DE ESTE ARCHIVO PORQUE
+        //EL PROGRAMA EXPLOTA
     }
     
 }
