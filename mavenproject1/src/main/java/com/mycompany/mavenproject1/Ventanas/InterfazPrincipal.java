@@ -55,6 +55,11 @@ public class InterfazPrincipal extends javax.swing.JFrame {
         BotonCargarDatos.setText("CARGAR DATOS GUARDADOS");
 
         BotonVerTorneos.setText("VER TORNEOS EN CURSO");
+        BotonVerTorneos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonVerTorneosActionPerformed(evt);
+            }
+        });
 
         Logo.setText("LOGO BIEN CRIMINAL");
 
@@ -65,7 +70,7 @@ public class InterfazPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(BotonGuardarDatos, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                    .addComponent(BotonGuardarDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 126, Short.MAX_VALUE)
                     .addComponent(BotonSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BotonCargarDatos)
@@ -123,6 +128,15 @@ public class InterfazPrincipal extends javax.swing.JFrame {
             }
         });
     }//GEN-LAST:event_BotonRegistrarTorneoActionPerformed
+
+    private void BotonVerTorneosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVerTorneosActionPerformed
+        // llamo a la ventana ver torneo en curso
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new VerTorneoEnCurso().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_BotonVerTorneosActionPerformed
 
     /**
      * @param args the command line arguments
