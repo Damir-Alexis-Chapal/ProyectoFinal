@@ -69,10 +69,10 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="22" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="TorneoAjedrez" min="-2" pref="188" max="-2" attributes="0"/>
-                      <Component id="TorneoBasket" min="-2" pref="188" max="-2" attributes="0"/>
-                      <Component id="TorneoVolley" min="-2" pref="188" max="-2" attributes="0"/>
-                      <Component id="TorneoFutbol" min="-2" pref="188" max="-2" attributes="0"/>
+                      <Component id="BotonTorneoAjedrez" min="-2" pref="188" max="-2" attributes="0"/>
+                      <Component id="BotonTorneoFutbol" min="-2" pref="188" max="-2" attributes="0"/>
+                      <Component id="BotonTorneoBasket" min="-2" pref="188" max="-2" attributes="0"/>
+                      <Component id="BotonTorneoVolley" min="-2" pref="188" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               </Group>
@@ -86,14 +86,14 @@
                   <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                  <Component id="TorneoBasket" min="-2" pref="53" max="-2" attributes="0"/>
+                  <Component id="BotonTorneoFutbol" min="-2" pref="53" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                  <Component id="TorneoFutbol" min="-2" pref="53" max="-2" attributes="0"/>
+                  <Component id="BotonTorneoVolley" min="-2" pref="53" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                  <Component id="TorneoVolley" min="-2" pref="53" max="-2" attributes="0"/>
+                  <Component id="BotonTorneoBasket" min="-2" pref="53" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                  <Component id="TorneoAjedrez" min="-2" pref="53" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="BotonTorneoAjedrez" min="-2" pref="53" max="-2" attributes="0"/>
+                  <EmptySpace pref="185" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -109,25 +109,25 @@
             <Property name="text" type="java.lang.String" value="TORNEOS DISPONIBLES"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="TorneoFutbol">
+        <Component class="javax.swing.JButton" name="BotonTorneoVolley">
           <Properties>
             <Property name="text" type="java.lang.String" value="VOLLEY"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="TorneoVolley">
+        <Component class="javax.swing.JButton" name="BotonTorneoBasket">
           <Properties>
             <Property name="text" type="java.lang.String" value="BASKET"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="TorneoBasket">
+        <Component class="javax.swing.JButton" name="BotonTorneoFutbol">
           <Properties>
             <Property name="text" type="java.lang.String" value="FUTBOL"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TorneoBasketActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonTorneoFutbolActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="TorneoAjedrez">
+        <Component class="javax.swing.JButton" name="BotonTorneoAjedrez">
           <Properties>
             <Property name="text" type="java.lang.String" value="AJEDREZ"/>
           </Properties>
@@ -199,7 +199,7 @@
                       <Component id="BotonVolver" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="BotonSalir" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="36" max="32767" attributes="0"/>
+                  <EmptySpace pref="112" max="32767" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
               </Group>

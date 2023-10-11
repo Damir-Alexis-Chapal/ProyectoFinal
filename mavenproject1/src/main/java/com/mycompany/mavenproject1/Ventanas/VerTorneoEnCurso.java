@@ -29,10 +29,10 @@ public class VerTorneoEnCurso extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        TorneoFutbol = new javax.swing.JButton();
-        TorneoVolley = new javax.swing.JButton();
-        TorneoBasket = new javax.swing.JButton();
-        TorneoAjedrez = new javax.swing.JButton();
+        BotonTorneoVolley = new javax.swing.JButton();
+        BotonTorneoBasket = new javax.swing.JButton();
+        BotonTorneoFutbol = new javax.swing.JButton();
+        BotonTorneoAjedrez = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -48,18 +48,18 @@ public class VerTorneoEnCurso extends javax.swing.JFrame {
 
         jLabel2.setText("TORNEOS DISPONIBLES");
 
-        TorneoFutbol.setText("VOLLEY");
+        BotonTorneoVolley.setText("VOLLEY");
 
-        TorneoVolley.setText("BASKET");
+        BotonTorneoBasket.setText("BASKET");
 
-        TorneoBasket.setText("FUTBOL");
-        TorneoBasket.addActionListener(new java.awt.event.ActionListener() {
+        BotonTorneoFutbol.setText("FUTBOL");
+        BotonTorneoFutbol.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TorneoBasketActionPerformed(evt);
+                BotonTorneoFutbolActionPerformed(evt);
             }
         });
 
-        TorneoAjedrez.setText("AJEDREZ");
+        BotonTorneoAjedrez.setText("AJEDREZ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -74,10 +74,10 @@ public class VerTorneoEnCurso extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(22, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TorneoAjedrez, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TorneoBasket, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TorneoVolley, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TorneoFutbol, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BotonTorneoAjedrez, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotonTorneoFutbol, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotonTorneoBasket, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotonTorneoVolley, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20))
         );
         jPanel1Layout.setVerticalGroup(
@@ -88,14 +88,14 @@ public class VerTorneoEnCurso extends javax.swing.JFrame {
                 .addGap(75, 75, 75)
                 .addComponent(jLabel2)
                 .addGap(47, 47, 47)
-                .addComponent(TorneoBasket, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BotonTorneoFutbol, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
-                .addComponent(TorneoFutbol, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BotonTorneoVolley, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
-                .addComponent(TorneoVolley, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BotonTorneoBasket, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
-                .addComponent(TorneoAjedrez, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(BotonTorneoAjedrez, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(185, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -157,7 +157,7 @@ public class VerTorneoEnCurso extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotonVolver)
                     .addComponent(BotonSalir))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(49, 49, 49))
         );
@@ -188,14 +188,14 @@ public class VerTorneoEnCurso extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TorneoBasketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TorneoBasketActionPerformed
+    private void BotonTorneoFutbolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonTorneoFutbolActionPerformed
         // llamo a la ventana ver torneo futbol para ver todos los torneos de futbol disponibles
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new VerTorneoFutbol().setVisible(true);
             }
         });
-    }//GEN-LAST:event_TorneoBasketActionPerformed
+    }//GEN-LAST:event_BotonTorneoFutbolActionPerformed
 
     private void BotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVolverActionPerformed
         // TODO add your handling code here:
@@ -242,11 +242,11 @@ public class VerTorneoEnCurso extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonSalir;
+    private javax.swing.JButton BotonTorneoAjedrez;
+    private javax.swing.JButton BotonTorneoBasket;
+    private javax.swing.JButton BotonTorneoFutbol;
+    private javax.swing.JButton BotonTorneoVolley;
     private javax.swing.JButton BotonVolver;
-    private javax.swing.JButton TorneoAjedrez;
-    private javax.swing.JButton TorneoBasket;
-    private javax.swing.JButton TorneoFutbol;
-    private javax.swing.JButton TorneoVolley;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
