@@ -11,15 +11,17 @@ import javax.swing.*;
  * @author sano2
  */
 public class Fecha {
+
+    
     //atributos
     
-    String dia, mes, año; // teniendo en cuenta que haremos todo con interfaces gráficas es mejor String
+    int dia, mes, año; // teniendo en cuenta que haremos operaciones es mejor integer
     
     public Fecha(){
     
     }
     
-    public Fecha (String dia, String mes, String año){
+    public Fecha (int dia, int mes, int año){
         //constructor
         
         this.dia=dia;
@@ -27,20 +29,20 @@ public class Fecha {
         this.año=año; 
     }
     //setters
-    public void setDia(String dia) {
+    public void setDia(int dia) {
         this.dia = dia;
     }
 
-    public void setMes(String mes) {
+    public void setMes(int mes) {
         this.mes = mes;
     }
 
-    public void setAño(String año) {
+    public void setAño(int año) {
         this.año = año;
     }
     
     
-    public boolean verificar_fecha(int dia, int mes, int año){
+    public static boolean verificar_fecha(int dia, int mes, int año){
         //método que recibe dia, mes, año EN FORMA INTEGER como parámetros y retorna true si la fecha ingresada es válida
         //se llamaría desde otras clases como Fecha.verificar_fecha(dia, mes, año);
         
@@ -55,5 +57,68 @@ public class Fecha {
             es_valido=true;
         }
         return es_valido;
-    } 
+    }
+    
+    public static int transformar_StringMes(String mes){
+        //método que recibe String mes (en español) como "Enero" y retorna su valor en int
+        int mes_int=0;
+        if (mes.equals("Enero")){
+            mes_int =1;
+        }else if(mes.equals("Febrero")){
+            mes_int=2;
+        }else if(mes.equals("Marzo")){
+            mes_int=3;
+        }else if(mes.equals("Abril")){
+            mes_int=4;
+        }else if(mes.equals("Mayo")){
+            mes_int=5;
+        }else if(mes.equals("Junio")){
+            mes_int=6;
+        }else if(mes.equals("Julio")){
+            mes_int=7;
+        }else if(mes.equals("Agosto")){
+            mes_int=8;
+        }else if(mes.equals("Septiembre")){
+            mes_int=9;
+        }else if(mes.equals("Octubre")){
+            mes_int=10;
+        }else if(mes.equals("Noviembre")){
+            mes_int=11;
+        }else if(mes.equals("Diciembre")){
+            mes_int=12;
+        }
+        return mes_int;
+        
+    }
+    
+    public static String transformar_intMes(int mes){
+        //método que recibe un int y lo transforma en un String del nombre del mes
+        String StringMes="";
+        if(mes==1){
+            StringMes="Enero";
+        }else if(mes==2){
+            StringMes="Febrero";
+        }else if(mes==3){
+            StringMes="Marzo";
+        }else if(mes==4){
+            StringMes="Abril";
+        }else if(mes==5){
+            StringMes="Mayo";
+        }else if(mes==6){
+            StringMes="Junio";
+        }else if(mes==7){
+            StringMes="Julio";
+        }else if(mes==8){
+            StringMes="Agosto";
+        }else if(mes==9){
+            StringMes="Septiembre";
+        }else if(mes==10){
+            StringMes="Octubre";
+        }else if(mes==11){
+            StringMes="Noviembre";
+        }else if(mes==12){
+            StringMes="Diciembre";
+        }
+        return StringMes;
+    }
 }
