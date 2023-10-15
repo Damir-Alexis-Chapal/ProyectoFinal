@@ -722,6 +722,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="REGISTRAR JUECES"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonRegistrarJuecesActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BotonGuardarDatos">
       <Properties>
@@ -732,6 +735,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="REGISTRAR EQUIPOS"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonRegistrarEquiposActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BotonSalir">
       <Properties>

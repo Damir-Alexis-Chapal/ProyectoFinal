@@ -308,10 +308,20 @@ public class FormularioTorneo extends javax.swing.JFrame {
         );
 
         BotonRegistrarJueces.setText("REGISTRAR JUECES");
+        BotonRegistrarJueces.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonRegistrarJuecesActionPerformed(evt);
+            }
+        });
 
         BotonGuardarDatos.setText("GUARDAR DATOS");
 
         BotonRegistrarEquipos.setText("REGISTRAR EQUIPOS");
+        BotonRegistrarEquipos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonRegistrarEquiposActionPerformed(evt);
+            }
+        });
 
         BotonSalir.setText("SALIR");
         BotonSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -367,6 +377,22 @@ public class FormularioTorneo extends javax.swing.JFrame {
     private void CampoLimiteEdadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoLimiteEdadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoLimiteEdadActionPerformed
+
+    private void BotonRegistrarEquiposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarEquiposActionPerformed
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new FormularioEquipo().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_BotonRegistrarEquiposActionPerformed
+
+    private void BotonRegistrarJuecesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarJuecesActionPerformed
+                java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new FormularioJuez().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_BotonRegistrarJuecesActionPerformed
 
     /**
      * @param args the command line arguments
