@@ -159,9 +159,9 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="ComboCancelar" min="-2" pref="119" max="-2" attributes="0"/>
-                      <Component id="COmboAplazar" min="-2" pref="119" max="-2" attributes="0"/>
-                      <Component id="ComboBorrar" min="-2" pref="119" max="-2" attributes="0"/>
+                      <Component id="cajaCancelarTorneo" min="-2" pref="119" max="-2" attributes="0"/>
+                      <Component id="cajaTorneoAplazar" min="-2" pref="119" max="-2" attributes="0"/>
+                      <Component id="cajaTorneoBorrar" min="-2" pref="119" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                       <Group type="102" attributes="0">
@@ -174,11 +174,11 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                          <Component id="EditarDia" min="-2" max="-2" attributes="0"/>
+                          <Component id="cajaDiaAplazar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="EditarMes" min="-2" max="-2" attributes="0"/>
+                          <Component id="cajaMesAplazar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                          <Component id="EditarAño" min="-2" pref="61" max="-2" attributes="0"/>
+                          <Component id="cajaAñoAplazar" min="-2" pref="61" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="ConfirmarAplazar" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -192,20 +192,20 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="ComboCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cajaCancelarTorneo" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="confirmarCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="ConfirmarAplazar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="COmboAplazar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="EditarDia" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="EditarMes" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="EditarAño" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cajaTorneoAplazar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cajaDiaAplazar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cajaMesAplazar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cajaAñoAplazar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="ComboBorrar" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="cajaTorneoBorrar" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="ConfirmarBorrar" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="64" max="32767" attributes="0"/>
@@ -216,7 +216,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JComboBox" name="ComboCancelar">
+        <Component class="javax.swing.JComboBox" name="cajaCancelarTorneo">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -228,7 +228,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ComboCancelarActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cajaCancelarTorneoActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -240,7 +240,7 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="ConfirmarBorrar">
         </Component>
-        <Component class="javax.swing.JComboBox" name="COmboAplazar">
+        <Component class="javax.swing.JComboBox" name="cajaTorneoAplazar">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -252,13 +252,13 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="COmboAplazarActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cajaTorneoAplazarActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="ComboBorrar">
+        <Component class="javax.swing.JComboBox" name="cajaTorneoBorrar">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -270,7 +270,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ComboBorrarActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cajaTorneoBorrarActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -284,7 +284,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GuardarCambiosActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JComboBox" name="EditarDia">
+        <Component class="javax.swing.JComboBox" name="cajaDiaAplazar">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="30">
@@ -325,7 +325,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="EditarMes">
+        <Component class="javax.swing.JComboBox" name="cajaMesAplazar">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="13">
@@ -349,7 +349,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="EditarA&#xf1;o">
+        <Component class="javax.swing.JComboBox" name="cajaA&#xf1;oAplazar">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="13">

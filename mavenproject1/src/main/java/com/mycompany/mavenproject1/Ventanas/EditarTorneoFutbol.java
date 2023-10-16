@@ -33,16 +33,16 @@ public class EditarTorneoFutbol extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        ComboCancelar = new javax.swing.JComboBox<>();
+        cajaCancelarTorneo = new javax.swing.JComboBox<>();
         confirmarCancelar = new javax.swing.JCheckBox();
         ConfirmarAplazar = new javax.swing.JCheckBox();
         ConfirmarBorrar = new javax.swing.JCheckBox();
-        COmboAplazar = new javax.swing.JComboBox<>();
-        ComboBorrar = new javax.swing.JComboBox<>();
+        cajaTorneoAplazar = new javax.swing.JComboBox<>();
+        cajaTorneoBorrar = new javax.swing.JComboBox<>();
         GuardarCambios = new javax.swing.JButton();
-        EditarDia = new javax.swing.JComboBox<>();
-        EditarMes = new javax.swing.JComboBox<>();
-        EditarAño = new javax.swing.JComboBox<>();
+        cajaDiaAplazar = new javax.swing.JComboBox<>();
+        cajaMesAplazar = new javax.swing.JComboBox<>();
+        cajaAñoAplazar = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -103,24 +103,24 @@ public class EditarTorneoFutbol extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        ComboCancelar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TORNEO 1", "TORNEO 2", "TORNEO 3", "TORNEO 4" }));
-        ComboCancelar.addActionListener(new java.awt.event.ActionListener() {
+        cajaCancelarTorneo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TORNEO 1", "TORNEO 2", "TORNEO 3", "TORNEO 4" }));
+        cajaCancelarTorneo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComboCancelarActionPerformed(evt);
+                cajaCancelarTorneoActionPerformed(evt);
             }
         });
 
-        COmboAplazar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TORNEO 1", "TORNEO 2", "TORNEO 3", "TORNEO 4" }));
-        COmboAplazar.addActionListener(new java.awt.event.ActionListener() {
+        cajaTorneoAplazar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TORNEO 1", "TORNEO 2", "TORNEO 3", "TORNEO 4" }));
+        cajaTorneoAplazar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                COmboAplazarActionPerformed(evt);
+                cajaTorneoAplazarActionPerformed(evt);
             }
         });
 
-        ComboBorrar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TORNEO 1", "TORNEO 2", "TORNEO 3", "TORNEO 4" }));
-        ComboBorrar.addActionListener(new java.awt.event.ActionListener() {
+        cajaTorneoBorrar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TORNEO 1", "TORNEO 2", "TORNEO 3", "TORNEO 4" }));
+        cajaTorneoBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComboBorrarActionPerformed(evt);
+                cajaTorneoBorrarActionPerformed(evt);
             }
         });
 
@@ -131,11 +131,11 @@ public class EditarTorneoFutbol extends javax.swing.JFrame {
             }
         });
 
-        EditarDia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30" }));
+        cajaDiaAplazar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30" }));
 
-        EditarMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE", " " }));
+        cajaMesAplazar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE", " " }));
 
-        EditarAño.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", " ", " " }));
+        cajaAñoAplazar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", " ", " " }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -144,9 +144,9 @@ public class EditarTorneoFutbol extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(79, 79, 79)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(ComboCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(COmboAplazar, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ComboBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cajaCancelarTorneo, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cajaTorneoAplazar, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cajaTorneoBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(304, 304, 304)
@@ -156,11 +156,11 @@ public class EditarTorneoFutbol extends javax.swing.JFrame {
                             .addComponent(GuardarCambios)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(58, 58, 58)
-                        .addComponent(EditarDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cajaDiaAplazar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
-                        .addComponent(EditarMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cajaMesAplazar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(44, 44, 44)
-                        .addComponent(EditarAño, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cajaAñoAplazar, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(ConfirmarAplazar)))
                 .addContainerGap(78, Short.MAX_VALUE))
@@ -170,18 +170,18 @@ public class EditarTorneoFutbol extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ComboCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cajaCancelarTorneo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(confirmarCancelar))
                 .addGap(98, 98, 98)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ConfirmarAplazar)
-                    .addComponent(COmboAplazar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(EditarDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(EditarMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(EditarAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cajaTorneoAplazar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cajaDiaAplazar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cajaMesAplazar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cajaAñoAplazar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(97, 97, 97)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ComboBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cajaTorneoBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ConfirmarBorrar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addComponent(GuardarCambios)
@@ -244,17 +244,17 @@ public class EditarTorneoFutbol extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ComboCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboCancelarActionPerformed
+    private void cajaCancelarTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaCancelarTorneoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ComboCancelarActionPerformed
+    }//GEN-LAST:event_cajaCancelarTorneoActionPerformed
 
-    private void COmboAplazarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_COmboAplazarActionPerformed
+    private void cajaTorneoAplazarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaTorneoAplazarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_COmboAplazarActionPerformed
+    }//GEN-LAST:event_cajaTorneoAplazarActionPerformed
 
-    private void ComboBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBorrarActionPerformed
+    private void cajaTorneoBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaTorneoBorrarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ComboBorrarActionPerformed
+    }//GEN-LAST:event_cajaTorneoBorrarActionPerformed
 
     private void GuardarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarCambiosActionPerformed
         // TODO add your handling code here:
@@ -266,15 +266,15 @@ public class EditarTorneoFutbol extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> COmboAplazar;
-    private javax.swing.JComboBox<String> ComboBorrar;
-    private javax.swing.JComboBox<String> ComboCancelar;
     private javax.swing.JCheckBox ConfirmarAplazar;
     private javax.swing.JCheckBox ConfirmarBorrar;
-    private javax.swing.JComboBox<String> EditarAño;
-    private javax.swing.JComboBox<String> EditarDia;
-    private javax.swing.JComboBox<String> EditarMes;
     private javax.swing.JButton GuardarCambios;
+    private javax.swing.JComboBox<String> cajaAñoAplazar;
+    private javax.swing.JComboBox<String> cajaCancelarTorneo;
+    private javax.swing.JComboBox<String> cajaDiaAplazar;
+    private javax.swing.JComboBox<String> cajaMesAplazar;
+    private javax.swing.JComboBox<String> cajaTorneoAplazar;
+    private javax.swing.JComboBox<String> cajaTorneoBorrar;
     private javax.swing.JCheckBox confirmarCancelar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
