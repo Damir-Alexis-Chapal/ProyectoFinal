@@ -50,6 +50,8 @@ public class VerDatos extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        PanelDeFondo.setPreferredSize(new java.awt.Dimension(1000, 600));
+
         textoUsuario.setText("SEÑOR USUARIO, SE ENCUENTRA EN NUESTRA SECCION DE USUARIOS");
 
         LOGO.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -80,8 +82,13 @@ public class VerDatos extends javax.swing.JFrame {
         });
 
         BotonTablaDePosiciones.setText("TABLA DE POSICIONES");
+        BotonTablaDePosiciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonTablaDePosicionesActionPerformed(evt);
+            }
+        });
 
-        BotonProximosEnfrentamientos.setText("PROXIMOS ENFRENTAMIENTOS");
+        BotonProximosEnfrentamientos.setText("ENFRENTAMIENTOS");
         BotonProximosEnfrentamientos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonProximosEnfrentamientosActionPerformed(evt);
@@ -139,7 +146,7 @@ public class VerDatos extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelDeFondoLayout.createSequentialGroup()
                         .addGap(57, 57, 57)
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(121, Short.MAX_VALUE))
+                .addContainerGap(111, Short.MAX_VALUE))
             .addGroup(PanelDeFondoLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(LOGO, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -150,9 +157,9 @@ public class VerDatos extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelDeFondoLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BotonVolver)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BotonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BotonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(16, 16, 16))))
         );
         PanelDeFondoLayout.setVerticalGroup(
@@ -162,8 +169,8 @@ public class VerDatos extends javax.swing.JFrame {
                 .addGroup(PanelDeFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelDeFondoLayout.createSequentialGroup()
                         .addGroup(PanelDeFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(BotonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(BotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BotonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(10, 10, 10)
                         .addComponent(textoUsuario)
                         .addGap(97, 97, 97))
@@ -200,12 +207,12 @@ public class VerDatos extends javax.swing.JFrame {
                     .addGroup(PanelDeFondoLayout.createSequentialGroup()
                         .addGap(83, 83, 83)
                         .addComponent(BotonTablaDePosiciones)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                         .addComponent(BotonProximosEnfrentamientos)
                         .addGap(39, 39, 39))))
         );
 
-        getContentPane().add(PanelDeFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 600));
+        getContentPane().add(PanelDeFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -219,7 +226,11 @@ public class VerDatos extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void BotonProximosEnfrentamientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonProximosEnfrentamientosActionPerformed
-        // TODO add your handling code here:
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Enfrentamientos().setVisible(true);
+            }
+        });
     }//GEN-LAST:event_BotonProximosEnfrentamientosActionPerformed
 
     private void BotonCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCerrarActionPerformed
@@ -229,6 +240,14 @@ public class VerDatos extends javax.swing.JFrame {
     private void BotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVolverActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BotonVolverActionPerformed
+
+    private void BotonTablaDePosicionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonTablaDePosicionesActionPerformed
+       java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new tablaDePosiciones().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_BotonTablaDePosicionesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -245,7 +264,7 @@ public class VerDatos extends javax.swing.JFrame {
     private javax.swing.JTextField CampoDato4;
     private javax.swing.JTextField CampoDato5;
     private javax.swing.JLabel LOGO;
-    private javax.swing.JPanel PanelDeFondo;
+    public javax.swing.JPanel PanelDeFondo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

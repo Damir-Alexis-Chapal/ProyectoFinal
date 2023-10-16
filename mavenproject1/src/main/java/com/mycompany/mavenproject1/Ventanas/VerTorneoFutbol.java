@@ -51,6 +51,11 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
         jLabel1.setText("Torneo 1");
 
         VerDatosTorneo1.setText("Datos");
+        VerDatosTorneo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VerDatosTorneo1ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Una imagen perronsita");
 
@@ -68,7 +73,7 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(VerDatosTorneo1)
                             .addComponent(jLabel1))))
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -208,7 +213,7 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
                 .addContainerGap(116, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE))
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -246,6 +251,14 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
             }
         });
     }//GEN-LAST:event_EditarTorneosFutbolActionPerformed
+
+    private void VerDatosTorneo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerDatosTorneo1ActionPerformed
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new VerDatos().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_VerDatosTorneo1ActionPerformed
 
     /**
      * @param args the command line arguments
