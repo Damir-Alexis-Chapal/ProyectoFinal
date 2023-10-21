@@ -9,18 +9,22 @@ package com.mycompany.mavenproject1;
  * @author sano2
  */
 public class Torneo {
+
     //se definen los atributos generales de la clase torneo
     //el caracter con interfaces gráficas es mejor trabajarlo String
-    String nombre, genero, lugar, caracter, estado; 
+    String nombre, genero, lugar, caracter, estado;
     int cant_equipos, limite_edad, valor_inscripcion;
     Fecha fecha_inicio_inscripcion, fecha_fin_inscripcion, fecha_inicio_torneo;
-    Juez juez1, juez2, juez3;
-    
-    public Torneo(){
-    
+    //Juez juez1, juez2, juez3;
+
+    public Torneo() {
+
     }
 
-    public Torneo(String nombre, String genero, String lugar, String caracter, String estado, int cant_equipos, int limite_edad, int valor_inscripcion, Fecha fecha_inicio_inscripcion, Fecha fecha_fin_inscripcion, Fecha fecha_inicio_torneo, Juez juez1, Juez juez2, Juez juez3) {
+    public Torneo(String nombre, String genero, String lugar, String caracter, String estado,
+            int cant_equipos, int limite_edad, int valor_inscripcion, Fecha fecha_inicio_inscripcion,
+            Fecha fecha_fin_inscripcion, Fecha fecha_inicio_torneo) {
+
         this.nombre = nombre;
         this.genero = genero;
         this.lugar = lugar;
@@ -32,9 +36,7 @@ public class Torneo {
         this.fecha_inicio_inscripcion = fecha_inicio_inscripcion;
         this.fecha_fin_inscripcion = fecha_fin_inscripcion;
         this.fecha_inicio_torneo = fecha_inicio_torneo;
-        this.juez1 = juez1;
-        this.juez2 = juez2;
-        this.juez3 = juez3;
+
     }
 
     public void setNombre(String nombre) {
@@ -81,18 +83,4 @@ public class Torneo {
         this.fecha_inicio_torneo = fecha_inicio_torneo;
     }
 
-    public void setJuez1(Juez juez1) {
-        this.juez1 = juez1;
-    }
-
-    public void setJuez2(Juez juez2) {
-        this.juez2 = juez2;
-    }
-
-    public void setJuez3(Juez juez3) {
-        this.juez3 = juez3;
-    }
-    
-    
-     
 }

@@ -4,6 +4,8 @@
  */
 package com.mycompany.mavenproject1.Ventanas;
 
+import com.mycompany.mavenproject1.*;
+
 /**
  *
  * @author sano2
@@ -63,7 +65,9 @@ public class FormularioTorneo extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         CampoLimiteEdad = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
-        CajaValorInscripcion = new javax.swing.JTextField();
+        CampoValorInscripcion = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        EstadoTorneo = new javax.swing.JTextField();
         BotonRegistrarJueces = new javax.swing.JButton();
         BotonGuardarDatos = new javax.swing.JButton();
         BotonRegistrarEquipos = new javax.swing.JButton();
@@ -128,6 +132,11 @@ public class FormularioTorneo extends javax.swing.JFrame {
         jLabel15.setText("GÉNERO PERMITIDO EN EL TORNEO");
 
         CajaGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Femenino", "Masculino", "Mixto" }));
+        CajaGenero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CajaGeneroActionPerformed(evt);
+            }
+        });
 
         jLabel16.setText("LUGAR DONDE SE LLEVARÁ A CABO EL TORNEO");
 
@@ -151,11 +160,17 @@ public class FormularioTorneo extends javax.swing.JFrame {
 
         jLabel20.setText("VALOR DE LA INSCRIPCION");
 
+        jLabel21.setText("ESTADO DEL TORNEO");
+
+        EstadoTorneo.setEditable(false);
+        EstadoTorneo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        EstadoTorneo.setText("ACTIVO");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -212,22 +227,25 @@ public class FormularioTorneo extends javax.swing.JFrame {
                         .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel20)
-                            .addComponent(CajaValorInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(CampoValorInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel14)
-                            .addComponent(CajaCaracter, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CajaGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel16))
-                        .addGap(53, 53, 53))
-                    .addComponent(jLabel17)
-                    .addComponent(CajaTipoTorneo, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CajaLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel18)
-                    .addComponent(CajaNumeroEquipos, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(EstadoTorneo, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel15)
+                                .addComponent(jLabel14)
+                                .addComponent(CajaCaracter, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CajaGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(119, 119, 119))
+                        .addComponent(jLabel17)
+                        .addComponent(CajaTipoTorneo, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CajaLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel18)
+                        .addComponent(CajaNumeroEquipos, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel16)
+                        .addComponent(jLabel21))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,22 +280,25 @@ public class FormularioTorneo extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(jLabel15))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9))
-                .addGap(2, 2, 2)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(CajaAñoCierreInscripciones)
-                        .addComponent(CajaGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(CajaDiaCierreInscripciones)
-                    .addComponent(CajaMesCierreInscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9))
+                        .addGap(2, 2, 2)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(CajaAñoCierreInscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CajaDiaCierreInscripciones, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                            .addComponent(CajaMesCierreInscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(CajaGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(15, 15, 15)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
                             .addComponent(jLabel12)
@@ -294,17 +315,21 @@ public class FormularioTorneo extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(CampoLimiteEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CajaValorInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(CampoValorInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
                         .addComponent(jLabel16)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(CajaLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel18)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(CajaNumeroEquipos, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(64, 64, 64))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel21)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(EstadoTorneo, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         BotonRegistrarJueces.setText("REGISTRAR JUECES");
@@ -315,6 +340,11 @@ public class FormularioTorneo extends javax.swing.JFrame {
         });
 
         BotonGuardarDatos.setText("GUARDAR DATOS");
+        BotonGuardarDatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonGuardarDatosActionPerformed(evt);
+            }
+        });
 
         BotonRegistrarEquipos.setText("REGISTRAR EQUIPOS");
         BotonRegistrarEquipos.addActionListener(new java.awt.event.ActionListener() {
@@ -387,17 +417,57 @@ public class FormularioTorneo extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonRegistrarEquiposActionPerformed
 
     private void BotonRegistrarJuecesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarJuecesActionPerformed
-                java.awt.EventQueue.invokeLater(new Runnable() {
+        java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new FormularioJuez().setVisible(true);
             }
         });
     }//GEN-LAST:event_BotonRegistrarJuecesActionPerformed
 
+    private void BotonGuardarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGuardarDatosActionPerformed
+
+        Torneo NuevoTorneo = new Torneo();
+        NuevoTorneo.setNombre(CampoNombreTorneo.getText());
+        NuevoTorneo.setGenero("" + CajaGenero.getSelectedItem());
+        NuevoTorneo.setLugar("" + CajaLugar.getSelectedItem());
+        NuevoTorneo.setCaracter("" + CajaCaracter.getSelectedItem());
+        NuevoTorneo.setEstado(EstadoTorneo.getText());
+        NuevoTorneo.setCant_equipos((int) CajaNumeroEquipos.getSelectedItem());
+        NuevoTorneo.setLimite_edad(Integer.parseInt(CampoLimiteEdad.getText()));
+        NuevoTorneo.setValor_inscripcion(Integer.parseInt(CampoValorInscripcion.getText()));
+
+        Fecha FechaInicioInscripcionesTorneo = new Fecha();
+        FechaInicioInscripcionesTorneo.setDia(Integer.parseInt((String) CajaDiaInicioInscripciones.getSelectedItem()));
+        FechaInicioInscripcionesTorneo.setAño(Integer.parseInt((String) CajaAñoInicioInscripciones.getSelectedItem()));
+        FechaInicioInscripcionesTorneo.setMes(Integer.parseInt((String) CajaMesInicioInscripciones.getSelectedItem()) + 1);
+
+        NuevoTorneo.setFecha_inicio_inscripcion(FechaInicioInscripcionesTorneo);
+        
+        Fecha FechaCierreInscripcionesTorneo = new Fecha();
+        FechaCierreInscripcionesTorneo.setDia(Integer.parseInt((String) CajaDiaCierreInscripciones.getSelectedItem()));
+        FechaCierreInscripcionesTorneo.setAño(Integer.parseInt((String) CajaAñoCierreInscripciones.getSelectedItem()));
+        FechaCierreInscripcionesTorneo.setMes(Integer.parseInt((String) CajaMesCierreInscripciones.getSelectedItem()) + 1);
+        
+        NuevoTorneo.setFecha_fin_inscripcion(FechaCierreInscripcionesTorneo);
+        
+        Fecha FechaInicioTorneo = new Fecha();
+        FechaInicioTorneo.setDia(Integer.parseInt((String) CajaDiaInicioTorneo.getSelectedItem()));
+        FechaInicioTorneo.setAño(Integer.parseInt((String) CajaMesInicioTorneo.getSelectedItem()));
+        FechaInicioTorneo.setMes(Integer.parseInt((String) CajaAñoInicioTorneo.getSelectedItem()) + 1);
+        
+        NuevoTorneo.setFecha_inicio_torneo(FechaInicioTorneo);
+        
+        BaseDeDatos.ListaDeTorneos.add(NuevoTorneo);
+
+    }//GEN-LAST:event_BotonGuardarDatosActionPerformed
+
+    private void CajaGeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CajaGeneroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CajaGeneroActionPerformed
+
     /**
      * @param args the command line arguments
      */
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonGuardarDatos;
@@ -418,9 +488,10 @@ public class FormularioTorneo extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> CajaMesInicioTorneo;
     private javax.swing.JComboBox<String> CajaNumeroEquipos;
     private javax.swing.JComboBox<String> CajaTipoTorneo;
-    private javax.swing.JTextField CajaValorInscripcion;
-    private javax.swing.JTextField CampoLimiteEdad;
+    public javax.swing.JTextField CampoLimiteEdad;
     private javax.swing.JTextField CampoNombreTorneo;
+    private javax.swing.JTextField CampoValorInscripcion;
+    private javax.swing.JTextField EstadoTorneo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -434,6 +505,7 @@ public class FormularioTorneo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
