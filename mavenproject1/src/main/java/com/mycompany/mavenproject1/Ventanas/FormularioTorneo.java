@@ -70,7 +70,6 @@ public class FormularioTorneo extends javax.swing.JFrame {
         EstadoTorneo = new javax.swing.JTextField();
         BotonRegistrarJueces = new javax.swing.JButton();
         BotonGuardarDatos = new javax.swing.JButton();
-        BotonRegistrarEquipos = new javax.swing.JButton();
         BotonSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -339,17 +338,10 @@ public class FormularioTorneo extends javax.swing.JFrame {
             }
         });
 
-        BotonGuardarDatos.setText("GUARDAR DATOS");
+        BotonGuardarDatos.setText("CONTINUAR");
         BotonGuardarDatos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonGuardarDatosActionPerformed(evt);
-            }
-        });
-
-        BotonRegistrarEquipos.setText("REGISTRAR EQUIPOS");
-        BotonRegistrarEquipos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonRegistrarEquiposActionPerformed(evt);
             }
         });
 
@@ -372,9 +364,7 @@ public class FormularioTorneo extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(BotonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(BotonRegistrarEquipos, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(186, 186, 186)
                         .addComponent(BotonGuardarDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(BotonRegistrarJueces, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -389,7 +379,6 @@ public class FormularioTorneo extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(BotonRegistrarJueces, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BotonGuardarDatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BotonRegistrarEquipos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BotonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
@@ -408,14 +397,6 @@ public class FormularioTorneo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoLimiteEdadActionPerformed
 
-    private void BotonRegistrarEquiposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarEquiposActionPerformed
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FormularioEquipo().setVisible(true);
-            }
-        });
-    }//GEN-LAST:event_BotonRegistrarEquiposActionPerformed
-
     private void BotonRegistrarJuecesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarJuecesActionPerformed
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -425,40 +406,59 @@ public class FormularioTorneo extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonRegistrarJuecesActionPerformed
 
     private void BotonGuardarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGuardarDatosActionPerformed
-
+        //creo un nuevo torneo usando los campos del formulario
+        
         Torneo NuevoTorneo = new Torneo();
+
         NuevoTorneo.setNombre(CampoNombreTorneo.getText());
         NuevoTorneo.setGenero("" + CajaGenero.getSelectedItem());
         NuevoTorneo.setLugar("" + CajaLugar.getSelectedItem());
         NuevoTorneo.setCaracter("" + CajaCaracter.getSelectedItem());
         NuevoTorneo.setEstado(EstadoTorneo.getText());
-        NuevoTorneo.setCant_equipos((int) CajaNumeroEquipos.getSelectedItem());
+        NuevoTorneo.setCant_equipos((int) CajaNumeroEquipos.getSelectedIndex()+1);
         NuevoTorneo.setLimite_edad(Integer.parseInt(CampoLimiteEdad.getText()));
         NuevoTorneo.setValor_inscripcion(Integer.parseInt(CampoValorInscripcion.getText()));
 
+        //creo un objeto fecha para el inicio inscripciones
+        //con respecto al mes, en la clase fecha este está como int, y en las cajaMes de este formulario está como
+        //enero, febrero... son tipo string, por eso para no modificar la clase fecha, tomo el index de las cajaMes ya
+        //que es un int, obviamente el index empieza desde 0 y se le debe sumar 1 para tener el numuero exacto del mes
         Fecha FechaInicioInscripcionesTorneo = new Fecha();
         FechaInicioInscripcionesTorneo.setDia(Integer.parseInt((String) CajaDiaInicioInscripciones.getSelectedItem()));
         FechaInicioInscripcionesTorneo.setAño(Integer.parseInt((String) CajaAñoInicioInscripciones.getSelectedItem()));
-        FechaInicioInscripcionesTorneo.setMes(Integer.parseInt((String) CajaMesInicioInscripciones.getSelectedItem()) + 1);
+        FechaInicioInscripcionesTorneo.setMes((CajaMesInicioInscripciones.getSelectedIndex()+1));
 
         NuevoTorneo.setFecha_inicio_inscripcion(FechaInicioInscripcionesTorneo);
-        
+
+        //creo un objeto fecha para el cierre inscripciones
         Fecha FechaCierreInscripcionesTorneo = new Fecha();
         FechaCierreInscripcionesTorneo.setDia(Integer.parseInt((String) CajaDiaCierreInscripciones.getSelectedItem()));
         FechaCierreInscripcionesTorneo.setAño(Integer.parseInt((String) CajaAñoCierreInscripciones.getSelectedItem()));
-        FechaCierreInscripcionesTorneo.setMes(Integer.parseInt((String) CajaMesCierreInscripciones.getSelectedItem()) + 1);
-        
+        FechaCierreInscripcionesTorneo.setMes((CajaMesCierreInscripciones.getSelectedIndex()+1));
+
         NuevoTorneo.setFecha_fin_inscripcion(FechaCierreInscripcionesTorneo);
-        
+
+        //creo un objeto fecha para el inicio del torneo
         Fecha FechaInicioTorneo = new Fecha();
         FechaInicioTorneo.setDia(Integer.parseInt((String) CajaDiaInicioTorneo.getSelectedItem()));
-        FechaInicioTorneo.setAño(Integer.parseInt((String) CajaMesInicioTorneo.getSelectedItem()));
-        FechaInicioTorneo.setMes(Integer.parseInt((String) CajaAñoInicioTorneo.getSelectedItem()) + 1);
-        
+        FechaInicioTorneo.setAño(Integer.parseInt((String) CajaAñoInicioTorneo.getSelectedItem()));
+        FechaInicioTorneo.setMes((CajaMesInicioTorneo.getSelectedIndex()+1));
+
         NuevoTorneo.setFecha_inicio_torneo(FechaInicioTorneo);
-        
+        //guardo los datos en la base
         BaseDeDatos.ListaDeTorneos.add(NuevoTorneo);
 
+        //una vez guardados los datos continuamos a la ventana de registrar equipos para el torneo
+        //envio y seteo en la siguiente ventana el nombre del torneo para que se vea mejor
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                FormularioEquipo NuevoEquipo= new FormularioEquipo();
+                NuevoEquipo.NombreTorneo.setText(CampoNombreTorneo.getText());
+                NuevoEquipo.setVisible(true);
+                //new FormularioEquipo().setVisible(true);
+            }
+        });
+       
     }//GEN-LAST:event_BotonGuardarDatosActionPerformed
 
     private void CajaGeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CajaGeneroActionPerformed
@@ -471,7 +471,6 @@ public class FormularioTorneo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonGuardarDatos;
-    private javax.swing.JButton BotonRegistrarEquipos;
     private javax.swing.JButton BotonRegistrarJueces;
     private javax.swing.JButton BotonSalir;
     private javax.swing.JComboBox<String> CajaAñoCierreInscripciones;

@@ -91,7 +91,12 @@ public class FormularioPersona extends javax.swing.JFrame {
 
         CajaAñoNacimiento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033" }));
 
-        BotonFinalizar.setText("FINALIZAR");
+        BotonFinalizar.setText("CONTINUAR");
+        BotonFinalizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonFinalizarActionPerformed(evt);
+            }
+        });
 
         BotonAtras.setText("ATRAS");
 
@@ -218,6 +223,10 @@ public class FormularioPersona extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BotonFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonFinalizarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonFinalizarActionPerformed
 
     /**
      * @param args the command line arguments

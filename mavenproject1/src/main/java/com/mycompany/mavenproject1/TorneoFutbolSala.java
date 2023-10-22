@@ -15,8 +15,8 @@ public class TorneoFutbolSala extends Torneo {
     public TorneoFutbolSala() {
     }
     //constructor
-    public TorneoFutbolSala(String nombre, String genero, String lugar, String caracter, String estado, int cant_equipos, int limite_edad, int valor_inscripcion, Fecha fecha_inicio_inscripcion, Fecha fecha_fin_inscripcion, Fecha fecha_inicio_torneo) {
-        super(nombre, genero, lugar, caracter, estado, cant_equipos, limite_edad, valor_inscripcion, fecha_inicio_inscripcion, fecha_fin_inscripcion, fecha_inicio_torneo);
+    public TorneoFutbolSala(String nombre, String genero, String lugar, String caracter, String estado, int cant_equipos, int limite_edad, int valor_inscripcion, Fecha fecha_inicio_inscripcion, Fecha fecha_fin_inscripcion, Fecha fecha_inicio_torneo, Juez juez1, Juez juez2, Juez juez3) {
+        super(nombre, genero, lugar, caracter, estado, cant_equipos, limite_edad, valor_inscripcion, fecha_inicio_inscripcion, fecha_fin_inscripcion, fecha_inicio_torneo,juez1,juez2,juez3);
     }
     //setters
     public void setCant_min_participantes_por_equipo(int cant_min_participantes_por_equipo) {
@@ -65,6 +65,18 @@ public class TorneoFutbolSala extends Torneo {
 
     public void setFecha_inicio_torneo(Fecha fecha_inicio_torneo) {
         this.fecha_inicio_torneo = fecha_inicio_torneo;
+    }
+
+    public void setJuez1(Juez juez1) {
+        this.juez1 = juez1;
+    }
+
+    public void setJuez2(Juez juez2) {
+        this.juez2 = juez2;
+    }
+
+    public void setJuez3(Juez juez3) {
+        this.juez3 = juez3;
     }
     
     

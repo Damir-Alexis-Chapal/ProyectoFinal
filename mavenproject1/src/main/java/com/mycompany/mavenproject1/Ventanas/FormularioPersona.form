@@ -362,8 +362,11 @@
         </Component>
         <Component class="javax.swing.JButton" name="BotonFinalizar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="FINALIZAR"/>
+            <Property name="text" type="java.lang.String" value="CONTINUAR"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonFinalizarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BotonAtras">
           <Properties>
