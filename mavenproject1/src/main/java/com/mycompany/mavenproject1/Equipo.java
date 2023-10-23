@@ -13,8 +13,7 @@ import java.util.ArrayList;
 public class Equipo {
     //listado tanto de participantes como de enfrentamientos que tiene cada equipo
     //se deben poder consultar
-    ArrayList<Persona> listado_participantes=new ArrayList<Persona>();
-    ArrayList<Enfrentamiento> listado_enfrentamientos=new ArrayList<Enfrentamiento>();
+    public static ArrayList<Persona> listado_participantes=new ArrayList<Persona>();
     
     String nombre, genero;
     Persona lider, tecnico;
@@ -34,10 +33,6 @@ public class Equipo {
 
     public void setListado_participantes(ArrayList<Persona> listado_participantes) {
         this.listado_participantes = listado_participantes;
-    }
-
-    public void setListado_enfrentamientos(ArrayList<Enfrentamiento> listado_enfrentamientos) {
-        this.listado_enfrentamientos = listado_enfrentamientos;
     }
 
     public void setNombre(String nombre) {
