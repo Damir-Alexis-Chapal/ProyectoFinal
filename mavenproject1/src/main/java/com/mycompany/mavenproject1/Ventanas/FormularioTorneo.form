@@ -31,7 +31,7 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="BotonSalir" min="-2" pref="161" max="-2" attributes="0"/>
+                      <Component id="BotonAtras" min="-2" pref="161" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="BotonRegistrarEquipos" min="-2" pref="146" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -54,7 +54,7 @@
                   <Component id="BotonRegistrarJueces" max="32767" attributes="0"/>
                   <Component id="BotonGuardarDatos" max="32767" attributes="0"/>
                   <Component id="BotonRegistrarEquipos" max="32767" attributes="0"/>
-                  <Component id="BotonSalir" min="-2" pref="59" max="-2" attributes="0"/>
+                  <Component id="BotonAtras" min="-2" pref="59" max="-2" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -739,12 +739,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonRegistrarEquiposActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="BotonSalir">
+    <Component class="javax.swing.JButton" name="BotonAtras">
       <Properties>
-        <Property name="text" type="java.lang.String" value="SALIR"/>
+        <Property name="text" type="java.lang.String" value="ATRAS"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonSalirActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonAtrasActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

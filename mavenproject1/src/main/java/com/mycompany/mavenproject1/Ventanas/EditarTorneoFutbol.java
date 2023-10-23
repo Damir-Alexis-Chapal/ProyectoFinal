@@ -43,6 +43,7 @@ public class EditarTorneoFutbol extends javax.swing.JFrame {
         cajaDiaAplazar = new javax.swing.JComboBox<>();
         cajaMesAplazar = new javax.swing.JComboBox<>();
         cajaAñoAplazar = new javax.swing.JComboBox<>();
+        BotonAtras = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -137,6 +138,13 @@ public class EditarTorneoFutbol extends javax.swing.JFrame {
 
         cajaAñoAplazar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", " ", " " }));
 
+        BotonAtras.setText("ATRAS");
+        BotonAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAtrasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -149,7 +157,9 @@ public class EditarTorneoFutbol extends javax.swing.JFrame {
                     .addComponent(cajaTorneoBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(304, 304, 304)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BotonAtras)
+                        .addGap(124, 124, 124)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(confirmarCancelar, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(ConfirmarBorrar, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -184,7 +194,9 @@ public class EditarTorneoFutbol extends javax.swing.JFrame {
                     .addComponent(cajaTorneoBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ConfirmarBorrar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                .addComponent(GuardarCambios)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(GuardarCambios)
+                    .addComponent(BotonAtras))
                 .addGap(30, 30, 30))
         );
 
@@ -260,12 +272,17 @@ public class EditarTorneoFutbol extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_GuardarCambiosActionPerformed
 
+    private void BotonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAtrasActionPerformed
+       this.dispose();
+    }//GEN-LAST:event_BotonAtrasActionPerformed
+
     /**
      * @param args the command line arguments
      */
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonAtras;
     private javax.swing.JCheckBox ConfirmarAplazar;
     private javax.swing.JCheckBox ConfirmarBorrar;
     private javax.swing.JButton GuardarCambios;

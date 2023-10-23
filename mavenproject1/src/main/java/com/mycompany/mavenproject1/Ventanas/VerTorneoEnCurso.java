@@ -198,11 +198,11 @@ public class VerTorneoEnCurso extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonTorneoFutbolActionPerformed
 
     private void BotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVolverActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_BotonVolverActionPerformed
 
     private void BotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSalirActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_BotonSalirActionPerformed
 
     /**

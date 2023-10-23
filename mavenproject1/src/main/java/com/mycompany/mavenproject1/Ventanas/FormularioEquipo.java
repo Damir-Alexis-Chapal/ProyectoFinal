@@ -63,8 +63,18 @@ public class FormularioEquipo extends javax.swing.JFrame {
         });
 
         BotonFinalizar.setText("FINALIZAR");
+        BotonFinalizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonFinalizarActionPerformed(evt);
+            }
+        });
 
         BotonAtras.setText("ATRÁS");
+        BotonAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAtrasActionPerformed(evt);
+            }
+        });
 
         MostrarCantParticipantes.setEditable(false);
 
@@ -159,6 +169,14 @@ public class FormularioEquipo extends javax.swing.JFrame {
             }
         });
     }//GEN-LAST:event_BotonRegistrarParticipanteActionPerformed
+
+    private void BotonFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonFinalizarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonFinalizarActionPerformed
+
+    private void BotonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAtrasActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_BotonAtrasActionPerformed
 
     /**
      * @param args the command line arguments

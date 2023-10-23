@@ -234,11 +234,11 @@ public class VerDatos extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonProximosEnfrentamientosActionPerformed
 
     private void BotonCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCerrarActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_BotonCerrarActionPerformed
 
     private void BotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVolverActionPerformed
-        // TODO add your handling code here:
+       this.dispose();
     }//GEN-LAST:event_BotonVolverActionPerformed
 
     private void BotonTablaDePosicionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonTablaDePosicionesActionPerformed

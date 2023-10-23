@@ -67,7 +67,7 @@ public class FormularioTorneo extends javax.swing.JFrame {
         BotonRegistrarJueces = new javax.swing.JButton();
         BotonGuardarDatos = new javax.swing.JButton();
         BotonRegistrarEquipos = new javax.swing.JButton();
-        BotonSalir = new javax.swing.JButton();
+        BotonAtras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -323,10 +323,10 @@ public class FormularioTorneo extends javax.swing.JFrame {
             }
         });
 
-        BotonSalir.setText("SALIR");
-        BotonSalir.addActionListener(new java.awt.event.ActionListener() {
+        BotonAtras.setText("ATRAS");
+        BotonAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonSalirActionPerformed(evt);
+                BotonAtrasActionPerformed(evt);
             }
         });
 
@@ -341,7 +341,7 @@ public class FormularioTorneo extends javax.swing.JFrame {
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addComponent(BotonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BotonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28)
                         .addComponent(BotonRegistrarEquipos, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -360,7 +360,7 @@ public class FormularioTorneo extends javax.swing.JFrame {
                     .addComponent(BotonRegistrarJueces, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BotonGuardarDatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BotonRegistrarEquipos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BotonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(BotonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         pack();
@@ -370,9 +370,9 @@ public class FormularioTorneo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoNombreTorneoActionPerformed
 
-    private void BotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSalirActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_BotonSalirActionPerformed
+    private void BotonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAtrasActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_BotonAtrasActionPerformed
 
     private void CampoLimiteEdadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoLimiteEdadActionPerformed
         // TODO add your handling code here:
@@ -400,10 +400,10 @@ public class FormularioTorneo extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonAtras;
     private javax.swing.JButton BotonGuardarDatos;
     private javax.swing.JButton BotonRegistrarEquipos;
     private javax.swing.JButton BotonRegistrarJueces;
-    private javax.swing.JButton BotonSalir;
     private javax.swing.JComboBox<String> CajaAñoCierreInscripciones;
     private javax.swing.JComboBox<String> CajaAñoInicioInscripciones;
     private javax.swing.JComboBox<String> CajaAñoInicioTorneo;
