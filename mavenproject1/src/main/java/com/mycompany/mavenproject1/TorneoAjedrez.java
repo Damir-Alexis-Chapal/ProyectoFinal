@@ -4,6 +4,8 @@
  */
 package com.mycompany.mavenproject1;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author sano2
@@ -15,9 +17,11 @@ public class TorneoAjedrez extends Torneo{
     public TorneoAjedrez() {
     }
     //constructor
-    public TorneoAjedrez(String nombre, String genero, String lugar, String caracter, String estado, int cant_equipos, int limite_edad, int valor_inscripcion, Fecha fecha_inicio_inscripcion, Fecha fecha_fin_inscripcion, Fecha fecha_inicio_torneo, Juez juez1, Juez juez2, Juez juez3) {
-        super(nombre, genero, lugar, caracter, estado, cant_equipos, limite_edad, valor_inscripcion, fecha_inicio_inscripcion, fecha_fin_inscripcion, fecha_inicio_torneo, juez1, juez2, juez3);
+
+    public TorneoAjedrez(String nombre, String genero, String lugar, String caracter, String estado, int cant_equipos, int limite_edad, int valor_inscripcion, Fecha fecha_inicio_inscripcion, Fecha fecha_fin_inscripcion, Fecha fecha_inicio_torneo) {
+        super(nombre, genero, lugar, caracter, estado, cant_equipos, limite_edad, valor_inscripcion, fecha_inicio_inscripcion, fecha_fin_inscripcion, fecha_inicio_torneo);
     }
+    
     //setters
     public void setCant_min_participantes_por_equipo(int cant_min_participantes_por_equipo) {
         this.cant_min_participantes_por_equipo = cant_min_participantes_por_equipo;
@@ -67,17 +71,16 @@ public class TorneoAjedrez extends Torneo{
         this.fecha_inicio_torneo = fecha_inicio_torneo;
     }
 
-    public void setJuez1(Juez juez1) {
-        this.juez1 = juez1;
+    public void setListado_equipos(ArrayList<Equipo> listado_equipos) {
+        this.listado_equipos = listado_equipos;
     }
 
-    public void setJuez2(Juez juez2) {
-        this.juez2 = juez2;
+    public void setListado_jueces(ArrayList<Juez> listado_jueces) {
+        this.listado_jueces = listado_jueces;
     }
-
-    public void setJuez3(Juez juez3) {
-        this.juez3 = juez3;
-    }
+    
+    
+    
     
     
 }

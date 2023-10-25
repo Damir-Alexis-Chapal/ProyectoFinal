@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 public class Mavenproject1 {
     public static void main (String [] args){
         //POR FAVOR NO MODIFICAR EL NOMBRE DE ESTE ARCHIVO PORQUE EL PROGRAMA EXPLOTA
-        
+       
         
         //Se ejecuta la interfaz principal
         java.awt.EventQueue.invokeLater(new Runnable() {
