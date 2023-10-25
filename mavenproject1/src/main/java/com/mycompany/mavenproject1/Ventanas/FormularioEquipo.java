@@ -3,7 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.mavenproject1.Ventanas;
+
 import com.mycompany.mavenproject1.*;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author sano2
@@ -15,6 +19,16 @@ public class FormularioEquipo extends javax.swing.JFrame {
      */
     public FormularioEquipo() {
         initComponents();
+        this.torneo = null;
+    }
+    
+    private final Torneo torneo; // Variable de instancia para guardar el objeto Torneo
+
+    // Constructor que acepta un objeto Torneo
+    public FormularioEquipo(Torneo torneo) {
+        this.torneo = torneo;
+        initComponents();
+        
     }
 
     /**
@@ -30,11 +44,17 @@ public class FormularioEquipo extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         CampoNombreEquipo = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        BotonRegistrarParticipante = new javax.swing.JButton();
-        BotonAtras = new javax.swing.JButton();
         CantidadParticipantes = new javax.swing.JTextField();
         NombreTorneo = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        MiembrosRegistrados = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        CampoCapitan = new javax.swing.JLabel();
+        CampoTecnico = new javax.swing.JLabel();
+        BotonRegistrarParticipante = new javax.swing.JButton();
+        BotonAtras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,6 +68,33 @@ public class FormularioEquipo extends javax.swing.JFrame {
 
         jLabel2.setText("CANTIDAD DE MIEMBROS : ");
 
+        CantidadParticipantes.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        NombreTorneo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jLabel5.setText("TORNEO:");
+
+        jLabel3.setText("MIEMBROS REGISTRADOS");
+
+        MiembrosRegistrados.setEditable(false);
+        MiembrosRegistrados.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        MiembrosRegistrados.setText("0");
+        MiembrosRegistrados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MiembrosRegistradosActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("CAPITÁN:");
+
+        jLabel6.setText("TECNICO:");
+
+        CampoCapitan.setBackground(new java.awt.Color(255, 255, 255));
+        CampoCapitan.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        CampoTecnico.setBackground(new java.awt.Color(255, 255, 255));
+        CampoTecnico.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         BotonRegistrarParticipante.setText("REGISTRAR MIEMBROS");
         BotonRegistrarParticipante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,42 +103,56 @@ public class FormularioEquipo extends javax.swing.JFrame {
         });
 
         BotonAtras.setText("ATRÁS");
-
-        NombreTorneo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        jLabel5.setText("TORNEO:");
+        BotonAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAtrasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BotonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(94, 94, 94)
                         .addComponent(BotonRegistrarParticipante, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44)
-                        .addComponent(BotonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(101, 101, 101))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CampoNombreEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(75, 75, 75)
+                                .addGap(25, 25, 25)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(CampoTecnico, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CampoCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(CampoNombreEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(64, 64, 64)
+                                .addComponent(CantidadParticipantes, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(144, 144, 144)
+                                .addComponent(MiembrosRegistrados, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(73, 73, 73)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(NombreTorneo, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(84, 84, 84)
-                                .addComponent(CantidadParticipantes, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(47, 47, 47)
-                                .addComponent(jLabel2)))))
-                .addContainerGap(153, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(NombreTorneo, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addGap(87, 87, 87)
+                                        .addComponent(jLabel2)
+                                        .addGap(43, 43, 43)
+                                        .addComponent(jLabel3)))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(201, 201, 201))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,32 +161,44 @@ public class FormularioEquipo extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(NombreTorneo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addGap(41, 41, 41)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CampoNombreEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CantidadParticipantes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BotonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotonRegistrarParticipante, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(CampoNombreEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CantidadParticipantes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(MiembrosRegistrados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(40, 40, 40)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(CampoCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel6)
+                            .addComponent(CampoTecnico, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(35, 203, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BotonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BotonRegistrarParticipante, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(92, 92, 92))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 716, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 34, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -140,35 +213,59 @@ public class FormularioEquipo extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             //llamo a la ventana de persona para crear el equipo alla
             public void run() {
-          
-                FormularioPersona NuevoFormulario= new FormularioPersona();
-                //envio la cantidad de participantes para crear un bucle while en base a ella
-                FormularioPersona.CajaNumeroPersonas.setText(CantidadParticipantes.getText());
-                //envio el nombre del equipo para poder setearlo allá
-                FormularioPersona.NombreEquipoNuevo.setText(CampoNombreEquipo.getText());
-                NuevoFormulario.setVisible(true);
+                ArrayList<Equipo> ListaTeam= new ArrayList();
+                Equipo NewTeam= new Equipo();
                 
+                
+                if (Integer.parseInt(CantidadParticipantes.getText()) == Integer.parseInt(MiembrosRegistrados.getText())) {
+                    JOptionPane.showMessageDialog(null, "Registro exitoso de todos los participantes,\nse ha completado la inscripción de su equipo");
+                    ListaTeam.add(NewTeam);
+                    torneo.setListado_equipos(ListaTeam);
+                    FormularioEquipo.this.dispose();
+                } else {
+                    FormularioPersona NuevoFormulario = new FormularioPersona(NewTeam);
+                    FormularioPersona.CajaNumeroPersonas.setText(CantidadParticipantes.getText());
+                    FormularioPersona.CajaPersonasRegistradas.setText(MiembrosRegistrados.getText());
+                    //envio el nombre del equipo para poder setearlo allá
+                    FormularioPersona.NombreEquipoNuevo.setText(CampoNombreEquipo.getText());
+                    NuevoFormulario.setVisible(true);
+                }
+            }
+
+            private void dispose() {
+                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
             }
         });
-        
-        
-        
+
     }//GEN-LAST:event_BotonRegistrarParticipanteActionPerformed
+
+    private void MiembrosRegistradosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MiembrosRegistradosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MiembrosRegistradosActionPerformed
+
+    private void BotonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAtrasActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_BotonAtrasActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton BotonAtras;
     public static javax.swing.JButton BotonRegistrarParticipante;
+    public static javax.swing.JLabel CampoCapitan;
     public static javax.swing.JTextField CampoNombreEquipo;
+    public static javax.swing.JLabel CampoTecnico;
     public static javax.swing.JTextField CantidadParticipantes;
+    public static javax.swing.JTextField MiembrosRegistrados;
     public static javax.swing.JLabel NombreTorneo;
     public static javax.swing.JLabel jLabel1;
     public static javax.swing.JLabel jLabel2;
+    public static javax.swing.JLabel jLabel3;
+    public static javax.swing.JLabel jLabel4;
     public static javax.swing.JLabel jLabel5;
+    public static javax.swing.JLabel jLabel6;
     public static javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

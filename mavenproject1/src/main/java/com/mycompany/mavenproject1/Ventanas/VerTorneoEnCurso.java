@@ -4,6 +4,8 @@
  */
 package com.mycompany.mavenproject1.Ventanas;
 
+import com.mycompany.mavenproject1.BaseDeDatos;
+
 /**
  *
  * @author Alexis Chapal
@@ -189,6 +191,17 @@ public class VerTorneoEnCurso extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonTorneoFutbolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonTorneoFutbolActionPerformed
+        
+        for (int i=0; i<BaseDeDatos.ListaDeTorneos.size();i++){
+            
+        }
+
+
+
+
+
+
+
         // llamo a la ventana ver torneo futbol para ver todos los torneos de futbol disponibles
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

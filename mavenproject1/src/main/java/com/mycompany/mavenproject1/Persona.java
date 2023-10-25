@@ -9,16 +9,19 @@ package com.mycompany.mavenproject1;
  * @author sano2
  */
 public class Persona {
+
     //se definen atributos
+    TipoPersona tipo;
     String nombre, cedula, genero, telefono, correo;
     int edad;
     Fecha fecha_nacimiento;
-    
-    public Persona(){
-    
+
+    public Persona() {
+
     }
 
-    public Persona(String nombre, String cedula, String genero, String telefono, String correo, int edad, Fecha fecha_nacimiento) {
+    public Persona(TipoPersona tipo, String nombre, String cedula, String genero, String telefono, String correo, int edad, Fecha fecha_nacimiento) {
+        this.tipo = tipo;
         this.nombre = nombre;
         this.cedula = cedula;
         this.genero = genero;
@@ -55,6 +58,10 @@ public class Persona {
     public void setFecha_nacimiento(Fecha fecha_nacimiento) {
         this.fecha_nacimiento = fecha_nacimiento;
     }
+
+    public void setTipo(TipoPersona tipo) {
+        this.tipo = tipo;
+    }
     
-    
+
 }

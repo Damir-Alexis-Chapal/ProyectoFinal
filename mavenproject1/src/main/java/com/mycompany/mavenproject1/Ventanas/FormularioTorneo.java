@@ -409,7 +409,17 @@ public class FormularioTorneo extends javax.swing.JFrame {
         //creo un nuevo torneo usando los campos del formulario
         
         Torneo NuevoTorneo = new Torneo();
-
+        
+        //seteo el tipo de torneo
+        if(CajaTipoTorneo.getSelectedItem().equals("Futbol Sala")){
+            NuevoTorneo.setTipo(TipoTorneo.FUTBOL_SALA);
+        }else if(CajaTipoTorneo.getSelectedItem().equals("BolleyBall")){
+            NuevoTorneo.setTipo(TipoTorneo.BOLLEYBALL);
+        }else if(CajaTipoTorneo.getSelectedItem().equals("Baloncesto")){
+            NuevoTorneo.setTipo(TipoTorneo.BALONCESTO);
+        }else if(CajaTipoTorneo.getSelectedItem().equals("Ajedrez")){
+            NuevoTorneo.setTipo(TipoTorneo.AJEDREZ);
+        }
         NuevoTorneo.setNombre(CampoNombreTorneo.getText());
         NuevoTorneo.setGenero("" + CajaGenero.getSelectedItem());
         NuevoTorneo.setLugar("" + CajaLugar.getSelectedItem());
@@ -449,10 +459,11 @@ public class FormularioTorneo extends javax.swing.JFrame {
         BaseDeDatos.ListaDeTorneos.add(NuevoTorneo);
 
         //una vez guardados los datos continuamos a la ventana de registrar equipos para el torneo
-        //envio y seteo en la siguiente ventana el nombre del torneo para que se vea mejor
+        //envio y seteo en la siguiente ventana el nombre del torneo para que se vea mejor        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                FormularioEquipo NuevoEquipo= new FormularioEquipo();
+                
+                FormularioEquipo NuevoEquipo= new FormularioEquipo(NuevoTorneo);
                 NuevoEquipo.NombreTorneo.setText(CampoNombreTorneo.getText());
                 NuevoEquipo.setVisible(true);
                 //new FormularioEquipo().setVisible(true);

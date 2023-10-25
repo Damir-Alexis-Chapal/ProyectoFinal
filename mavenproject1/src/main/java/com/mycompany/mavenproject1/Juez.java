@@ -19,10 +19,8 @@ public class Juez extends Persona{
     public Juez(){
     
     }
-
-
-    public Juez(String licencia, String nombre, String cedula, String genero, String telefono, String correo, int edad, Fecha fecha_nacimiento) {
-        super(nombre, cedula, genero, telefono, correo, edad, fecha_nacimiento);
+    public Juez(String licencia,TipoPersona tipo, String nombre, String cedula, String genero, String telefono, String correo, int edad, Fecha fecha_nacimiento) {
+        super(tipo, nombre, cedula, genero, telefono, correo, edad, fecha_nacimiento);
         this.licencia = licencia;
     }
 

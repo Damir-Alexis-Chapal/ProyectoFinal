@@ -4,14 +4,10 @@
  */
 package com.mycompany.mavenproject1;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author Alexis Chapal
  */
-public class BaseDeDatos {
-    
-    public static ArrayList ListaDeTorneos= new ArrayList();
-    
+public enum TipoPersona {
+    CAPITAN, JUGADOR, TECNICO;
 }

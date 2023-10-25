@@ -19,8 +19,15 @@ public class FormularioPersona extends javax.swing.JFrame {
      */
     public FormularioPersona() {
         initComponents();
+        this.Team=null;
     }
-
+     private final Equipo Team;
+     
+    public FormularioPersona(Equipo Team) {
+        this.Team = Team;
+        initComponents();
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -61,6 +68,8 @@ public class FormularioPersona extends javax.swing.JFrame {
         CampoEdad = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         NombreEquipoNuevo = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        CajaPersonasRegistradas = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -115,6 +124,11 @@ public class FormularioPersona extends javax.swing.JFrame {
         });
 
         BotonAtras.setText("ATRAS");
+        BotonAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAtrasActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("CANTIDAD PERSONAS ");
 
@@ -137,6 +151,17 @@ public class FormularioPersona extends javax.swing.JFrame {
         NombreEquipoNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NombreEquipoNuevoActionPerformed(evt);
+            }
+        });
+
+        jLabel14.setText("REGISTRADOS");
+
+        CajaPersonasRegistradas.setEditable(false);
+        CajaPersonasRegistradas.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        CajaPersonasRegistradas.setText("0");
+        CajaPersonasRegistradas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CajaPersonasRegistradasActionPerformed(evt);
             }
         });
 
@@ -209,9 +234,15 @@ public class FormularioPersona extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addComponent(BotonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CajaNumeroPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CajaNumeroPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(CajaPersonasRegistradas, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BotonFinalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60))
@@ -281,7 +312,11 @@ public class FormularioPersona extends javax.swing.JFrame {
                     .addComponent(BotonFinalizar, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
                     .addComponent(jLabel7)
                     .addComponent(CajaNumeroPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CajaPersonasRegistradas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14))
+                .addGap(25, 25, 25))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -296,7 +331,7 @@ public class FormularioPersona extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -306,71 +341,52 @@ public class FormularioPersona extends javax.swing.JFrame {
 
         //creo los contadores para usarlos en el ciclo while
         int cantPersonas = Integer.parseInt(CajaNumeroPersonas.getText());
-        int cantPersonasRegistradas = 0;
+        int cantPersonasRegistradas = Integer.parseInt(CajaPersonasRegistradas.getText());;
         //desde aqui creo el nuevo equipo
-        Equipo EquipoNuevo = new Equipo();
-        EquipoNuevo.setNombre(NombreEquipoNuevo.getText());
+        
+        Team.setNombre(NombreEquipoNuevo.getText());
         //creo un arraylist donde se ingresaran los participantes
         ArrayList<Persona> ListadoParticipantes = new ArrayList();
+        //creo la persona y seteo sus atributos
+        Persona NuevoParticipante = new Persona();
 
-        //creo el bucle para que la ventana continue registrando una persona
-        //mientras no se hayan registrado las que el usuario dio al principio
-        while (cantPersonasRegistradas < cantPersonas) {
-            //creo la persona y seteo sus atributos
-            Persona NuevoParticipante = new Persona();
-            NuevoParticipante.setNombre((String) CampoNombre.getText());
-            NuevoParticipante.setCedula((String) CampoCedula.getText());
-            NuevoParticipante.setGenero((String) CajaGenero.getSelectedItem());
-            NuevoParticipante.setTelefono((String) CampoTelefono.getText());
-            NuevoParticipante.setCorreo((String) CampoCorreo.getText());
-            NuevoParticipante.setEdad(Integer.parseInt(CampoEdad.getText()));
+        NuevoParticipante.setNombre((String) CampoNombre.getText());
+        NuevoParticipante.setCedula((String) CampoCedula.getText());
+        NuevoParticipante.setGenero((String) CajaGenero.getSelectedItem());
+        NuevoParticipante.setTelefono((String) CampoTelefono.getText());
+        NuevoParticipante.setCorreo((String) CampoCorreo.getText());
+        NuevoParticipante.setEdad(Integer.parseInt(CampoEdad.getText()));
 
-            //atributo fecha, en el formulario torneo explico su funcionamiento
-            Fecha FechaNacimientoPersona = new Fecha();
-            FechaNacimientoPersona.setDia(Integer.parseInt((String) CajaDiaNacimiento.getSelectedItem()));
-            FechaNacimientoPersona.setAño(Integer.parseInt((String) CajaAñoNacimiento.getSelectedItem()));
-            FechaNacimientoPersona.setMes((CajaMesNacimiento.getSelectedIndex() + 1));
+        //atributo fecha, en el formulario torneo explico su funcionamiento
+        Fecha FechaNacimientoPersona = new Fecha();
+        FechaNacimientoPersona.setDia(Integer.parseInt((String) CajaDiaNacimiento.getSelectedItem()));
+        FechaNacimientoPersona.setAño(Integer.parseInt((String) CajaAñoNacimiento.getSelectedItem()));
+        FechaNacimientoPersona.setMes((CajaMesNacimiento.getSelectedIndex() + 1));
 
-            //creo if´s anidados para verificar si la persona a ingresar es tecnico, jugador o lider
-            NuevoParticipante.setFecha_nacimiento(FechaNacimientoPersona);
-            if (BotonTecnico.isSelected()) {
-                EquipoNuevo.setTecnico(NuevoParticipante);
-                cantPersonasRegistradas++;
-                JOptionPane.showMessageDialog(null, "Registro exitoso del Tecnico");
-                CampoNombre.setText("");
-                CampoCedula.setText("");
-                CampoTelefono.setText("");
-                CampoCorreo.setText("");
-                CampoEdad.setText("");
-            } else if (BotonLider.isSelected()) {
-                EquipoNuevo.setLider(NuevoParticipante);
-                cantPersonasRegistradas++;
-                JOptionPane.showMessageDialog(null, "Registro exitoso del Lider");
-                CampoNombre.setText("");
-                CampoCedula.setText("");
-                CampoTelefono.setText("");
-                CampoCorreo.setText("");
-                CampoEdad.setText("");
-            } else if (BotonJugador.isSelected()) {
-                ListadoParticipantes.add(NuevoParticipante);
-                cantPersonasRegistradas++;
-                JOptionPane.showMessageDialog(null, "Registro exitoso delJugador");
-                CampoNombre.setText("");
-                CampoCedula.setText("");
-                CampoTelefono.setText("");
-                CampoCorreo.setText("");
-                CampoEdad.setText("");
-            }
-
+        //creo if´s anidados para verificar si la persona a ingresar es tecnico, jugador o lider
+        NuevoParticipante.setFecha_nacimiento(FechaNacimientoPersona);
+        if (BotonTecnico.isSelected()) {
+            FormularioEquipo.CampoTecnico.setText((String) CampoNombre.getText());
+            NuevoParticipante.setTipo(TipoPersona.TECNICO);
+            Team.setTecnico(NuevoParticipante);
+            JOptionPane.showMessageDialog(null, "Registro exitoso del Tecnico");
+        } else if (BotonLider.isSelected()) {
+            FormularioEquipo.CampoCapitan.setText((String) CampoNombre.getText());
+            NuevoParticipante.setTipo(TipoPersona.CAPITAN);
+            Team.setLider(NuevoParticipante);
+            JOptionPane.showMessageDialog(null, "Registro exitoso del Lider");
+        } else if (BotonJugador.isSelected()) {
+            NuevoParticipante.setTipo(TipoPersona.JUGADOR);
+            ListadoParticipantes.add(NuevoParticipante);
+            JOptionPane.showMessageDialog(null, "Registro exitoso del Jugador");
         }
         //seteo el listado de participantes al nuevo equipo y el nuevo equipo a la base de datos
-        EquipoNuevo.setListado_participantes(ListadoParticipantes);
-        BaseDeDatos.ListaDeEquipos.add(EquipoNuevo);
-        JOptionPane.showMessageDialog(null, "Registro exitoso de todos los participantes,\n se ha completado la inscripción de su equipo");
+        Team.setListado_participantes(ListadoParticipantes);
         //ya que finalizó el proceso devuelvo al usuario al principio del programa
+        FormularioEquipo.MiembrosRegistrados.setText(""+(cantPersonasRegistradas+1));
+        
         this.dispose();
-        InterfazPrincipal NuevoInicio = new InterfazPrincipal();
-        NuevoInicio.setVisible(true);
+
 
     }//GEN-LAST:event_BotonFinalizarActionPerformed
 
@@ -385,6 +401,14 @@ public class FormularioPersona extends javax.swing.JFrame {
     private void NombreEquipoNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreEquipoNuevoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NombreEquipoNuevoActionPerformed
+
+    private void CajaPersonasRegistradasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CajaPersonasRegistradasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CajaPersonasRegistradasActionPerformed
+
+    private void BotonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAtrasActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_BotonAtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -401,6 +425,7 @@ public class FormularioPersona extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> CajaGenero;
     private javax.swing.JComboBox<String> CajaMesNacimiento;
     public static javax.swing.JTextField CajaNumeroPersonas;
+    public static javax.swing.JTextField CajaPersonasRegistradas;
     private javax.swing.JTextField CampoCedula;
     private javax.swing.JTextField CampoCorreo;
     private javax.swing.JTextField CampoEdad;
@@ -413,6 +438,7 @@ public class FormularioPersona extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
