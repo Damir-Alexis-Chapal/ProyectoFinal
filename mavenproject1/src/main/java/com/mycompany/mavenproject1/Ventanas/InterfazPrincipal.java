@@ -122,6 +122,8 @@ public class InterfazPrincipal extends javax.swing.JFrame {
 
     private void BotonRegistrarTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarTorneoActionPerformed
         // Abre el formulario para crear un torneo
+        
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new FormularioTorneo().setVisible(true);

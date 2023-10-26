@@ -315,6 +315,11 @@ public class FormularioTorneo extends javax.swing.JFrame {
         });
 
         BotonGuardarDatos.setText("GUARDAR DATOS");
+        BotonGuardarDatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonGuardarDatosActionPerformed(evt);
+            }
+        });
 
         BotonRegistrarEquipos.setText("REGISTRAR EQUIPOS");
         BotonRegistrarEquipos.addActionListener(new java.awt.event.ActionListener() {
@@ -394,6 +399,10 @@ public class FormularioTorneo extends javax.swing.JFrame {
         });
     }//GEN-LAST:event_BotonRegistrarJuecesActionPerformed
 
+    private void BotonGuardarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGuardarDatosActionPerformed
+        //Basket 5, volley 6, futbol 5, ajedrez 1
+    }//GEN-LAST:event_BotonGuardarDatosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -420,7 +429,7 @@ public class FormularioTorneo extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> CajaTipoTorneo;
     private javax.swing.JTextField CajaValorInscripcion;
     private javax.swing.JTextField CampoLimiteEdad;
-    private javax.swing.JTextField CampoNombreTorneo;
+    public static javax.swing.JTextField CampoNombreTorneo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

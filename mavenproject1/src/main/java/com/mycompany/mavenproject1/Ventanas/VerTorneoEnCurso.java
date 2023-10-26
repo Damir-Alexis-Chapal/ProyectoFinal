@@ -4,6 +4,9 @@
  */
 package com.mycompany.mavenproject1.Ventanas;
 
+import static com.mycompany.mavenproject1.Ventanas.VerTorneoFutbol.NombreTorneo1;
+import com.mycompany.mavenproject1.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Alexis Chapal
@@ -189,12 +192,44 @@ public class VerTorneoEnCurso extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonTorneoFutbolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonTorneoFutbolActionPerformed
-        // llamo a la ventana ver torneo futbol para ver todos los torneos de futbol disponibles
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VerTorneoFutbol().setVisible(true);
+                
+                
+                if(Datos.listado_torneos_futbol.size()==0){
+                    //si no hay torneos creados se le informa al usuario
+                    JOptionPane.showMessageDialog(null, "No se han creado torneos");
+                }else{
+                    //Se muestra la ventana
+                    new VerTorneoFutbol().setVisible(true);
+                    //verificación para settear los nombres de los torneos y mostrarlos
+                    if(Datos.listado_torneos_futbol.size()==1){
+                    VerTorneoFutbol.NombreTorneo1.setText(Datos.listado_torneos_futbol.get(0).nombre);
+                    VerTorneoFutbol.NombreTorneo2.setText("NO EXISTE");
+                    VerTorneoFutbol.NombreTorneo3.setText("NO EXISTE");
+                    VerTorneoFutbol.NombreTorneo4.setText("NO EXISTE");
+                }else if(Datos.listado_torneos_futbol.size()==2){
+                    VerTorneoFutbol.NombreTorneo1.setText(Datos.listado_torneos_futbol.get(0).nombre);
+                    VerTorneoFutbol.NombreTorneo2.setText(Datos.listado_torneos_futbol.get(1).nombre);
+                    VerTorneoFutbol.NombreTorneo3.setText("NO EXISTE");
+                    VerTorneoFutbol.NombreTorneo4.setText("NO EXISTE");
+                }else if(Datos.listado_torneos_futbol.size()==3){
+                    VerTorneoFutbol.NombreTorneo1.setText(Datos.listado_torneos_futbol.get(0).nombre);
+                    VerTorneoFutbol.NombreTorneo2.setText(Datos.listado_torneos_futbol.get(1).nombre);
+                    VerTorneoFutbol.NombreTorneo3.setText(Datos.listado_torneos_futbol.get(2).nombre);
+                    VerTorneoFutbol.NombreTorneo4.setText("NO EXISTE");
+                }else if (Datos.listado_torneos_futbol.size()>=4){
+                    VerTorneoFutbol.NombreTorneo1.setText(Datos.listado_torneos_futbol.get(0).nombre);
+                    VerTorneoFutbol.NombreTorneo2.setText(Datos.listado_torneos_futbol.get(1).nombre);
+                    VerTorneoFutbol.NombreTorneo3.setText(Datos.listado_torneos_futbol.get(2).nombre);
+                    VerTorneoFutbol.NombreTorneo4.setText(Datos.listado_torneos_futbol.get(3).nombre);
+                }
+                }
             }
         });
+        
+        
     }//GEN-LAST:event_BotonTorneoFutbolActionPerformed
 
     private void BotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVolverActionPerformed

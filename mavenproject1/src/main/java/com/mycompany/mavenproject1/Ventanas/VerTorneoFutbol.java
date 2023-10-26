@@ -27,21 +27,21 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         VerDatosTorneo1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        NombreTorneo1 = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         VerDatosTorneo2 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        NombreTorneo2 = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        VerDatosTorneo3 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
+        NombreTorneo4 = new javax.swing.JTextField();
         VerDatosTorneo4 = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
+        NombreTorneo3 = new javax.swing.JTextField();
+        VerDatosTorneo3 = new javax.swing.JButton();
         EditarTorneosFutbol = new javax.swing.JButton();
         BotonAtras = new javax.swing.JButton();
         BotonSalir = new javax.swing.JButton();
@@ -50,9 +50,8 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setText("Torneo 1");
-
         VerDatosTorneo1.setText("Datos");
+        VerDatosTorneo1.setEnabled(false);
         VerDatosTorneo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VerDatosTorneo1ActionPerformed(evt);
@@ -61,6 +60,14 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
 
         jLabel2.setText("Una imagen perronsita");
 
+        NombreTorneo1.setEditable(false);
+        NombreTorneo1.setText("AQUÍ APERECE EL NOMBRE");
+        NombreTorneo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NombreTorneo1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -68,21 +75,22 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(107, 107, 107)
+                        .addComponent(VerDatosTorneo1))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(84, 84, 84)
                         .addComponent(jLabel2))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(107, 107, 107)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(VerDatosTorneo1)
-                            .addComponent(jLabel1))))
-                .addContainerGap(79, Short.MAX_VALUE))
+                        .addGap(49, 49, 49)
+                        .addComponent(NombreTorneo1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addContainerGap(21, Short.MAX_VALUE)
+                .addComponent(NombreTorneo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(VerDatosTorneo1)
                 .addGap(26, 26, 26)
                 .addComponent(jLabel2)
@@ -92,11 +100,13 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setPreferredSize(new java.awt.Dimension(283, 170));
 
-        jLabel3.setText("Torneo 2");
-
         VerDatosTorneo2.setText("Datos");
+        VerDatosTorneo2.setEnabled(false);
 
         jLabel4.setText("Una imagen perronsita");
+
+        NombreTorneo2.setEditable(false);
+        NombreTorneo2.setText("AQUÍ APERECE EL NOMBRE");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -105,21 +115,23 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addComponent(jLabel4))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(107, 107, 107)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(VerDatosTorneo2)
-                            .addComponent(jLabel3))))
+                        .addComponent(VerDatosTorneo2))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addComponent(jLabel4)))
                 .addContainerGap(79, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(NombreTorneo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(NombreTorneo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(VerDatosTorneo2)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
@@ -129,35 +141,41 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setPreferredSize(new java.awt.Dimension(283, 170));
 
-        jLabel5.setText("Torneo 4");
-
-        VerDatosTorneo3.setText("Datos");
-
         jLabel6.setText("Una imagen perronsita");
+
+        NombreTorneo4.setEditable(false);
+        NombreTorneo4.setText("AQUÍ APERECE EL NOMBRE");
+        NombreTorneo4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NombreTorneo4ActionPerformed(evt);
+            }
+        });
+
+        VerDatosTorneo4.setText("Datos");
+        VerDatosTorneo4.setEnabled(false);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addComponent(jLabel6))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(107, 107, 107)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(VerDatosTorneo3)
-                            .addComponent(jLabel5))))
+                .addGap(43, 43, 43)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel6)
+                    .addComponent(NombreTorneo4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(79, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(VerDatosTorneo4)
+                .addGap(103, 103, 103))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addComponent(VerDatosTorneo3)
+                .addGap(22, 22, 22)
+                .addComponent(NombreTorneo4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(VerDatosTorneo4)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6)
                 .addGap(59, 59, 59))
@@ -166,11 +184,13 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setPreferredSize(new java.awt.Dimension(283, 170));
 
-        jLabel7.setText("Torneo 3");
-
-        VerDatosTorneo4.setText("Datos");
-
         jLabel8.setText("Una imagen perronsita");
+
+        NombreTorneo3.setEditable(false);
+        NombreTorneo3.setText("AQUÍ APERECE EL NOMBRE");
+
+        VerDatosTorneo3.setText("Datos");
+        VerDatosTorneo3.setEnabled(false);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -183,19 +203,21 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
                         .addComponent(jLabel8))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(107, 107, 107)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(VerDatosTorneo4)
-                            .addComponent(jLabel7))))
+                        .addComponent(VerDatosTorneo3)))
                 .addContainerGap(80, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(NombreTorneo3, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(VerDatosTorneo4)
+                .addGap(16, 16, 16)
+                .addComponent(NombreTorneo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(VerDatosTorneo3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addComponent(jLabel8)
                 .addGap(59, 59, 59))
         );
@@ -280,6 +302,8 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
     }//GEN-LAST:event_EditarTorneosFutbolActionPerformed
 
     private void VerDatosTorneo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerDatosTorneo1ActionPerformed
+        
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new VerDatos().setVisible(true);
@@ -295,6 +319,14 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_BotonAtrasActionPerformed
 
+    private void NombreTorneo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreTorneo4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NombreTorneo4ActionPerformed
+
+    private void NombreTorneo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreTorneo1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NombreTorneo1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -304,17 +336,17 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
     private javax.swing.JButton BotonAtras;
     private javax.swing.JButton BotonSalir;
     private javax.swing.JButton EditarTorneosFutbol;
+    public static javax.swing.JTextField NombreTorneo1;
+    public static javax.swing.JTextField NombreTorneo2;
+    public static javax.swing.JTextField NombreTorneo3;
+    public static javax.swing.JTextField NombreTorneo4;
     private javax.swing.JButton VerDatosTorneo1;
     private javax.swing.JButton VerDatosTorneo2;
     private javax.swing.JButton VerDatosTorneo3;
     private javax.swing.JButton VerDatosTorneo4;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;

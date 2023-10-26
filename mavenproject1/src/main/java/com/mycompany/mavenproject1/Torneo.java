@@ -11,13 +11,16 @@ import java.util.ArrayList;
  * @author sano2
  */
 public class Torneo {
-    //ArrayList que solo se pueden settears
+    
+    
+    //ArrayList que solo se pueden settear
     ArrayList<Equipo> listado_equipos;
     ArrayList<Juez> listado_jueces;
     //se definen los atributos generales de la clase torneo
     //el caracter con interfaces gráficas es mejor trabajarlo String
-    String nombre, genero, lugar, caracter, estado; 
+    public String nombre, genero, lugar, caracter, estado; 
     int cant_equipos, limite_edad, valor_inscripcion;
+    int cant_minima_jugadores_equipo;//atributo que solo se puede settear (cuando se cree el objeto se le quema dependiendo del deporte)
     Fecha fecha_inicio_inscripcion, fecha_fin_inscripcion, fecha_inicio_torneo;
     
     public Torneo(){
@@ -50,6 +53,11 @@ public class Torneo {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+    
+    
+    public void setCantidad_minima_jugadores_equipo(int cant){
+        this.cant_minima_jugadores_equipo=cant;
     }
 
     public void setGenero(String genero) {

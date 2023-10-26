@@ -4,6 +4,9 @@
  */
 package com.mycompany.mavenproject1.Ventanas;
 
+import com.mycompany.mavenproject1.*;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author sano2
@@ -37,10 +40,6 @@ public class FormularioJuez extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         CajaGenero = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        BotonTecnico = new javax.swing.JRadioButton();
-        BotonJugador = new javax.swing.JRadioButton();
-        BotonLider = new javax.swing.JRadioButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         CajaDiaNacimiento = new javax.swing.JComboBox<>();
@@ -66,14 +65,6 @@ public class FormularioJuez extends javax.swing.JFrame {
         CajaGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Femenino", "Masculino" }));
 
         jLabel5.setText("GÉNERO DEL PARTICIPANTE");
-
-        jLabel6.setText("ELIJA EL TIPO DE PARTICIPANTE");
-
-        BotonTecnico.setText("TÉCNICO");
-
-        BotonJugador.setText("JUGADOR");
-
-        BotonLider.setText("LIDER JUGADOR");
 
         jLabel10.setText("FECHA DE NACIMIENTO");
 
@@ -118,16 +109,9 @@ public class FormularioJuez extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addGap(53, 53, 53)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
                     .addComponent(CajaGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(BotonTecnico, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BotonJugador)
-                        .addGap(18, 18, 18)
-                        .addComponent(BotonLider)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel5))
+                .addGap(0, 244, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(CampoTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -179,15 +163,9 @@ public class FormularioJuez extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(CajaGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CampoCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
+                .addComponent(CampoCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(BotonTecnico)
-                    .addComponent(BotonJugador)
-                    .addComponent(BotonLider))
+                .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -238,6 +216,7 @@ public class FormularioJuez extends javax.swing.JFrame {
 
     private void BotonFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonFinalizarActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_BotonFinalizarActionPerformed
 
     private void BotonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAtrasActionPerformed
@@ -253,9 +232,6 @@ public class FormularioJuez extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonAtras;
     private javax.swing.JButton BotonFinalizar;
-    private javax.swing.JRadioButton BotonJugador;
-    private javax.swing.JRadioButton BotonLider;
-    private javax.swing.JRadioButton BotonTecnico;
     private javax.swing.JComboBox<String> CajaAñoNacimiento;
     private javax.swing.JComboBox<String> CajaDiaNacimiento;
     private javax.swing.JComboBox<String> CajaGenero;
@@ -274,7 +250,6 @@ public class FormularioJuez extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
