@@ -33,7 +33,7 @@
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="BotonSalir" min="-2" pref="161" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="186" max="-2" attributes="0"/>
-                      <Component id="BotonGuardarDatos" min="-2" pref="138" max="-2" attributes="0"/>
+                      <Component id="BotonRegistrarEquipo" min="-2" pref="138" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="BotonRegistrarJueces" min="-2" pref="145" max="-2" attributes="0"/>
                   </Group>
@@ -50,7 +50,7 @@
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="BotonRegistrarJueces" max="32767" attributes="0"/>
-                  <Component id="BotonGuardarDatos" max="32767" attributes="0"/>
+                  <Component id="BotonRegistrarEquipo" max="32767" attributes="0"/>
                   <Component id="BotonSalir" min="-2" pref="59" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -754,12 +754,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonRegistrarJuecesActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="BotonGuardarDatos">
+    <Component class="javax.swing.JButton" name="BotonRegistrarEquipo">
       <Properties>
-        <Property name="text" type="java.lang.String" value="CONTINUAR"/>
+        <Property name="text" type="java.lang.String" value="REGISTRAR EQUIPO"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonGuardarDatosActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonRegistrarEquipoActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BotonSalir">

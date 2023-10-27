@@ -69,7 +69,7 @@ public class FormularioTorneo extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         EstadoTorneo = new javax.swing.JTextField();
         BotonRegistrarJueces = new javax.swing.JButton();
-        BotonGuardarDatos = new javax.swing.JButton();
+        BotonRegistrarEquipo = new javax.swing.JButton();
         BotonSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -338,10 +338,10 @@ public class FormularioTorneo extends javax.swing.JFrame {
             }
         });
 
-        BotonGuardarDatos.setText("CONTINUAR");
-        BotonGuardarDatos.addActionListener(new java.awt.event.ActionListener() {
+        BotonRegistrarEquipo.setText("REGISTRAR EQUIPO");
+        BotonRegistrarEquipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonGuardarDatosActionPerformed(evt);
+                BotonRegistrarEquipoActionPerformed(evt);
             }
         });
 
@@ -365,7 +365,7 @@ public class FormularioTorneo extends javax.swing.JFrame {
                         .addGap(20, 20, 20)
                         .addComponent(BotonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(186, 186, 186)
-                        .addComponent(BotonGuardarDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BotonRegistrarEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(BotonRegistrarJueces, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(56, Short.MAX_VALUE))
@@ -378,7 +378,7 @@ public class FormularioTorneo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(BotonRegistrarJueces, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BotonGuardarDatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotonRegistrarEquipo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BotonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
@@ -405,7 +405,7 @@ public class FormularioTorneo extends javax.swing.JFrame {
         });
     }//GEN-LAST:event_BotonRegistrarJuecesActionPerformed
 
-    private void BotonGuardarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGuardarDatosActionPerformed
+    private void BotonRegistrarEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarEquipoActionPerformed
         //creo un nuevo torneo usando los campos del formulario
         
         Torneo NuevoTorneo = new Torneo();
@@ -436,7 +436,8 @@ public class FormularioTorneo extends javax.swing.JFrame {
         Fecha FechaInicioInscripcionesTorneo = new Fecha();
         FechaInicioInscripcionesTorneo.setDia(Integer.parseInt((String) CajaDiaInicioInscripciones.getSelectedItem()));
         FechaInicioInscripcionesTorneo.setAño(Integer.parseInt((String) CajaAñoInicioInscripciones.getSelectedItem()));
-        FechaInicioInscripcionesTorneo.setMes((CajaMesInicioInscripciones.getSelectedIndex()+1));
+        //FechaInicioInscripcionesTorneo.setMes((CajaMesInicioInscripciones.getSelectedIndex()+1));
+        FechaInicioInscripcionesTorneo.setMes(FechaInicioInscripcionesTorneo.transformar_StringMes((String)CajaMesInicioInscripciones.getSelectedItem()));
 
         NuevoTorneo.setFecha_inicio_inscripcion(FechaInicioInscripcionesTorneo);
 
@@ -444,7 +445,8 @@ public class FormularioTorneo extends javax.swing.JFrame {
         Fecha FechaCierreInscripcionesTorneo = new Fecha();
         FechaCierreInscripcionesTorneo.setDia(Integer.parseInt((String) CajaDiaCierreInscripciones.getSelectedItem()));
         FechaCierreInscripcionesTorneo.setAño(Integer.parseInt((String) CajaAñoCierreInscripciones.getSelectedItem()));
-        FechaCierreInscripcionesTorneo.setMes((CajaMesCierreInscripciones.getSelectedIndex()+1));
+        //FechaCierreInscripcionesTorneo.setMes((CajaMesCierreInscripciones.getSelectedIndex()+1));
+        FechaCierreInscripcionesTorneo.setMes(FechaCierreInscripcionesTorneo.transformar_StringMes((String)CajaMesCierreInscripciones.getSelectedItem()));
 
         NuevoTorneo.setFecha_fin_inscripcion(FechaCierreInscripcionesTorneo);
 
@@ -452,7 +454,8 @@ public class FormularioTorneo extends javax.swing.JFrame {
         Fecha FechaInicioTorneo = new Fecha();
         FechaInicioTorneo.setDia(Integer.parseInt((String) CajaDiaInicioTorneo.getSelectedItem()));
         FechaInicioTorneo.setAño(Integer.parseInt((String) CajaAñoInicioTorneo.getSelectedItem()));
-        FechaInicioTorneo.setMes((CajaMesInicioTorneo.getSelectedIndex()+1));
+        //FechaInicioTorneo.setMes((CajaMesInicioTorneo.getSelectedIndex()+1));
+        FechaInicioTorneo.setMes(FechaInicioTorneo.transformar_StringMes((String)CajaMesInicioTorneo.getSelectedItem()));
 
         NuevoTorneo.setFecha_inicio_torneo(FechaInicioTorneo);
         //guardo los datos en la base
@@ -470,7 +473,7 @@ public class FormularioTorneo extends javax.swing.JFrame {
             }
         });
        
-    }//GEN-LAST:event_BotonGuardarDatosActionPerformed
+    }//GEN-LAST:event_BotonRegistrarEquipoActionPerformed
 
     private void CajaGeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CajaGeneroActionPerformed
         // TODO add your handling code here:
@@ -481,7 +484,7 @@ public class FormularioTorneo extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotonGuardarDatos;
+    private javax.swing.JButton BotonRegistrarEquipo;
     private javax.swing.JButton BotonRegistrarJueces;
     private javax.swing.JButton BotonSalir;
     private javax.swing.JComboBox<String> CajaAñoCierreInscripciones;

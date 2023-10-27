@@ -361,8 +361,8 @@ public class FormularioPersona extends javax.swing.JFrame {
         Fecha FechaNacimientoPersona = new Fecha();
         FechaNacimientoPersona.setDia(Integer.parseInt((String) CajaDiaNacimiento.getSelectedItem()));
         FechaNacimientoPersona.setAño(Integer.parseInt((String) CajaAñoNacimiento.getSelectedItem()));
-        FechaNacimientoPersona.setMes((CajaMesNacimiento.getSelectedIndex() + 1));
-
+        //FechaNacimientoPersona.setMes((CajaMesNacimiento.getSelectedIndex() + 1));
+        FechaNacimientoPersona.setMes(FechaNacimientoPersona.transformar_StringMes((String)CajaMesNacimiento.getSelectedItem()));
         //creo if´s anidados para verificar si la persona a ingresar es tecnico, jugador o lider
         NuevoParticipante.setFecha_nacimiento(FechaNacimientoPersona);
         if (BotonTecnico.isSelected()) {
