@@ -52,8 +52,18 @@ public class VerTorneoEnCurso extends javax.swing.JFrame {
         jLabel2.setText("TORNEOS DISPONIBLES");
 
         BotonTorneoVolley.setText("VOLLEY");
+        BotonTorneoVolley.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonTorneoVolleyActionPerformed(evt);
+            }
+        });
 
         BotonTorneoBasket.setText("BASKET");
+        BotonTorneoBasket.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonTorneoBasketActionPerformed(evt);
+            }
+        });
 
         BotonTorneoFutbol.setText("FUTBOL");
         BotonTorneoFutbol.addActionListener(new java.awt.event.ActionListener() {
@@ -63,6 +73,11 @@ public class VerTorneoEnCurso extends javax.swing.JFrame {
         });
 
         BotonTorneoAjedrez.setText("AJEDREZ");
+        BotonTorneoAjedrez.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonTorneoAjedrezActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -206,24 +221,34 @@ public class VerTorneoEnCurso extends javax.swing.JFrame {
                     //verificación para settear los nombres de los torneos y mostrarlos
                     if(Datos.listado_torneos_futbol.size()==1){
                     VerTorneoFutbol.NombreTorneo1.setText(Datos.listado_torneos_futbol.get(0).nombre);
+                    VerTorneoFutbol.VerDatosTorneo1.setEnabled(true);
                     VerTorneoFutbol.NombreTorneo2.setText("NO EXISTE");
                     VerTorneoFutbol.NombreTorneo3.setText("NO EXISTE");
                     VerTorneoFutbol.NombreTorneo4.setText("NO EXISTE");
                 }else if(Datos.listado_torneos_futbol.size()==2){
                     VerTorneoFutbol.NombreTorneo1.setText(Datos.listado_torneos_futbol.get(0).nombre);
                     VerTorneoFutbol.NombreTorneo2.setText(Datos.listado_torneos_futbol.get(1).nombre);
+                    VerTorneoFutbol.VerDatosTorneo1.setEnabled(true);
+                    VerTorneoFutbol.VerDatosTorneo2.setEnabled(true);
                     VerTorneoFutbol.NombreTorneo3.setText("NO EXISTE");
                     VerTorneoFutbol.NombreTorneo4.setText("NO EXISTE");
                 }else if(Datos.listado_torneos_futbol.size()==3){
                     VerTorneoFutbol.NombreTorneo1.setText(Datos.listado_torneos_futbol.get(0).nombre);
                     VerTorneoFutbol.NombreTorneo2.setText(Datos.listado_torneos_futbol.get(1).nombre);
                     VerTorneoFutbol.NombreTorneo3.setText(Datos.listado_torneos_futbol.get(2).nombre);
+                    VerTorneoFutbol.VerDatosTorneo1.setEnabled(true);
+                    VerTorneoFutbol.VerDatosTorneo2.setEnabled(true);
+                    VerTorneoFutbol.VerDatosTorneo3.setEnabled(true);
                     VerTorneoFutbol.NombreTorneo4.setText("NO EXISTE");
                 }else if (Datos.listado_torneos_futbol.size()>=4){
                     VerTorneoFutbol.NombreTorneo1.setText(Datos.listado_torneos_futbol.get(0).nombre);
                     VerTorneoFutbol.NombreTorneo2.setText(Datos.listado_torneos_futbol.get(1).nombre);
                     VerTorneoFutbol.NombreTorneo3.setText(Datos.listado_torneos_futbol.get(2).nombre);
                     VerTorneoFutbol.NombreTorneo4.setText(Datos.listado_torneos_futbol.get(3).nombre);
+                    VerTorneoFutbol.VerDatosTorneo1.setEnabled(true);
+                    VerTorneoFutbol.VerDatosTorneo2.setEnabled(true);
+                    VerTorneoFutbol.VerDatosTorneo3.setEnabled(true);
+                    VerTorneoFutbol.VerDatosTorneo4.setEnabled(true);
                 }
                 }
             }
@@ -239,6 +264,150 @@ public class VerTorneoEnCurso extends javax.swing.JFrame {
     private void BotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSalirActionPerformed
         this.dispose();
     }//GEN-LAST:event_BotonSalirActionPerformed
+
+    private void BotonTorneoVolleyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonTorneoVolleyActionPerformed
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                
+                
+                if(Datos.listado_torneos_volley.size()==0){
+                    //si no hay torneos creados se le informa al usuario
+                    JOptionPane.showMessageDialog(null, "No se han creado torneos");
+                }else{
+                    //Se muestra la ventana
+                    new VerTorneoVolley().setVisible(true);
+                    //verificación para settear los nombres de los torneos y mostrarlos
+                    if(Datos.listado_torneos_volley.size()==1){
+                    VerTorneoVolley.NombreTorneo1.setText(Datos.listado_torneos_volley.get(0).nombre);
+                    VerTorneoVolley.VerDatosTorneo1.setEnabled(true);
+                    VerTorneoVolley.NombreTorneo2.setText("NO EXISTE");
+                    VerTorneoVolley.NombreTorneo3.setText("NO EXISTE");
+                    VerTorneoVolley.NombreTorneo4.setText("NO EXISTE");
+                }else if(Datos.listado_torneos_volley.size()==2){
+                    VerTorneoVolley.NombreTorneo1.setText(Datos.listado_torneos_volley.get(0).nombre);
+                    VerTorneoVolley.NombreTorneo2.setText(Datos.listado_torneos_volley.get(1).nombre);
+                    VerTorneoVolley.VerDatosTorneo1.setEnabled(true);
+                    VerTorneoVolley.VerDatosTorneo2.setEnabled(true);
+                    VerTorneoVolley.NombreTorneo3.setText("NO EXISTE");
+                    VerTorneoVolley.NombreTorneo4.setText("NO EXISTE");
+                }else if(Datos.listado_torneos_volley.size()==3){
+                    VerTorneoVolley.NombreTorneo1.setText(Datos.listado_torneos_volley.get(0).nombre);
+                    VerTorneoVolley.NombreTorneo2.setText(Datos.listado_torneos_volley.get(1).nombre);
+                    VerTorneoVolley.NombreTorneo3.setText(Datos.listado_torneos_volley.get(2).nombre);
+                    VerTorneoVolley.VerDatosTorneo1.setEnabled(true);
+                    VerTorneoVolley.VerDatosTorneo2.setEnabled(true);
+                    VerTorneoVolley.VerDatosTorneo3.setEnabled(true);
+                    VerTorneoVolley.NombreTorneo4.setText("NO EXISTE");
+                }else if (Datos.listado_torneos_volley.size()>=4){
+                    VerTorneoVolley.NombreTorneo1.setText(Datos.listado_torneos_volley.get(0).nombre);
+                    VerTorneoVolley.NombreTorneo2.setText(Datos.listado_torneos_volley.get(1).nombre);
+                    VerTorneoVolley.NombreTorneo3.setText(Datos.listado_torneos_volley.get(2).nombre);
+                    VerTorneoVolley.NombreTorneo4.setText(Datos.listado_torneos_volley.get(3).nombre);
+                    VerTorneoVolley.VerDatosTorneo1.setEnabled(true);
+                    VerTorneoVolley.VerDatosTorneo2.setEnabled(true);
+                    VerTorneoVolley.VerDatosTorneo3.setEnabled(true);
+                    VerTorneoVolley.VerDatosTorneo4.setEnabled(true);
+                }
+                }
+            }
+        });
+    }//GEN-LAST:event_BotonTorneoVolleyActionPerformed
+
+    private void BotonTorneoAjedrezActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonTorneoAjedrezActionPerformed
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                
+                
+                if(Datos.listado_torneos_ajedrez.size()==0){
+                    //si no hay torneos creados se le informa al usuario
+                    JOptionPane.showMessageDialog(null, "No se han creado torneos");
+                }else{
+                    //Se muestra la ventana
+                    new VerTorneoAjedrez().setVisible(true);
+                    //verificación para settear los nombres de los torneos y mostrarlos
+                    if(Datos.listado_torneos_ajedrez.size()==1){
+                    VerTorneoAjedrez.NombreTorneo1.setText(Datos.listado_torneos_ajedrez.get(0).nombre);
+                    VerTorneoAjedrez.VerDatosTorneo1.setEnabled(true);
+                    VerTorneoAjedrez.NombreTorneo2.setText("NO EXISTE");
+                    VerTorneoAjedrez.NombreTorneo3.setText("NO EXISTE");
+                    VerTorneoAjedrez.NombreTorneo4.setText("NO EXISTE");
+                }else if(Datos.listado_torneos_ajedrez.size()==2){
+                    VerTorneoAjedrez.NombreTorneo1.setText(Datos.listado_torneos_ajedrez.get(0).nombre);
+                    VerTorneoAjedrez.NombreTorneo2.setText(Datos.listado_torneos_ajedrez.get(1).nombre);
+                    VerTorneoAjedrez.VerDatosTorneo1.setEnabled(true);
+                    VerTorneoAjedrez.VerDatosTorneo2.setEnabled(true);
+                    VerTorneoAjedrez.NombreTorneo3.setText("NO EXISTE");
+                    VerTorneoAjedrez.NombreTorneo4.setText("NO EXISTE");
+                }else if(Datos.listado_torneos_ajedrez.size()==3){
+                    VerTorneoAjedrez.NombreTorneo1.setText(Datos.listado_torneos_ajedrez.get(0).nombre);
+                    VerTorneoAjedrez.NombreTorneo2.setText(Datos.listado_torneos_ajedrez.get(1).nombre);
+                    VerTorneoAjedrez.NombreTorneo3.setText(Datos.listado_torneos_ajedrez.get(2).nombre);
+                    VerTorneoAjedrez.VerDatosTorneo1.setEnabled(true);
+                    VerTorneoAjedrez.VerDatosTorneo2.setEnabled(true);
+                    VerTorneoAjedrez.VerDatosTorneo3.setEnabled(true);
+                    VerTorneoAjedrez.NombreTorneo4.setText("NO EXISTE");
+                }else if (Datos.listado_torneos_ajedrez.size()>=4){
+                    VerTorneoAjedrez.NombreTorneo1.setText(Datos.listado_torneos_ajedrez.get(0).nombre);
+                    VerTorneoAjedrez.NombreTorneo2.setText(Datos.listado_torneos_ajedrez.get(1).nombre);
+                    VerTorneoAjedrez.NombreTorneo3.setText(Datos.listado_torneos_ajedrez.get(2).nombre);
+                    VerTorneoAjedrez.NombreTorneo4.setText(Datos.listado_torneos_ajedrez.get(3).nombre);
+                    VerTorneoAjedrez.VerDatosTorneo1.setEnabled(true);
+                    VerTorneoAjedrez.VerDatosTorneo2.setEnabled(true);
+                    VerTorneoAjedrez.VerDatosTorneo3.setEnabled(true);
+                    VerTorneoAjedrez.VerDatosTorneo4.setEnabled(true);
+                }
+                }
+            }
+        });
+    }//GEN-LAST:event_BotonTorneoAjedrezActionPerformed
+
+    private void BotonTorneoBasketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonTorneoBasketActionPerformed
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                
+                
+                if(Datos.listado_torneos_basket.size()==0){
+                    //si no hay torneos creados se le informa al usuario
+                    JOptionPane.showMessageDialog(null, "No se han creado torneos");
+                }else{
+                    //Se muestra la ventana
+                    new VerTorneoBasket().setVisible(true);
+                    //verificación para settear los nombres de los torneos y mostrarlos
+                    if(Datos.listado_torneos_basket.size()==1){
+                    VerTorneoBasket.NombreTorneo1.setText(Datos.listado_torneos_basket.get(0).nombre);
+                    VerTorneoBasket.VerDatosTorneo1.setEnabled(true);
+                    VerTorneoBasket.NombreTorneo2.setText("NO EXISTE");
+                    VerTorneoBasket.NombreTorneo3.setText("NO EXISTE");
+                    VerTorneoBasket.NombreTorneo4.setText("NO EXISTE");
+                }else if(Datos.listado_torneos_basket.size()==2){
+                    VerTorneoBasket.NombreTorneo1.setText(Datos.listado_torneos_basket.get(0).nombre);
+                    VerTorneoBasket.NombreTorneo2.setText(Datos.listado_torneos_basket.get(1).nombre);
+                    VerTorneoBasket.VerDatosTorneo1.setEnabled(true);
+                    VerTorneoBasket.VerDatosTorneo2.setEnabled(true);
+                    VerTorneoBasket.NombreTorneo3.setText("NO EXISTE");
+                    VerTorneoBasket.NombreTorneo4.setText("NO EXISTE");
+                }else if(Datos.listado_torneos_basket.size()==3){
+                    VerTorneoBasket.NombreTorneo1.setText(Datos.listado_torneos_basket.get(0).nombre);
+                    VerTorneoBasket.NombreTorneo2.setText(Datos.listado_torneos_basket.get(1).nombre);
+                    VerTorneoBasket.NombreTorneo3.setText(Datos.listado_torneos_basket.get(2).nombre);
+                    VerTorneoBasket.VerDatosTorneo1.setEnabled(true);
+                    VerTorneoBasket.VerDatosTorneo2.setEnabled(true);
+                    VerTorneoBasket.VerDatosTorneo3.setEnabled(true);
+                    VerTorneoBasket.NombreTorneo4.setText("NO EXISTE");
+                }else if (Datos.listado_torneos_basket.size()>=4){
+                    VerTorneoBasket.NombreTorneo1.setText(Datos.listado_torneos_basket.get(0).nombre);
+                    VerTorneoBasket.NombreTorneo2.setText(Datos.listado_torneos_basket.get(1).nombre);
+                    VerTorneoBasket.NombreTorneo3.setText(Datos.listado_torneos_basket.get(2).nombre);
+                    VerTorneoBasket.NombreTorneo4.setText(Datos.listado_torneos_basket.get(3).nombre);
+                    VerTorneoBasket.VerDatosTorneo1.setEnabled(true);
+                    VerTorneoBasket.VerDatosTorneo2.setEnabled(true);
+                    VerTorneoBasket.VerDatosTorneo3.setEnabled(true);
+                    VerTorneoBasket.VerDatosTorneo4.setEnabled(true);
+                }
+                }
+            }
+        });
+    }//GEN-LAST:event_BotonTorneoBasketActionPerformed
 
     /**
      * @param args the command line arguments

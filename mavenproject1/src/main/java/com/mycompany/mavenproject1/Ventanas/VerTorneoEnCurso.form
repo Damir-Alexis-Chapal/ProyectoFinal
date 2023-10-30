@@ -113,11 +113,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="VOLLEY"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonTorneoVolleyActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BotonTorneoBasket">
           <Properties>
             <Property name="text" type="java.lang.String" value="BASKET"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonTorneoBasketActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BotonTorneoFutbol">
           <Properties>
@@ -131,6 +137,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="AJEDREZ"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonTorneoAjedrezActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

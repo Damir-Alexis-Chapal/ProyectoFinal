@@ -10,12 +10,12 @@ import com.mycompany.mavenproject1.*;
  *
  * @author Alexis Chapal
  */
-public class VerTorneoFutbol extends javax.swing.JFrame {
+public class VerTorneoBasket extends javax.swing.JFrame {
 
     /**
      * Creates new form VerTorneoFutbol
      */
-    public VerTorneoFutbol() {
+    public VerTorneoBasket() {
         initComponents();
     }
 
@@ -321,7 +321,7 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
     private void VerDatosTorneo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerDatosTorneo1ActionPerformed
         
         
-        VerDatos.ver_datos(Datos.listado_torneos_futbol.get(0));//mandamos como parámetro el torneo que queremos consultar
+        VerDatos.ver_datos(Datos.listado_torneos_basket.get(0));//mandamos como parámetro el torneo que queremos consultar
     }//GEN-LAST:event_VerDatosTorneo1ActionPerformed
 
     private void BotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSalirActionPerformed
@@ -341,15 +341,15 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
     }//GEN-LAST:event_NombreTorneo1ActionPerformed
 
     private void VerDatosTorneo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerDatosTorneo2ActionPerformed
-        VerDatos.ver_datos(Datos.listado_torneos_futbol.get(1));//mandamos como parámetro el torneo que queremos consultar
+        VerDatos.ver_datos(Datos.listado_torneos_basket.get(1));//mandamos como parámetro el torneo que queremos consultar
     }//GEN-LAST:event_VerDatosTorneo2ActionPerformed
 
     private void VerDatosTorneo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerDatosTorneo3ActionPerformed
-        VerDatos.ver_datos(Datos.listado_torneos_futbol.get(2));//mandamos como parámetro el torneo que queremos consultar
+        VerDatos.ver_datos(Datos.listado_torneos_basket.get(2));//mandamos como parámetro el torneo que queremos consultar
     }//GEN-LAST:event_VerDatosTorneo3ActionPerformed
 
     private void VerDatosTorneo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerDatosTorneo4ActionPerformed
-        VerDatos.ver_datos(Datos.listado_torneos_futbol.get(3));//mandamos como parámetro el torneo que queremos consultar
+        VerDatos.ver_datos(Datos.listado_torneos_basket.get(3));//mandamos como parámetro el torneo que queremos consultar
     }//GEN-LAST:event_VerDatosTorneo4ActionPerformed
 
     /**

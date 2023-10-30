@@ -4,6 +4,8 @@
  */
 package com.mycompany.mavenproject1.Ventanas;
 
+import com.mycompany.mavenproject1.*;
+
 /**
  *
  * @author angel
@@ -248,7 +250,15 @@ public class VerDatos extends javax.swing.JFrame {
             }
         });
     }//GEN-LAST:event_BotonTablaDePosicionesActionPerformed
-
+    
+    public static void ver_datos(Torneo torneo){ //le llega como parámetro el torneo que queremos consultar
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                
+                new VerDatos().setVisible(true);
+            }
+        });
+    }
     /**
      * @param args the command line arguments
      */

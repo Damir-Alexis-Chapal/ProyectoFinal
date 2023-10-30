@@ -8,12 +8,12 @@ package com.mycompany.mavenproject1.Ventanas;
  *
  * @author Alexis Chapal
  */
-public class EditarTorneoFutbol extends javax.swing.JFrame {
+public class EditarTorneo extends javax.swing.JFrame {
 
     /**
      * Creates new form EditarTorneoFutbol
      */
-    public EditarTorneoFutbol() {
+    public EditarTorneo() {
         initComponents();
     }
 
