@@ -3,20 +3,32 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.mavenproject1.Ventanas;
-
+import com.mycompany.mavenproject1.*;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 /**
  *
  * @author sano2
  */
-public class FormularioEquipo extends javax.swing.JFrame {
-
+public class FormularioEquipo extends javax.swing.JFrame{
+    //con esta variable se ha´ra el ciclo de registros de personas
+    public static int MiembrosRegistrados=0;
     /**
      * Creates new form FormularioPersona
      */
-    public FormularioEquipo() {
+     public FormularioEquipo() {
         initComponents();
+        this.torneo = null;
     }
 
+    private final Torneo torneo; // Variable de instancia para guardar el objeto Torneo
+
+    // Constructor que acepta un objeto Torneo
+    public FormularioEquipo(Torneo torneo) {
+        this.torneo = torneo;
+        initComponents();
+
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,44 +40,37 @@ public class FormularioEquipo extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        CampoNombre = new javax.swing.JTextField();
+        CampoNombreEquipo = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         BotonRegistrarParticipante = new javax.swing.JButton();
-        BotonFinalizar = new javax.swing.JButton();
         BotonAtras = new javax.swing.JButton();
-        MostrarCantParticipantes = new javax.swing.JTextField();
-        MostrarTecnico = new javax.swing.JTextField();
-        MostrarLider = new javax.swing.JTextField();
+        CantidadParticipantes = new javax.swing.JTextField();
+        CampoTecnico = new javax.swing.JTextField();
+        CampoLider = new javax.swing.JTextField();
+        NombreTorneo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("INGRESE NOMBRE DEL EQUIPO");
+        jLabel1.setText("NOMBRE DEL EQUIPO:");
 
-        CampoNombre.addActionListener(new java.awt.event.ActionListener() {
+        CampoNombreEquipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoNombreActionPerformed(evt);
+                CampoNombreEquipoActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("CANTIDAD DE PARTICIPANTES REGISTRADOS: ");
+        jLabel2.setText("CANTIDAD DE PARTICIPANTES: ");
 
         jLabel3.setText("TÉCNICO DEL EQUIPO: ");
 
-        jLabel4.setText("LIDER DEL EQUIPO");
+        jLabel4.setText("LIDER DEL EQUIPO:");
 
         BotonRegistrarParticipante.setText("REGISTRAR PARTICIPANTES");
         BotonRegistrarParticipante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonRegistrarParticipanteActionPerformed(evt);
-            }
-        });
-
-        BotonFinalizar.setText("FINALIZAR");
-        BotonFinalizar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonFinalizarActionPerformed(evt);
             }
         });
 
@@ -76,70 +81,84 @@ public class FormularioEquipo extends javax.swing.JFrame {
             }
         });
 
-        MostrarCantParticipantes.setEditable(false);
+        CantidadParticipantes.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        MostrarTecnico.setEditable(false);
+        CampoTecnico.setEditable(false);
 
-        MostrarLider.setEditable(false);
+        CampoLider.setEditable(false);
+
+        NombreTorneo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(CampoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CampoNombreEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(100, 100, 100)
+                                .addComponent(jLabel1)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(106, 106, 106))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(CantidadParticipantes, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(120, 120, 120))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(MostrarTecnico, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(MostrarLider))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(BotonRegistrarParticipante, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(27, 27, 27)
-                                .addComponent(BotonFinalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(BotonAtras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(160, 160, 160)
-                                .addComponent(jLabel2)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(MostrarCantParticipantes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                            .addComponent(CampoLider, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                            .addComponent(CampoTecnico))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addComponent(BotonRegistrarParticipante, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BotonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(120, 120, 120))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(220, 220, 220)
+                .addComponent(NombreTorneo, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(NombreTorneo, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(MostrarCantParticipantes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
+                    .addComponent(jLabel2))
+                .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CampoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CampoNombreEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CantidadParticipantes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
-                    .addComponent(MostrarTecnico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
+                    .addComponent(CampoTecnico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel4))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(CampoLider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(MostrarLider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(57, 57, 57)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(BotonRegistrarParticipante, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
-                    .addComponent(BotonFinalizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BotonAtras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(32, Short.MAX_VALUE))
+                    .addComponent(BotonRegistrarParticipante, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -152,27 +171,52 @@ public class FormularioEquipo extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 40, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CampoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoNombreActionPerformed
+    private void CampoNombreEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoNombreEquipoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CampoNombreActionPerformed
+    }//GEN-LAST:event_CampoNombreEquipoActionPerformed
 
     private void BotonRegistrarParticipanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarParticipanteActionPerformed
+         
+       
         java.awt.EventQueue.invokeLater(new Runnable() {
+            //llamo a la ventana de persona para crear el equipo alla
             public void run() {
-                new FormularioPersona().setVisible(true);
+                ArrayList<Equipo> ListaTeam= new ArrayList();
+                Equipo NewTeam= new Equipo();
+
+                if (Integer.parseInt(CantidadParticipantes.getText())==MiembrosRegistrados) {
+                    JOptionPane.showMessageDialog(null, "Registro exitoso de todos los participantes,\nse ha completado la inscripción de su equipo");
+                    ListaTeam.add(NewTeam);
+                    torneo.setListado_equipos(ListaTeam);
+                    FormularioEquipo.this.dispose();
+                } else {
+                    //creo el formulario persona
+                    FormularioPersona NuevoFormulario = new FormularioPersona(NewTeam);
+                    //con esto indico el numero de participantes que se van a registrar
+                    FormularioPersona.CajaNumeroPersonas.setText(CantidadParticipantes.getText());
+                    
+                    FormularioPersona.CajaPersonasRegistradas.setText(""+MiembrosRegistrados);
+                    //envio el nombre del equipo para poder setearlo allá
+                    FormularioPersona.NombreEquipoNuevo.setText(CampoNombreEquipo.getText());
+                    NuevoFormulario.setVisible(true);
+                }
+            }
+
+            private void dispose() {
+                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
             }
         });
-    }//GEN-LAST:event_BotonRegistrarParticipanteActionPerformed
 
-    private void BotonFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonFinalizarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BotonFinalizarActionPerformed
+        
+        
+        
+    }//GEN-LAST:event_BotonRegistrarParticipanteActionPerformed
 
     private void BotonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAtrasActionPerformed
         this.dispose();
@@ -185,12 +229,12 @@ public class FormularioEquipo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonAtras;
-    private javax.swing.JButton BotonFinalizar;
     private javax.swing.JButton BotonRegistrarParticipante;
-    private javax.swing.JTextField CampoNombre;
-    private javax.swing.JTextField MostrarCantParticipantes;
-    private javax.swing.JTextField MostrarLider;
-    private javax.swing.JTextField MostrarTecnico;
+    public static javax.swing.JTextField CampoLider;
+    private javax.swing.JTextField CampoNombreEquipo;
+    public static javax.swing.JTextField CampoTecnico;
+    public static javax.swing.JTextField CantidadParticipantes;
+    public static javax.swing.JLabel NombreTorneo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

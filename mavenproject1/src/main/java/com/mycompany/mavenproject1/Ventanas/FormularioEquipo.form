@@ -30,7 +30,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="40" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -42,44 +42,53 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="CampoNombreEquipo" min="-2" pref="312" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace pref="84" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="CantidadParticipantes" min="-2" pref="148" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="CampoNombre" min="-2" pref="312" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="MostrarTecnico" min="-2" pref="218" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="MostrarLider" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="CampoLider" pref="240" max="32767" attributes="0"/>
+                              <Component id="CampoTecnico" max="32767" attributes="0"/>
                           </Group>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="BotonRegistrarParticipante" min="-2" pref="186" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                  <Component id="BotonFinalizar" min="-2" pref="181" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="BotonAtras" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
-                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="MostrarCantParticipantes" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                          <Component id="BotonRegistrarParticipante" min="-2" pref="186" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="BotonAtras" min="-2" pref="165" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="20" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="220" max="-2" attributes="0"/>
+                  <Component id="NombreTorneo" min="-2" pref="264" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -87,29 +96,38 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
+                  <Component id="NombreTorneo" min="-2" pref="22" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="MostrarCantParticipantes" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="CampoNombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="MostrarTecnico" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CampoNombreEquipo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CantidadParticipantes" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CampoTecnico" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="CampoLider" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="49" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="MostrarLider" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BotonRegistrarParticipante" alignment="3" min="-2" pref="82" max="-2" attributes="0"/>
+                      <Component id="BotonAtras" alignment="3" min="-2" pref="82" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="BotonRegistrarParticipante" pref="82" max="32767" attributes="0"/>
-                      <Component id="BotonFinalizar" max="32767" attributes="0"/>
-                      <Component id="BotonAtras" max="32767" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="32" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -117,17 +135,17 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="INGRESE NOMBRE DEL EQUIPO"/>
+            <Property name="text" type="java.lang.String" value="NOMBRE DEL EQUIPO:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="CampoNombre">
+        <Component class="javax.swing.JTextField" name="CampoNombreEquipo">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CampoNombreActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CampoNombreEquipoActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="CANTIDAD DE PARTICIPANTES REGISTRADOS: "/>
+            <Property name="text" type="java.lang.String" value="CANTIDAD DE PARTICIPANTES: "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
@@ -137,7 +155,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="LIDER DEL EQUIPO"/>
+            <Property name="text" type="java.lang.String" value="LIDER DEL EQUIPO:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="BotonRegistrarParticipante">
@@ -148,14 +166,6 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonRegistrarParticipanteActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="BotonFinalizar">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="FINALIZAR"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonFinalizarActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JButton" name="BotonAtras">
           <Properties>
             <Property name="text" type="java.lang.String" value="ATR&#xc1;S"/>
@@ -164,20 +174,37 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonAtrasActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="MostrarCantParticipantes">
+        <Component class="javax.swing.JTextField" name="CantidadParticipantes">
           <Properties>
-            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="MostrarTecnico">
+        <Component class="javax.swing.JTextField" name="CampoTecnico">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="MostrarLider">
+        <Component class="javax.swing.JTextField" name="CampoLider">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="NombreTorneo">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
