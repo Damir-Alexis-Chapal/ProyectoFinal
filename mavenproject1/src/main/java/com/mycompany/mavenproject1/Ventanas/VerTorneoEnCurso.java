@@ -211,7 +211,6 @@ public class VerTorneoEnCurso extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 
-                
                 if(Datos.listado_torneos_futbol.size()==0){
                     //si no hay torneos creados se le informa al usuario
                     JOptionPane.showMessageDialog(null, "No se han creado torneos");

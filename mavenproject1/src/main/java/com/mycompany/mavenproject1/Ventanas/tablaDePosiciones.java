@@ -40,22 +40,22 @@ public class tablaDePosiciones extends javax.swing.JFrame {
 
         tablaDePosiciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", "", null, null, null, null, null, null},
-                {"2", null, null, null, null, null, null, null},
-                {"3", null, null, null, null, null, null, null},
-                {"4", null, null, null, null, null, null, null},
-                {"5", null, null, null, null, null, null, null},
-                {"6", null, null, null, null, null, null, null},
-                {"7", null, null, null, null, null, null, null},
-                {"8", null, null, null, null, null, null, null},
-                {"9", null, null, null, null, null, null, null}
+                {"1", "", null, null, null, null},
+                {"2", null, null, null, null, null},
+                {"3", null, null, null, null, null},
+                {"4", null, null, null, null, null},
+                {"5", null, null, null, null, null},
+                {"6", null, null, null, null, null},
+                {"7", null, null, null, null, null},
+                {"8", null, null, null, null, null},
+                {"9", null, null, null, null, null}
             },
             new String [] {
-                "POSICIÓN", "EQUIPO", "PUNTOS", "GM", "GR", "GANADOS", "EMPATADOS", "PERDIDOS"
+                "POSICIÓN", "EQUIPO", "PUNTOS", "GANADOS", "EMPATADOS", "PERDIDOS"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {

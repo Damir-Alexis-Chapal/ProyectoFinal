@@ -124,6 +124,11 @@ public class FormularioTorneo extends javax.swing.JFrame {
         CajaAñoInicioTorneo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033" }));
 
         CajaCaracter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Municipal", "Departamental", "Nacional", "Internacional" }));
+        CajaCaracter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CajaCaracterActionPerformed(evt);
+            }
+        });
 
         jLabel14.setText("CARACTER DEL TORNEO");
 
@@ -133,7 +138,7 @@ public class FormularioTorneo extends javax.swing.JFrame {
 
         jLabel16.setText("LUGAR DONDE SE LLEVARÁ A CABO EL TORNEO");
 
-        CajaLugar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CajaLugar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "UQ", "COMFENALCO", "CENTENARIO", "C.CAFÉ", "S.JOSE", "INEM" }));
 
         jLabel17.setText("DEPORTE AL QUE SE JUGARÁ");
 
@@ -401,8 +406,6 @@ public class FormularioTorneo extends javax.swing.JFrame {
         Fecha FechaInicioInscripcionesTorneo = new Fecha();
         FechaInicioInscripcionesTorneo.setDia(Integer.parseInt((String) CajaDiaInicioInscripciones.getSelectedItem()));
         FechaInicioInscripcionesTorneo.setAño(Integer.parseInt((String) CajaAñoInicioInscripciones.getSelectedItem()));
-        FechaInicioInscripcionesTorneo.setMes((CajaMesInicioInscripciones.getSelectedIndex()+1));
-        //FechaInicioInscripcionesTorneo.setMes((CajaMesInicioInscripciones.getSelectedIndex()+1));
         FechaInicioInscripcionesTorneo.setMes(FechaInicioInscripcionesTorneo.transformar_StringMes((String)CajaMesInicioInscripciones.getSelectedItem()));
 
         NuevoTorneo.setFecha_inicio_inscripcion(FechaInicioInscripcionesTorneo);
@@ -411,8 +414,6 @@ public class FormularioTorneo extends javax.swing.JFrame {
         Fecha FechaCierreInscripcionesTorneo = new Fecha();
         FechaCierreInscripcionesTorneo.setDia(Integer.parseInt((String) CajaDiaCierreInscripciones.getSelectedItem()));
         FechaCierreInscripcionesTorneo.setAño(Integer.parseInt((String) CajaAñoCierreInscripciones.getSelectedItem()));
-        FechaCierreInscripcionesTorneo.setMes((CajaMesCierreInscripciones.getSelectedIndex()+1));
-        //FechaCierreInscripcionesTorneo.setMes((CajaMesCierreInscripciones.getSelectedIndex()+1));
         FechaCierreInscripcionesTorneo.setMes(FechaCierreInscripcionesTorneo.transformar_StringMes((String)CajaMesCierreInscripciones.getSelectedItem()));
 
         NuevoTorneo.setFecha_fin_inscripcion(FechaCierreInscripcionesTorneo);
@@ -421,13 +422,11 @@ public class FormularioTorneo extends javax.swing.JFrame {
         Fecha FechaInicioTorneo = new Fecha();
         FechaInicioTorneo.setDia(Integer.parseInt((String) CajaDiaInicioTorneo.getSelectedItem()));
         FechaInicioTorneo.setAño(Integer.parseInt((String) CajaAñoInicioTorneo.getSelectedItem()));
-        FechaInicioTorneo.setMes((CajaMesInicioTorneo.getSelectedIndex()+1));
-        //FechaInicioTorneo.setMes((CajaMesInicioTorneo.getSelectedIndex()+1));
         FechaInicioTorneo.setMes(FechaInicioTorneo.transformar_StringMes((String)CajaMesInicioTorneo.getSelectedItem()));
 
         NuevoTorneo.setFecha_inicio_torneo(FechaInicioTorneo);
         //guardo el torneo según el tipo que sea
-        if(CajaTipoTorneo.getSelectedItem().equals("Futbol Sala")){
+        if(CajaTipoTorneo.getSelectedItem().equals("Fútbol Sala")){
             Datos.listado_torneos_futbol.add(NuevoTorneo);
         }else if(CajaTipoTorneo.getSelectedItem().equals("BolleyBall")){
             Datos.listado_torneos_volley.add(NuevoTorneo);
@@ -462,6 +461,10 @@ public class FormularioTorneo extends javax.swing.JFrame {
     private void BotonGuardarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGuardarDatosActionPerformed
         //Basket 5, volley 6, futbol 5, ajedrez 1
     }//GEN-LAST:event_BotonGuardarDatosActionPerformed
+
+    private void CajaCaracterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CajaCaracterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CajaCaracterActionPerformed
 
     /**
      * @param args the command line arguments

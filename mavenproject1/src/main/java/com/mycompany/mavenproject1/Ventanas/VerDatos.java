@@ -61,8 +61,16 @@ public class VerDatos extends javax.swing.JFrame {
 
         jLabel1.setText("DATO 1");
 
+        CampoDato1.setEditable(false);
+        CampoDato1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoDato1ActionPerformed(evt);
+            }
+        });
+
         jLabel2.setText("DATO 2");
 
+        CampoDato2.setEditable(false);
         CampoDato2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoDato2ActionPerformed(evt);
@@ -250,12 +258,19 @@ public class VerDatos extends javax.swing.JFrame {
             }
         });
     }//GEN-LAST:event_BotonTablaDePosicionesActionPerformed
+
+    private void CampoDato1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoDato1ActionPerformed
+
+    }//GEN-LAST:event_CampoDato1ActionPerformed
     
     public static void ver_datos(Torneo torneo){ //le llega como parámetro el torneo que queremos consultar
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 
                 new VerDatos().setVisible(true);
+                
+                CampoDato1.setText(torneo.nombre);
+                CampoDato2.setText(torneo.genero);
             }
         });
     }
@@ -268,8 +283,8 @@ public class VerDatos extends javax.swing.JFrame {
     private javax.swing.JButton BotonProximosEnfrentamientos;
     private javax.swing.JButton BotonTablaDePosiciones;
     private javax.swing.JButton BotonVolver;
-    private javax.swing.JTextField CampoDato1;
-    private javax.swing.JTextField CampoDato2;
+    public static javax.swing.JTextField CampoDato1;
+    public static javax.swing.JTextField CampoDato2;
     private javax.swing.JTextField CampoDato3;
     private javax.swing.JTextField CampoDato4;
     private javax.swing.JTextField CampoDato5;
