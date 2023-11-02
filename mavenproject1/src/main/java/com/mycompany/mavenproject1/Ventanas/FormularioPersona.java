@@ -3,9 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.mavenproject1.Ventanas;
+
 import com.mycompany.mavenproject1.*;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author sano2
@@ -17,9 +19,9 @@ public class FormularioPersona extends javax.swing.JFrame {
      */
     public FormularioPersona() {
         initComponents();
-        this.Team=null;
+        this.Team = null;
     }
-     private final Equipo Team;
+    private final Equipo Team;
 
     public FormularioPersona(Equipo Team) {
         this.Team = Team;
@@ -79,7 +81,7 @@ public class FormularioPersona extends javax.swing.JFrame {
 
         jLabel4.setText("CORREO");
 
-        CajaGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FEMENINO", "MASCULINO", " " }));
+        CajaGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FEMENINO", "MASCULINO", "MIXTO", " ", " " }));
 
         jLabel5.setText("GÉNERO");
 
@@ -329,56 +331,75 @@ public class FormularioPersona extends javax.swing.JFrame {
     }//GEN-LAST:event_CampoEdadActionPerformed
 
     private void BotonContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonContinuarActionPerformed
-        
+        int cantErrores = 0;
+
         int cantPersonasRegistradas = Integer.parseInt(CajaPersonasRegistradas.getText());;
         //el equipo se crea desde aqui
         Team.setNombre(NombreEquipoNuevo.getText());
         //creo un arraylist donde se ingresaran los participantes
         ArrayList<Persona> ListadoParticipantes = new ArrayList();
-        
+
         //creo la persona y seteo sus atributos
         Persona NuevoParticipante = new Persona();
         NuevoParticipante.setNombre((String) CampoNombre.getText());
         NuevoParticipante.setCedula((String) CampoCedula.getText());
-        NuevoParticipante.setGenero((String) CajaGenero.getSelectedItem());
+
+        if (FormularioTorneo.generoTorneo.equals((String) CajaGenero.getSelectedItem())) {
+            NuevoParticipante.setGenero((String) CajaGenero.getSelectedItem());
+
+        } else {
+            cantErrores++;
+        }
+
         NuevoParticipante.setTelefono((String) CampoTelefono.getText());
         NuevoParticipante.setCorreo((String) CampoCorreo.getText());
-        NuevoParticipante.setEdad(Integer.parseInt(CampoEdad.getText()));
+
+        if (FormularioTorneo.LimiteEdad > Integer.parseInt(CampoEdad.getText())) {
+
+            NuevoParticipante.setEdad(Integer.parseInt(CampoEdad.getText()));
+
+        } else {
+            cantErrores++;
+        }
 
         //atributo fecha, en el formulario torneo explico su funcionamiento
         Fecha FechaNacimientoPersona = new Fecha();
         FechaNacimientoPersona.setDia(Integer.parseInt((String) CajaDiaNacimiento.getSelectedItem()));
         FechaNacimientoPersona.setAño(Integer.parseInt((String) CajaAñoNacimiento.getSelectedItem()));
-        FechaNacimientoPersona.setMes(FechaNacimientoPersona.transformar_StringMes((String)CajaMesNacimiento.getSelectedItem()));
+        FechaNacimientoPersona.setMes(FechaNacimientoPersona.transformar_StringMes((String) CajaMesNacimiento.getSelectedItem()));
 
         //creo if´s anidados para verificar si la persona a ingresar es tecnico, jugador o lider
         NuevoParticipante.setFecha_nacimiento(FechaNacimientoPersona);
-        if (BotonTecnico.isSelected()) {
-            FormularioEquipo.CampoTecnico.setText((String) CampoNombre.getText());
-            NuevoParticipante.setTipo("TECNICO");
-            Team.setTecnico(NuevoParticipante);
-            JOptionPane.showMessageDialog(null, "Registro exitoso del Tecnico");
-        } else if (BotonLider.isSelected()) {
-            FormularioEquipo.CampoLider.setText((String) CampoNombre.getText());
-            NuevoParticipante.setTipo("LIDER_JUGADOR");
-            Team.setLider(NuevoParticipante);
-            JOptionPane.showMessageDialog(null, "Registro exitoso del Lider");
-        } else if (BotonJugador.isSelected()) {
-            NuevoParticipante.setTipo("JUGADOR");
-            ListadoParticipantes.add(NuevoParticipante);
-            JOptionPane.showMessageDialog(null, "Registro exitoso del Jugador");
+        if (cantErrores == 0) {
+            if (BotonTecnico.isSelected()) {
+                FormularioEquipo.CampoTecnico.setText((String) CampoNombre.getText());
+                NuevoParticipante.setTipo("TECNICO");
+                Team.setTecnico(NuevoParticipante);
+                JOptionPane.showMessageDialog(null, "Registro exitoso del Tecnico");
+            } else if (BotonLider.isSelected()) {
+                FormularioEquipo.CampoLider.setText((String) CampoNombre.getText());
+                NuevoParticipante.setTipo("LIDER_JUGADOR");
+                Team.setLider(NuevoParticipante);
+                JOptionPane.showMessageDialog(null, "Registro exitoso del Lider");
+            } else if (BotonJugador.isSelected()) {
+                NuevoParticipante.setTipo("JUGADOR");
+                ListadoParticipantes.add(NuevoParticipante);
+                JOptionPane.showMessageDialog(null, "Registro exitoso del Jugador");
+            }
+            FormularioEquipo.MiembrosRegistrados++;
+            Team.setListado_participantes(ListadoParticipantes);
+            //ya que finalizó el proceso devuelvo al usuario al principio del programa
+            this.dispose();
+        }else{
+            JOptionPane.showMessageDialog(null, "Por favor ingrese los datos correctamente");
         }
-        FormularioEquipo.MiembrosRegistrados++;
-        Team.setListado_participantes(ListadoParticipantes);
-        //ya que finalizó el proceso devuelvo al usuario al principio del programa
-        this.dispose();
-       
+
+
     }//GEN-LAST:event_BotonContinuarActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonAtras;

@@ -194,6 +194,7 @@ public class FormularioEquipo extends javax.swing.JFrame{
                     JOptionPane.showMessageDialog(null, "Registro exitoso de todos los participantes,\nse ha completado la inscripción de su equipo");
                     ListaTeam.add(NewTeam);
                     torneo.setListado_equipos(ListaTeam);
+                    FormularioTorneo.NumEquiposRegistrados++;
                     FormularioEquipo.this.dispose();
                 } else {
                     //creo el formulario persona
