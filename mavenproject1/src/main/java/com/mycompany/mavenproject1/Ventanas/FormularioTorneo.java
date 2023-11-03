@@ -462,11 +462,12 @@ public class FormularioTorneo extends javax.swing.JFrame {
         //envio y seteo en la siguiente ventana el nombre del torneo para que se vea mejor
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                
                 if (NumEquipos == NumEquiposRegistrados) {
                     //guardo el torneo según el tipo que sea
                     if (CajaTipoTorneo.getSelectedItem().equals("Fútbol Sala")) {
-                        Datos.listado_torneos_futbol.add(NuevoTorneo);
-                    } else if (CajaTipoTorneo.getSelectedItem().equals("BolleyBall")) {
+                        Datos.listado_torneos_futbol.add(NuevoTorneo);                        
+                    } else if (CajaTipoTorneo.getSelectedItem().equals("VolleyBall")) {
                         Datos.listado_torneos_volley.add(NuevoTorneo);
                     } else if (CajaTipoTorneo.getSelectedItem().equals("Baloncesto")) {
                         Datos.listado_torneos_basket.add(NuevoTorneo);
