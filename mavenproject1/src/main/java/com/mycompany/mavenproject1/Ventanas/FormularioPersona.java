@@ -354,7 +354,7 @@ public class FormularioPersona extends javax.swing.JFrame {
         NuevoParticipante.setTelefono((String) CampoTelefono.getText());
         NuevoParticipante.setCorreo((String) CampoCorreo.getText());
 
-        if (FormularioTorneo.LimiteEdad > Integer.parseInt(CampoEdad.getText())) {
+        if (FormularioTorneo.LimiteEdad >= Integer.parseInt(CampoEdad.getText())) {
 
             NuevoParticipante.setEdad(Integer.parseInt(CampoEdad.getText()));
 
@@ -392,6 +392,7 @@ public class FormularioPersona extends javax.swing.JFrame {
             this.dispose();
         }else{
             JOptionPane.showMessageDialog(null, "Por favor ingrese los datos correctamente");
+            cantErrores=0;
         }
 
 

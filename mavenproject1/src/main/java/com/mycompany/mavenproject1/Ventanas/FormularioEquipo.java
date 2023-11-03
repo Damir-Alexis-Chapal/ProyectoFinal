@@ -195,6 +195,7 @@ public class FormularioEquipo extends javax.swing.JFrame{
                     ListaTeam.add(NewTeam);
                     torneo.setListado_equipos(ListaTeam);
                     FormularioTorneo.NumEquiposRegistrados++;
+                    MiembrosRegistrados=0;
                     FormularioEquipo.this.dispose();
                 } else {
                     //creo el formulario persona

@@ -220,11 +220,11 @@
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="CajaDiaInicioInscripciones" alignment="1" min="-2" pref="35" max="-2" attributes="0"/>
                       <Component id="CajaMesInicioInscripciones" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
                       <Component id="CajaAñoInicioInscripciones" alignment="1" min="-2" pref="35" max="-2" attributes="0"/>
-                      <Component id="CajaGenero" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="CajaGenero" min="-2" pref="35" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -254,11 +254,13 @@
                       <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="CajaDiaInicioTorneo" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="CajaMesInicioTorneo" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="CajaAñoInicioTorneo" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="CajaNumeroEquipos" alignment="1" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="CajaDiaInicioTorneo" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="CajaMesInicioTorneo" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="CajaAñoInicioTorneo" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
