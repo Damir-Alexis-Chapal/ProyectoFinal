@@ -7,6 +7,7 @@ package com.mycompany.mavenproject1.Ventanas;
 import com.mycompany.mavenproject1.*;
 import static com.mycompany.mavenproject1.Ventanas.FormularioEquipo.CantidadParticipantes;
 import static com.mycompany.mavenproject1.Ventanas.FormularioEquipo.MiembrosRegistrados;
+import java.util.InputMismatchException;
 import javax.swing.JOptionPane;
 
 /**
@@ -417,80 +418,85 @@ public class FormularioTorneo extends javax.swing.JFrame {
     }//GEN-LAST:event_CampoLimiteEdadActionPerformed
 
     private void BotonRegistrarEquiposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarEquiposActionPerformed
-        //le doy valor a las variables usadas para verificar a las personas y a los equipos
-        NumEquipos = Integer.parseInt((String) CajaNumeroEquipos.getSelectedItem());
+        //verifico que los campos de texto no estén vacios 
+        if (CampoNombreTorneo.getText().isEmpty() || CampoLimiteEdad.getText().isEmpty() || CajaValorInscripcion.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por favor llene todos los campos");
+        } else {
 
-        LimiteEdad = Integer.parseInt(CampoLimiteEdad.getText());
-        generoTorneo = (String) CajaGenero.getSelectedItem();
+            //le doy valor a las variables usadas para verificar a las personas y a los equipos
+            NumEquipos = Integer.parseInt((String) CajaNumeroEquipos.getSelectedItem());
 
-        //creo un nuevo torneo usando los campos del formulario
-        Torneo NuevoTorneo = new Torneo();
-        //seteo los datos del torneo
-        NuevoTorneo.setNombre("" + CampoNombreTorneo.getText());
-        NuevoTorneo.setGenero("" + CajaGenero.getSelectedItem());
-        NuevoTorneo.setLugar("" + CajaLugar.getSelectedItem());
-        NuevoTorneo.setCaracter("" + CajaCaracter.getSelectedItem());
-        NuevoTorneo.setCant_equipos((int) CajaNumeroEquipos.getSelectedIndex() + 1);
-        NuevoTorneo.setLimite_edad(Integer.parseInt(CampoLimiteEdad.getText()));
-        NuevoTorneo.setValor_inscripcion(Integer.parseInt(CajaValorInscripcion.getText()));
-        //creo un objeto fecha para el inicio inscripciones
+            LimiteEdad = Integer.parseInt(CampoLimiteEdad.getText());
+            generoTorneo = (String) CajaGenero.getSelectedItem();
 
-        Fecha FechaInicioInscripcionesTorneo = new Fecha();
-        FechaInicioInscripcionesTorneo.setDia(Integer.parseInt((String) CajaDiaInicioInscripciones.getSelectedItem()));
-        FechaInicioInscripcionesTorneo.setAño(Integer.parseInt((String) CajaAñoInicioInscripciones.getSelectedItem()));
-        FechaInicioInscripcionesTorneo.setMes(FechaInicioInscripcionesTorneo.transformar_StringMes((String) CajaMesInicioInscripciones.getSelectedItem()));
+            //creo un nuevo torneo usando los campos del formulario
+            Torneo NuevoTorneo = new Torneo();
+            //seteo los datos del torneo
+            NuevoTorneo.setNombre("" + CampoNombreTorneo.getText());
+            NuevoTorneo.setGenero("" + CajaGenero.getSelectedItem());
+            NuevoTorneo.setLugar("" + CajaLugar.getSelectedItem());
+            NuevoTorneo.setCaracter("" + CajaCaracter.getSelectedItem());
+            NuevoTorneo.setCant_equipos((int) CajaNumeroEquipos.getSelectedIndex() + 1);
+            NuevoTorneo.setLimite_edad(Integer.parseInt(CampoLimiteEdad.getText()));
+            NuevoTorneo.setValor_inscripcion(Integer.parseInt(CajaValorInscripcion.getText()));
+            //creo un objeto fecha para el inicio inscripciones
 
-        NuevoTorneo.setFecha_inicio_inscripcion(FechaInicioInscripcionesTorneo);
+            Fecha FechaInicioInscripcionesTorneo = new Fecha();
+            FechaInicioInscripcionesTorneo.setDia(Integer.parseInt((String) CajaDiaInicioInscripciones.getSelectedItem()));
+            FechaInicioInscripcionesTorneo.setAño(Integer.parseInt((String) CajaAñoInicioInscripciones.getSelectedItem()));
+            FechaInicioInscripcionesTorneo.setMes(FechaInicioInscripcionesTorneo.transformar_StringMes((String) CajaMesInicioInscripciones.getSelectedItem()));
 
-        //creo un objeto fecha para el cierre inscripciones
-        Fecha FechaCierreInscripcionesTorneo = new Fecha();
-        FechaCierreInscripcionesTorneo.setDia(Integer.parseInt((String) CajaDiaCierreInscripciones.getSelectedItem()));
-        FechaCierreInscripcionesTorneo.setAño(Integer.parseInt((String) CajaAñoCierreInscripciones.getSelectedItem()));
-        FechaCierreInscripcionesTorneo.setMes(FechaCierreInscripcionesTorneo.transformar_StringMes((String) CajaMesCierreInscripciones.getSelectedItem()));
+            NuevoTorneo.setFecha_inicio_inscripcion(FechaInicioInscripcionesTorneo);
 
-        NuevoTorneo.setFecha_fin_inscripcion(FechaCierreInscripcionesTorneo);
+            //creo un objeto fecha para el cierre inscripciones
+            Fecha FechaCierreInscripcionesTorneo = new Fecha();
+            FechaCierreInscripcionesTorneo.setDia(Integer.parseInt((String) CajaDiaCierreInscripciones.getSelectedItem()));
+            FechaCierreInscripcionesTorneo.setAño(Integer.parseInt((String) CajaAñoCierreInscripciones.getSelectedItem()));
+            FechaCierreInscripcionesTorneo.setMes(FechaCierreInscripcionesTorneo.transformar_StringMes((String) CajaMesCierreInscripciones.getSelectedItem()));
 
-        //creo un objeto fecha para el inicio del torneo
-        Fecha FechaInicioTorneo = new Fecha();
-        FechaInicioTorneo.setDia(Integer.parseInt((String) CajaDiaInicioTorneo.getSelectedItem()));
-        FechaInicioTorneo.setAño(Integer.parseInt((String) CajaAñoInicioTorneo.getSelectedItem()));
-        FechaInicioTorneo.setMes(FechaInicioTorneo.transformar_StringMes((String) CajaMesInicioTorneo.getSelectedItem()));
+            NuevoTorneo.setFecha_fin_inscripcion(FechaCierreInscripcionesTorneo);
 
-        NuevoTorneo.setFecha_inicio_torneo(FechaInicioTorneo);
+            //creo un objeto fecha para el inicio del torneo
+            Fecha FechaInicioTorneo = new Fecha();
+            FechaInicioTorneo.setDia(Integer.parseInt((String) CajaDiaInicioTorneo.getSelectedItem()));
+            FechaInicioTorneo.setAño(Integer.parseInt((String) CajaAñoInicioTorneo.getSelectedItem()));
+            FechaInicioTorneo.setMes(FechaInicioTorneo.transformar_StringMes((String) CajaMesInicioTorneo.getSelectedItem()));
 
-        //una vez guardados los datos continuamos a la ventana de registrar equipos para el torneo
-        //envio y seteo en la siguiente ventana el nombre del torneo para que se vea mejor
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                
-                if (NumEquipos == NumEquiposRegistrados) {
-                    //guardo el torneo según el tipo que sea
-                    if (CajaTipoTorneo.getSelectedItem().equals("Fútbol Sala")) {
-                        Datos.listado_torneos_futbol.add(NuevoTorneo);                        
-                    } else if (CajaTipoTorneo.getSelectedItem().equals("VolleyBall")) {
-                        Datos.listado_torneos_volley.add(NuevoTorneo);
-                    } else if (CajaTipoTorneo.getSelectedItem().equals("Baloncesto")) {
-                        Datos.listado_torneos_basket.add(NuevoTorneo);
-                    } else if (CajaTipoTorneo.getSelectedItem().equals("Ajedrez")) {
-                        Datos.listado_torneos_ajedrez.add(NuevoTorneo);
+            NuevoTorneo.setFecha_inicio_torneo(FechaInicioTorneo);
+
+            //una vez guardados los datos continuamos a la ventana de registrar equipos para el torneo
+            //envio y seteo en la siguiente ventana el nombre del torneo para que se vea mejor
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+
+                    if (NumEquipos == NumEquiposRegistrados) {
+                        //guardo el torneo según el tipo que sea
+                        if (CajaTipoTorneo.getSelectedItem().equals("Fútbol Sala")) {
+                            Datos.listado_torneos_futbol.add(NuevoTorneo);
+                        } else if (CajaTipoTorneo.getSelectedItem().equals("VolleyBall")) {
+                            Datos.listado_torneos_volley.add(NuevoTorneo);
+                        } else if (CajaTipoTorneo.getSelectedItem().equals("Baloncesto")) {
+                            Datos.listado_torneos_basket.add(NuevoTorneo);
+                        } else if (CajaTipoTorneo.getSelectedItem().equals("Ajedrez")) {
+                            Datos.listado_torneos_ajedrez.add(NuevoTorneo);
+                        }
+                        JOptionPane.showMessageDialog(null, "¡Registro exitoso de todos los equipos participantes"
+                                + "\n El torneo " + CampoNombreTorneo.getText() + " ha sido creado con exito!");
+                        NumEquiposRegistrados = 0;
+                        FormularioTorneo.this.dispose();
+
+                    } else {
+                        FormularioEquipo NuevoEquipo = new FormularioEquipo(NuevoTorneo);
+                        NuevoEquipo.NombreTorneo.setText(CampoNombreTorneo.getText());
+                        NuevoEquipo.setVisible(true);
                     }
-                    JOptionPane.showMessageDialog(null, "¡Registro exitoso de todos los equipos participantes"+
-                            "\n El torneo "+CampoNombreTorneo.getText()+" ha sido creado con exito!");
-                    NumEquiposRegistrados=0;
-                    FormularioTorneo.this.dispose();
-
-                } else {
-                    FormularioEquipo NuevoEquipo = new FormularioEquipo(NuevoTorneo);
-                    NuevoEquipo.NombreTorneo.setText(CampoNombreTorneo.getText());
-                    NuevoEquipo.setVisible(true);
                 }
-            }
 
-            private void dispose() {
-                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-            }
-        });
-
+                private void dispose() {
+                    throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+                }
+            });
+        }
     }//GEN-LAST:event_BotonRegistrarEquiposActionPerformed
 
     private void BotonRegistrarJuecesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarJuecesActionPerformed

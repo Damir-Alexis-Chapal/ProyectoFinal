@@ -3,20 +3,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.mavenproject1.Ventanas;
+
 import com.mycompany.mavenproject1.*;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author sano2
  */
-public class FormularioEquipo extends javax.swing.JFrame{
+public class FormularioEquipo extends javax.swing.JFrame {
+
     //con esta variable se ha´ra el ciclo de registros de personas
-    public static int MiembrosRegistrados=0;
+    public static int MiembrosRegistrados = 0;
+
     /**
      * Creates new form FormularioPersona
      */
-     public FormularioEquipo() {
+    public FormularioEquipo() {
         initComponents();
         this.torneo = null;
     }
@@ -29,6 +33,7 @@ public class FormularioEquipo extends javax.swing.JFrame{
         initComponents();
 
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -182,42 +187,44 @@ public class FormularioEquipo extends javax.swing.JFrame{
     }//GEN-LAST:event_CampoNombreEquipoActionPerformed
 
     private void BotonRegistrarParticipanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarParticipanteActionPerformed
-         
-       
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            //llamo a la ventana de persona para crear el equipo alla
-            public void run() {
-                ArrayList<Equipo> ListaTeam= new ArrayList();
-                Equipo NewTeam= new Equipo();
+        //verifico que los campos de texto no estén vacios 
+        if (CampoNombreEquipo.getText().isEmpty() || CantidadParticipantes.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por favor llene todos los campos");
+        } else {
 
-                if (Integer.parseInt(CantidadParticipantes.getText())==MiembrosRegistrados) {
-                    JOptionPane.showMessageDialog(null, "Registro exitoso de todos los participantes,\nse ha completado la inscripción de su equipo");
-                    ListaTeam.add(NewTeam);
-                    torneo.setListado_equipos(ListaTeam);
-                    FormularioTorneo.NumEquiposRegistrados++;
-                    MiembrosRegistrados=0;
-                    FormularioEquipo.this.dispose();
-                } else {
-                    //creo el formulario persona
-                    FormularioPersona NuevoFormulario = new FormularioPersona(NewTeam);
-                    //con esto indico el numero de participantes que se van a registrar
-                    FormularioPersona.CajaNumeroPersonas.setText(CantidadParticipantes.getText());
-                    
-                    FormularioPersona.CajaPersonasRegistradas.setText(""+MiembrosRegistrados);
-                    //envio el nombre del equipo para poder setearlo allá
-                    FormularioPersona.NombreEquipoNuevo.setText(CampoNombreEquipo.getText());
-                    NuevoFormulario.setVisible(true);
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                //llamo a la ventana de persona para crear el equipo alla
+                public void run() {
+                    ArrayList<Equipo> ListaTeam = new ArrayList();
+                    Equipo NewTeam = new Equipo();
+
+                    if (Integer.parseInt(CantidadParticipantes.getText()) == MiembrosRegistrados) {
+                        JOptionPane.showMessageDialog(null, "Registro exitoso de todos los participantes,\nse ha completado la inscripción de su equipo");
+                        ListaTeam.add(NewTeam);
+                        torneo.setListado_equipos(ListaTeam);
+                        FormularioTorneo.NumEquiposRegistrados++;
+                        MiembrosRegistrados = 0;
+                        FormularioEquipo.this.dispose();
+                    } else {
+                        //creo el formulario persona
+                        FormularioPersona NuevoFormulario = new FormularioPersona(NewTeam);
+                        //con esto indico el numero de participantes que se van a registrar
+                        FormularioPersona.CajaNumeroPersonas.setText(CantidadParticipantes.getText());
+
+                        FormularioPersona.CajaPersonasRegistradas.setText("" + MiembrosRegistrados);
+                        //envio el nombre del equipo para poder setearlo allá
+                        FormularioPersona.NombreEquipoNuevo.setText(CampoNombreEquipo.getText());
+                        NuevoFormulario.setVisible(true);
+                    }
                 }
-            }
 
-            private void dispose() {
-                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-            }
-        });
+                private void dispose() {
+                    throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+                }
+            });
 
-        
-        
-        
+        }
+
     }//GEN-LAST:event_BotonRegistrarParticipanteActionPerformed
 
     private void BotonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAtrasActionPerformed
@@ -227,7 +234,6 @@ public class FormularioEquipo extends javax.swing.JFrame{
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonAtras;

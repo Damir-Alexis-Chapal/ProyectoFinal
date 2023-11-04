@@ -331,71 +331,79 @@ public class FormularioPersona extends javax.swing.JFrame {
     }//GEN-LAST:event_CampoEdadActionPerformed
 
     private void BotonContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonContinuarActionPerformed
-        int cantErrores = 0;
+//      
+        //verifico que los campos de texto no estén vacios 
+        if (CampoNombre.getText().isEmpty() || CampoEdad.getText().isEmpty() || CampoCedula.getText().isEmpty()
+                || CampoTelefono.getText().isEmpty() || CampoCorreo.getText().isEmpty() || buttonGroup1.getSelection() == null) {
 
-        int cantPersonasRegistradas = Integer.parseInt(CajaPersonasRegistradas.getText());;
-        //el equipo se crea desde aqui
-        Team.setNombre(NombreEquipoNuevo.getText());
-        //creo un arraylist donde se ingresaran los participantes
-        ArrayList<Persona> ListadoParticipantes = new ArrayList();
-
-        //creo la persona y seteo sus atributos
-        Persona NuevoParticipante = new Persona();
-        NuevoParticipante.setNombre((String) CampoNombre.getText());
-        NuevoParticipante.setCedula((String) CampoCedula.getText());
-
-        if (FormularioTorneo.generoTorneo.equals((String) CajaGenero.getSelectedItem())) {
-            NuevoParticipante.setGenero((String) CajaGenero.getSelectedItem());
-
+            JOptionPane.showMessageDialog(null, "Por favor llene todos los campos y seleccione las opciones");
         } else {
-            cantErrores++;
-        }
 
-        NuevoParticipante.setTelefono((String) CampoTelefono.getText());
-        NuevoParticipante.setCorreo((String) CampoCorreo.getText());
+            int cantErrores = 0;
 
-        if (FormularioTorneo.LimiteEdad >= Integer.parseInt(CampoEdad.getText())) {
+            int cantPersonasRegistradas = Integer.parseInt(CajaPersonasRegistradas.getText());;
+            //el equipo se crea desde aqui
+            Team.setNombre(NombreEquipoNuevo.getText());
+            //creo un arraylist donde se ingresaran los participantes
+            ArrayList<Persona> ListadoParticipantes = new ArrayList();
 
-            NuevoParticipante.setEdad(Integer.parseInt(CampoEdad.getText()));
+            //creo la persona y seteo sus atributos
+            Persona NuevoParticipante = new Persona();
+            NuevoParticipante.setNombre((String) CampoNombre.getText());
+            NuevoParticipante.setCedula((String) CampoCedula.getText());
 
-        } else {
-            cantErrores++;
-        }
+            if (FormularioTorneo.generoTorneo.equals((String) CajaGenero.getSelectedItem())) {
+                NuevoParticipante.setGenero((String) CajaGenero.getSelectedItem());
 
-        //atributo fecha, en el formulario torneo explico su funcionamiento
-        Fecha FechaNacimientoPersona = new Fecha();
-        FechaNacimientoPersona.setDia(Integer.parseInt((String) CajaDiaNacimiento.getSelectedItem()));
-        FechaNacimientoPersona.setAño(Integer.parseInt((String) CajaAñoNacimiento.getSelectedItem()));
-        FechaNacimientoPersona.setMes(FechaNacimientoPersona.transformar_StringMes((String) CajaMesNacimiento.getSelectedItem()));
-
-        //creo if´s anidados para verificar si la persona a ingresar es tecnico, jugador o lider
-        NuevoParticipante.setFecha_nacimiento(FechaNacimientoPersona);
-        if (cantErrores == 0) {
-            if (BotonTecnico.isSelected()) {
-                FormularioEquipo.CampoTecnico.setText((String) CampoNombre.getText());
-                NuevoParticipante.setTipo("TECNICO");
-                Team.setTecnico(NuevoParticipante);
-                JOptionPane.showMessageDialog(null, "Registro exitoso del Tecnico");
-            } else if (BotonLider.isSelected()) {
-                FormularioEquipo.CampoLider.setText((String) CampoNombre.getText());
-                NuevoParticipante.setTipo("LIDER_JUGADOR");
-                Team.setLider(NuevoParticipante);
-                JOptionPane.showMessageDialog(null, "Registro exitoso del Lider");
-            } else if (BotonJugador.isSelected()) {
-                NuevoParticipante.setTipo("JUGADOR");
-                ListadoParticipantes.add(NuevoParticipante);
-                JOptionPane.showMessageDialog(null, "Registro exitoso del Jugador");
+            } else {
+                cantErrores++;
             }
-            FormularioEquipo.MiembrosRegistrados++;
-            Team.setListado_participantes(ListadoParticipantes);
-            //ya que finalizó el proceso devuelvo al usuario al principio del programa
-            this.dispose();
-        }else{
-            JOptionPane.showMessageDialog(null, "Por favor ingrese los datos correctamente");
-            cantErrores=0;
+
+            NuevoParticipante.setTelefono((String) CampoTelefono.getText());
+            NuevoParticipante.setCorreo((String) CampoCorreo.getText());
+
+            if (FormularioTorneo.LimiteEdad >= Integer.parseInt(CampoEdad.getText())) {
+
+                NuevoParticipante.setEdad(Integer.parseInt(CampoEdad.getText()));
+
+            } else {
+                cantErrores++;
+            }
+
+            //atributo fecha, en el formulario torneo explico su funcionamiento
+            Fecha FechaNacimientoPersona = new Fecha();
+            FechaNacimientoPersona.setDia(Integer.parseInt((String) CajaDiaNacimiento.getSelectedItem()));
+            FechaNacimientoPersona.setAño(Integer.parseInt((String) CajaAñoNacimiento.getSelectedItem()));
+            FechaNacimientoPersona.setMes(FechaNacimientoPersona.transformar_StringMes((String) CajaMesNacimiento.getSelectedItem()));
+
+            //creo if´s anidados para verificar si la persona a ingresar es tecnico, jugador o lider
+            NuevoParticipante.setFecha_nacimiento(FechaNacimientoPersona);
+            if (cantErrores == 0) {
+                if (BotonTecnico.isSelected()) {
+                    FormularioEquipo.CampoTecnico.setText((String) CampoNombre.getText());
+                    NuevoParticipante.setTipo("TECNICO");
+                    Team.setTecnico(NuevoParticipante);
+                    JOptionPane.showMessageDialog(null, "Registro exitoso del Tecnico");
+                } else if (BotonLider.isSelected()) {
+                    FormularioEquipo.CampoLider.setText((String) CampoNombre.getText());
+                    NuevoParticipante.setTipo("LIDER_JUGADOR");
+                    Team.setLider(NuevoParticipante);
+                    JOptionPane.showMessageDialog(null, "Registro exitoso del Lider");
+                } else if (BotonJugador.isSelected()) {
+                    NuevoParticipante.setTipo("JUGADOR");
+                    ListadoParticipantes.add(NuevoParticipante);
+                    JOptionPane.showMessageDialog(null, "Registro exitoso del Jugador");
+                }
+                FormularioEquipo.MiembrosRegistrados++;
+                Team.setListado_participantes(ListadoParticipantes);
+                //ya que finalizó el proceso devuelvo al usuario al principio del programa
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(null, "Por favor ingrese los datos correctamente");
+                cantErrores = 0;
+            }
+
         }
-
-
     }//GEN-LAST:event_BotonContinuarActionPerformed
 
     /**
