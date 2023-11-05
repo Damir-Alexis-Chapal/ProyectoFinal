@@ -6,13 +6,14 @@ package com.mycompany.mavenproject1;
 
 
 import com.mycompany.mavenproject1.Ventanas.InterfazPrincipal;
+import java.io.Serializable;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author Alexis Chapal & Santiago Navarro ;)
  */
-public class Mavenproject1 {
+public class Mavenproject1 implements Serializable {
     public static void main (String [] args){
         //POR FAVOR NO MODIFICAR EL NOMBRE DE ESTE ARCHIVO PORQUE EL PROGRAMA EXPLOTA
        

@@ -4,13 +4,14 @@
  */
 package com.mycompany.mavenproject1;
 
+import java.io.Serializable;
 import javax.swing.*;
 
 /**
  *
  * @author sano2
  */
-public class Fecha {
+public class Fecha implements Serializable {
 
     
     //atributos

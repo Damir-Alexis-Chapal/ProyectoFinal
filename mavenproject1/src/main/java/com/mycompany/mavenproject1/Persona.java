@@ -4,11 +4,13 @@
  */
 package com.mycompany.mavenproject1;
 
+import java.io.Serializable;
+
 /**
  *
  * @author sano2
  */
-public class Persona {
+public class Persona implements Serializable {
 
     //se definen atributos
     

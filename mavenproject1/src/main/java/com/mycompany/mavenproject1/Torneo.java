@@ -4,13 +4,14 @@
  */
 package com.mycompany.mavenproject1;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author sano2
  */
-public class Torneo {
+public class Torneo implements Serializable {
     
     
     //ArrayList que solo se pueden settear

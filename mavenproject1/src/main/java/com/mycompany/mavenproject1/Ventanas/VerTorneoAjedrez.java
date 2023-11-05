@@ -321,7 +321,7 @@ public class VerTorneoAjedrez extends javax.swing.JFrame {
     private void VerDatosTorneo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerDatosTorneo1ActionPerformed
         
         
-        VerDatos.ver_datos(Datos.listado_torneos_ajedrez.get(0));//mandamos como parámetro el torneo que queremos consultar
+        VerDatos.ver_datos(Datos.obtenerInstancia().listado_torneos_ajedrez.get(0));//mandamos como parámetro el torneo que queremos consultar
     }//GEN-LAST:event_VerDatosTorneo1ActionPerformed
 
     private void BotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSalirActionPerformed
@@ -341,15 +341,15 @@ public class VerTorneoAjedrez extends javax.swing.JFrame {
     }//GEN-LAST:event_NombreTorneo1ActionPerformed
 
     private void VerDatosTorneo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerDatosTorneo2ActionPerformed
-        VerDatos.ver_datos(Datos.listado_torneos_ajedrez.get(1));//mandamos como parámetro el torneo que queremos consultar
+        VerDatos.ver_datos(Datos.obtenerInstancia().listado_torneos_ajedrez.get(1));//mandamos como parámetro el torneo que queremos consultar
     }//GEN-LAST:event_VerDatosTorneo2ActionPerformed
 
     private void VerDatosTorneo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerDatosTorneo3ActionPerformed
-        VerDatos.ver_datos(Datos.listado_torneos_ajedrez.get(2));//mandamos como parámetro el torneo que queremos consultar
+        VerDatos.ver_datos(Datos.obtenerInstancia().listado_torneos_ajedrez.get(2));//mandamos como parámetro el torneo que queremos consultar
     }//GEN-LAST:event_VerDatosTorneo3ActionPerformed
 
     private void VerDatosTorneo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerDatosTorneo4ActionPerformed
-        VerDatos.ver_datos(Datos.listado_torneos_ajedrez.get(3));//mandamos como parámetro el torneo que queremos consultar
+        VerDatos.ver_datos(Datos.obtenerInstancia().listado_torneos_ajedrez.get(3));//mandamos como parámetro el torneo que queremos consultar
     }//GEN-LAST:event_VerDatosTorneo4ActionPerformed
 
     /**

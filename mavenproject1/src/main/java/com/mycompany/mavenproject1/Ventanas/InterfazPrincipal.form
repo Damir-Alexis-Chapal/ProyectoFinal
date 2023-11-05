@@ -103,11 +103,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="GUARDAR DATOS"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonGuardarDatosActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BotonCargarDatos">
           <Properties>
             <Property name="text" type="java.lang.String" value="CARGAR DATOS GUARDADOS"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonCargarDatosActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BotonVerTorneos">
           <Properties>

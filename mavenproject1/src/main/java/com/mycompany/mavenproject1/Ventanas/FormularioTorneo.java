@@ -472,13 +472,13 @@ public class FormularioTorneo extends javax.swing.JFrame {
                     if (NumEquipos == NumEquiposRegistrados) {
                         //guardo el torneo según el tipo que sea
                         if (CajaTipoTorneo.getSelectedItem().equals("Fútbol Sala")) {
-                            Datos.listado_torneos_futbol.add(NuevoTorneo);
+                            Datos.obtenerInstancia().listado_torneos_futbol.add(NuevoTorneo);
                         } else if (CajaTipoTorneo.getSelectedItem().equals("VolleyBall")) {
-                            Datos.listado_torneos_volley.add(NuevoTorneo);
+                            Datos.obtenerInstancia().listado_torneos_volley.add(NuevoTorneo);
                         } else if (CajaTipoTorneo.getSelectedItem().equals("Baloncesto")) {
-                            Datos.listado_torneos_basket.add(NuevoTorneo);
+                            Datos.obtenerInstancia().listado_torneos_basket.add(NuevoTorneo);
                         } else if (CajaTipoTorneo.getSelectedItem().equals("Ajedrez")) {
-                            Datos.listado_torneos_ajedrez.add(NuevoTorneo);
+                            Datos.obtenerInstancia().listado_torneos_ajedrez.add(NuevoTorneo);
                         }
                         JOptionPane.showMessageDialog(null, "¡Registro exitoso de todos los equipos participantes"
                                 + "\n El torneo " + CampoNombreTorneo.getText() + " ha sido creado con exito!");

@@ -4,15 +4,32 @@
  */
 package com.mycompany.mavenproject1.Ventanas;
 
+import com.mycompany.mavenproject1.Datos;
+import com.mycompany.mavenproject1.Torneo;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author sano2
  */
-public class InterfazPrincipal extends javax.swing.JFrame {
+public class InterfazPrincipal extends javax.swing.JFrame implements Serializable {
 
     /**
      * Creates new form InterfazPrincipal
      */
+    public static ArrayList<Torneo> torneosFutbol;
+    public static ArrayList<Torneo> torneosBasket;
+    public static ArrayList<Torneo> torneosAjedrez;
+    public static ArrayList<Torneo> torneosVolley;
+    public Datos datos = Datos.obtenerInstancia();
+
     public InterfazPrincipal() {
         initComponents();
     }
@@ -51,8 +68,18 @@ public class InterfazPrincipal extends javax.swing.JFrame {
         });
 
         BotonGuardarDatos.setText("GUARDAR DATOS");
+        BotonGuardarDatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonGuardarDatosActionPerformed(evt);
+            }
+        });
 
         BotonCargarDatos.setText("CARGAR DATOS GUARDADOS");
+        BotonCargarDatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonCargarDatosActionPerformed(evt);
+            }
+        });
 
         BotonVerTorneos.setText("VER TORNEOS EN CURSO");
         BotonVerTorneos.addActionListener(new java.awt.event.ActionListener() {
@@ -122,8 +149,7 @@ public class InterfazPrincipal extends javax.swing.JFrame {
 
     private void BotonRegistrarTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarTorneoActionPerformed
         // Abre el formulario para crear un torneo
-        
-        
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new FormularioTorneo().setVisible(true);
@@ -140,10 +166,57 @@ public class InterfazPrincipal extends javax.swing.JFrame {
         });
     }//GEN-LAST:event_BotonVerTorneosActionPerformed
 
+    private void BotonGuardarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGuardarDatosActionPerformed
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("datos.ser"))) {
+            System.out.println("Tamaño de torneosFutbol: " + datos.listado_torneos_futbol.size());
+            System.out.println("Tamaño de torneosBasket: " + datos.listado_torneos_basket.size());
+            System.out.println("Tamaño de torneosAjedrez: " + datos.listado_torneos_ajedrez.size());
+            System.out.println("Tamaño de torneosVolley: " + datos.listado_torneos_volley.size());
+            out.writeObject(datos);
+            System.out.println("Dirección de memoria de datos al guardar: " + System.identityHashCode(datos));
+
+            JOptionPane.showMessageDialog(null, "datos guardados");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_BotonGuardarDatosActionPerformed
+
+    private void BotonCargarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCargarDatosActionPerformed
+
+        ;
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("datos.ser"))) {
+            Datos datosCargados = Datos.obtenerInstancia();
+            datosCargados = (Datos) in.readObject();
+
+            datos.listado_torneos_futbol.clear();
+            datos.listado_torneos_futbol.addAll(datosCargados.listado_torneos_futbol);
+
+            datos.listado_torneos_basket.clear();
+            datos.listado_torneos_basket.addAll(datosCargados.listado_torneos_basket);
+
+            datos.listado_torneos_ajedrez.clear();
+            datos.listado_torneos_ajedrez.addAll(datosCargados.listado_torneos_ajedrez);
+
+            datos.listado_torneos_volley.clear();
+            datos.listado_torneos_volley.addAll(datosCargados.listado_torneos_volley);
+            //Acceder a los ArrayLists de datos
+            System.out.println("Tamaño de torneosFutbol: " + datos.listado_torneos_futbol.size());
+            System.out.println("Tamaño de torneosBasket: " + datos.listado_torneos_basket.size());
+            System.out.println("Tamaño de torneosAjedrez: " + datos.listado_torneos_ajedrez.size());
+            System.out.println("Tamaño de torneosVolley: " + datos.listado_torneos_volley.size());
+            
+            System.out.println("Dirección de memoria de datos al cargar: " + System.identityHashCode(datos));
+
+            JOptionPane.showMessageDialog(null, "datos cargados");
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+    }//GEN-LAST:event_BotonCargarDatosActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonCargarDatos;

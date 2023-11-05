@@ -4,13 +4,14 @@
  */
 package com.mycompany.mavenproject1;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author sano2
  */
-public class Equipo {
+public class Equipo implements Serializable {
     //listado tanto de participantes como de enfrentamientos que tiene cada equipo
     //se deben poder consultar
     ArrayList<Persona> listado_participantes=new ArrayList<Persona>();

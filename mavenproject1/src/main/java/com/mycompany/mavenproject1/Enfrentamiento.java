@@ -4,11 +4,13 @@
  */
 package com.mycompany.mavenproject1;
 
+import java.io.Serializable;
+
 /**
  *
  * @author sano2
  */
-public class Enfrentamiento {
+public class Enfrentamiento implements Serializable {
     
     Equipo equipo1, equipo2;
     Fecha fecha;

@@ -4,6 +4,7 @@
  */
 package com.mycompany.mavenproject1;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
@@ -11,7 +12,7 @@ import java.util.*;
  * @author sano2
  */
 //clase juez que hereda los atributos de persona
-public class Juez extends Persona{
+public class Juez extends Persona implements Serializable{
     String licencia;
     //ArrayList para poder consultar todos los enfrentamientos de cada juez;
     ArrayList<Enfrentamiento> lista_enfrentamientos=new ArrayList<>(); 
