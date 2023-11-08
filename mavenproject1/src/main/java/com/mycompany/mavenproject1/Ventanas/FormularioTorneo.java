@@ -7,6 +7,7 @@ package com.mycompany.mavenproject1.Ventanas;
 import com.mycompany.mavenproject1.*;
 import static com.mycompany.mavenproject1.Ventanas.FormularioEquipo.CantidadParticipantes;
 import static com.mycompany.mavenproject1.Ventanas.FormularioEquipo.MiembrosRegistrados;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import javax.swing.JOptionPane;
 
@@ -471,6 +472,13 @@ public class FormularioTorneo extends javax.swing.JFrame {
 
                     if (NumEquipos == NumEquiposRegistrados) {
                         //guardo el torneo según el tipo que sea
+                        
+                        //TODA CREACIÓN DE ENFRENTAMIENTOS EN EL TORNEO SE CREARÁ ACÁ
+                         
+                        ArrayList<Enfrentamiento>enfrentamientos=Enfrentamiento.generarEnfrentamientos(NuevoTorneo.listado_equipos, NuevoTorneo);
+                        NuevoTorneo.setListado_enfrentamientos(enfrentamientos);
+                        
+                        
                         if (CajaTipoTorneo.getSelectedItem().equals("Fútbol Sala")) {
                             Datos.obtenerInstancia().listado_torneos_futbol.add(NuevoTorneo);
                         } else if (CajaTipoTorneo.getSelectedItem().equals("VolleyBall")) {
