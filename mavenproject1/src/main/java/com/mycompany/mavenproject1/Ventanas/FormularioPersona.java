@@ -344,9 +344,6 @@ public class FormularioPersona extends javax.swing.JFrame {
             int cantPersonasRegistradas = Integer.parseInt(CajaPersonasRegistradas.getText());;
             //el equipo se crea desde aqui
             Team.setNombre(NombreEquipoNuevo.getText());
-            //creo un arraylist donde se ingresaran los participantes
-            ArrayList<Persona> ListadoParticipantes = new ArrayList();
-
             //creo la persona y seteo sus atributos
             Persona NuevoParticipante = new Persona();
             NuevoParticipante.setNombre((String) CampoNombre.getText());
@@ -391,12 +388,10 @@ public class FormularioPersona extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Registro exitoso del Lider");
                 } else if (BotonJugador.isSelected()) {
                     NuevoParticipante.setTipo("JUGADOR");
-                    ListadoParticipantes.add(NuevoParticipante);
+                    FormularioEquipo.ListadoParticipantes.add(NuevoParticipante);
                     JOptionPane.showMessageDialog(null, "Registro exitoso del Jugador");
                 }
                 FormularioEquipo.MiembrosRegistrados++;
-                Team.setListado_participantes(ListadoParticipantes);
-                //ya que finalizó el proceso devuelvo al usuario al principio del programa
                 this.dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Por favor ingrese los datos correctamente");

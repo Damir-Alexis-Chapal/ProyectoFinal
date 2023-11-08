@@ -7,6 +7,7 @@ package com.mycompany.mavenproject1.Ventanas;
 import com.mycompany.mavenproject1.*;
 import static com.mycompany.mavenproject1.Ventanas.FormularioEquipo.CantidadParticipantes;
 import static com.mycompany.mavenproject1.Ventanas.FormularioEquipo.MiembrosRegistrados;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import javax.swing.JOptionPane;
 
@@ -25,6 +26,8 @@ public class FormularioTorneo extends javax.swing.JFrame {
     //variables para validar las personas
     public static int LimiteEdad;
     public static String generoTorneo;
+    
+    public static ArrayList<Equipo> ListaTeam = new ArrayList();
 
     public FormularioTorneo() {
         initComponents();
@@ -470,6 +473,8 @@ public class FormularioTorneo extends javax.swing.JFrame {
                 public void run() {
 
                     if (NumEquipos == NumEquiposRegistrados) {
+                        //guardo los equipos
+                        NuevoTorneo.setListado_equipos(ListaTeam);
                         //guardo el torneo según el tipo que sea
                         if (CajaTipoTorneo.getSelectedItem().equals("Fútbol Sala")) {
                             Datos.obtenerInstancia().listado_torneos_futbol.add(NuevoTorneo);
