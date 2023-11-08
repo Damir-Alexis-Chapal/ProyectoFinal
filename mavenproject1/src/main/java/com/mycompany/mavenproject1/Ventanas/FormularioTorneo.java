@@ -26,7 +26,7 @@ public class FormularioTorneo extends javax.swing.JFrame {
     //variables para validar las personas
     public static int LimiteEdad;
     public static String generoTorneo;
-    
+
     public static ArrayList<Equipo> ListaTeam = new ArrayList();
 
     public FormularioTorneo() {
@@ -487,6 +487,11 @@ public class FormularioTorneo extends javax.swing.JFrame {
                         }
                         JOptionPane.showMessageDialog(null, "¡Registro exitoso de todos los equipos participantes"
                                 + "\n El torneo " + CampoNombreTorneo.getText() + " ha sido creado con exito!");
+                        Datos datos = Datos.obtenerInstancia();
+                        datos.imprimirListado(datos.listado_torneos_futbol);
+                        datos.imprimirListado(datos.listado_torneos_basket);
+                        datos.imprimirListado(datos.listado_torneos_ajedrez);
+                        datos.imprimirListado(datos.listado_torneos_volley);
                         NumEquiposRegistrados = 0;
                         FormularioTorneo.this.dispose();
 

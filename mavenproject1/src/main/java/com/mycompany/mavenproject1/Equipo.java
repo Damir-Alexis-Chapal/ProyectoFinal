@@ -60,6 +60,9 @@ public class Equipo implements Serializable {
     public void setCant_participantes(int cant_participantes) {
         this.cant_participantes = cant_participantes;
     }
+    public String toString() {
+    return "Equipo: "+ nombre + listado_participantes;
+}
     
     
 }

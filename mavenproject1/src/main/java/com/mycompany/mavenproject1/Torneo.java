@@ -100,6 +100,9 @@ public class Torneo implements Serializable {
     public void setFecha_inicio_torneo(Fecha fecha_inicio_torneo) {
         this.fecha_inicio_torneo = fecha_inicio_torneo;
     }
+    public String toString() {
+    return "torneo: "+ nombre+ listado_equipos;
+}
 
     
     

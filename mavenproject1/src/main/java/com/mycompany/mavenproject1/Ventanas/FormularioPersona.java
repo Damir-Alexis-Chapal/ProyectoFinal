@@ -342,8 +342,6 @@ public class FormularioPersona extends javax.swing.JFrame {
             int cantErrores = 0;
 
             int cantPersonasRegistradas = Integer.parseInt(CajaPersonasRegistradas.getText());;
-            //el equipo se crea desde aqui
-            Team.setNombre(NombreEquipoNuevo.getText());
             //creo la persona y seteo sus atributos
             Persona NuevoParticipante = new Persona();
             NuevoParticipante.setNombre((String) CampoNombre.getText());

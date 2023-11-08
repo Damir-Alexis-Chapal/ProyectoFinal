@@ -199,6 +199,7 @@ public class FormularioEquipo extends javax.swing.JFrame {
                 public void run() {
                    
                     Equipo NewTeam = new Equipo();
+                    NewTeam.setNombre(CampoNombreEquipo.getText());
 
                     if (Integer.parseInt(CantidadParticipantes.getText()) == MiembrosRegistrados) {
                         NewTeam.setListado_participantes(ListadoParticipantes);
@@ -206,6 +207,7 @@ public class FormularioEquipo extends javax.swing.JFrame {
                         FormularioTorneo.ListaTeam.add(NewTeam);
                         FormularioTorneo.NumEquiposRegistrados++;
                         MiembrosRegistrados = 0;
+                        ListadoParticipantes= new ArrayList();
                         FormularioEquipo.this.dispose();
                     } else {
                         //creo el formulario persona
