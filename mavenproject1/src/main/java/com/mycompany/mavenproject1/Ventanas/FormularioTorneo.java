@@ -26,6 +26,8 @@ public class FormularioTorneo extends javax.swing.JFrame {
     //variables para validar las personas
     public static int LimiteEdad;
     public static String generoTorneo;
+    
+    public static ArrayList<Equipo> ListaTeam = new ArrayList();
 
     public FormularioTorneo() {
         initComponents();
@@ -471,6 +473,8 @@ public class FormularioTorneo extends javax.swing.JFrame {
                 public void run() {
 
                     if (NumEquipos == NumEquiposRegistrados) {
+                        //guardo los equipos
+                        NuevoTorneo.setListado_equipos(ListaTeam);
                         //guardo el torneo según el tipo que sea
                         
                         //TODA CREACIÓN DE ENFRENTAMIENTOS EN EL TORNEO SE CREARÁ ACÁ

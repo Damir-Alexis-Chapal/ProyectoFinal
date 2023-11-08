@@ -13,10 +13,12 @@ import javax.swing.JOptionPane;
  * @author sano2
  */
 public class FormularioEquipo extends javax.swing.JFrame {
-
+       
+    //listado de participantes
+    public static ArrayList<Persona> ListadoParticipantes = new ArrayList();
     //con esta variable se ha´ra el ciclo de registros de personas
     public static int MiembrosRegistrados = 0;
-
+//    public  ArrayList<Equipo> ListaTeam = new ArrayList();
     /**
      * Creates new form FormularioPersona
      */
@@ -195,13 +197,13 @@ public class FormularioEquipo extends javax.swing.JFrame {
             java.awt.EventQueue.invokeLater(new Runnable() {
                 //llamo a la ventana de persona para crear el equipo alla
                 public void run() {
-                    ArrayList<Equipo> ListaTeam = new ArrayList();
+                   
                     Equipo NewTeam = new Equipo();
 
                     if (Integer.parseInt(CantidadParticipantes.getText()) == MiembrosRegistrados) {
+                        NewTeam.setListado_participantes(ListadoParticipantes);
                         JOptionPane.showMessageDialog(null, "Registro exitoso de todos los participantes,\nse ha completado la inscripción de su equipo");
-                        ListaTeam.add(NewTeam);
-                        torneo.setListado_equipos(ListaTeam);
+                        FormularioTorneo.ListaTeam.add(NewTeam);
                         FormularioTorneo.NumEquiposRegistrados++;
                         MiembrosRegistrados = 0;
                         FormularioEquipo.this.dispose();
