@@ -5,6 +5,8 @@
 package com.mycompany.mavenproject1;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.time.*;
 
 /**
  *
@@ -14,7 +16,7 @@ public class Enfrentamiento implements Serializable {
     
     Equipo equipo1, equipo2;
     Fecha fecha;
-    String hora;
+    LocalTime hora;
     String lugar;
     Juez juez;
     String estado;
@@ -26,7 +28,7 @@ public class Enfrentamiento implements Serializable {
     
     }
     //constructor sin resultado, acabajo hay un método generarResultado() que genera resultados aleatorios
-    public Enfrentamiento(Equipo equipo1, Equipo equipo2, Fecha fecha, String hora, String lugar, Juez juez, String estado) {
+    public Enfrentamiento(Equipo equipo1, Equipo equipo2, Fecha fecha, LocalTime hora, String lugar, Juez juez, String estado) {
         this.equipo1 = equipo1;
         this.equipo2 = equipo2;
         this.fecha = fecha;
@@ -49,7 +51,7 @@ public class Enfrentamiento implements Serializable {
         this.fecha = fecha;
     }
 
-    public void setHora(String hora) {
+    public void setHora(LocalTime hora) {
         this.hora = hora;
     }
 
@@ -99,6 +101,45 @@ public class Enfrentamiento implements Serializable {
         
     }
     
+    //
     
-    
+    public static ArrayList<Enfrentamiento> generarEnfrentamientos(ArrayList<Equipo> equipos, Torneo torneo) {
+        // Crear un ArrayList vacío para almacenar los enfrentamientos
+        ArrayList<Enfrentamiento> enfrentamientos = new ArrayList<>();
+        // Recorrer el ArrayList de equipos con un bucle for
+        for (int i = 0; i < equipos.size(); i++) {
+        // Obtener el equipo actual
+        Equipo equipo1 = equipos.get(i);
+            // Recorrer el ArrayList de equipos desde el siguiente índice con otro bucle for
+            for (int j = i + 1; j < equipos.size(); j++) {
+                // Obtener el otro equipo
+                Equipo equipo2 = equipos.get(j);
+                // Crear un objeto de tipo Enfrentamiento con los dos equipos
+                Enfrentamiento enfrentamiento = new Enfrentamiento();
+                enfrentamiento.setEquipo1(equipo1);
+                enfrentamiento.setEquipo2(equipo2);
+                enfrentamiento.setEstado("ACTIVO");
+                enfrentamiento.setLugar(torneo.lugar);
+                Fecha fecha=torneo.fecha_inicio_torneo;
+                
+                //+j para que los dias no sean iguales siempre
+                fecha.setDia(fecha.dia+j);
+                
+                //lo más probable es que se descuadre la fecha por lo que la arreglo con el métofo arreglar_fecha
+                fecha=Fecha.arreglar_fecha(fecha);
+                enfrentamiento.setFecha(fecha);
+                
+                //+j para que las horas no sean iguales siempre
+                LocalTime hora= LocalTime.of(7+j, 0);
+                enfrentamiento.setHora(hora);
+                // Añadir el enfrentamiento al ArrayList de enfrentamientos
+                enfrentamientos.add(enfrentamiento);
+                
+                //
+            }
+        }
+        //retorna la lista de enfrentamientos para el torneo
+        return enfrentamientos;
+    }
+  
 }

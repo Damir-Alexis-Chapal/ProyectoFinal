@@ -15,8 +15,10 @@ public class Torneo implements Serializable {
     
     
     //ArrayList que solo se pueden settear
-    ArrayList<Equipo> listado_equipos;
-    ArrayList<Juez> listado_jueces;
+    public ArrayList<Equipo> listado_equipos;
+    public ArrayList<Juez> listado_jueces;
+    public ArrayList<Enfrentamiento> listado_enfrentamientos;
+    
     //se definen los atributos generales de la clase torneo
     //el caracter con interfaces gráficas es mejor trabajarlo String
     public String nombre, genero, lugar, caracter, estado; 
@@ -49,6 +51,11 @@ public class Torneo implements Serializable {
     public void setListado_jueces(ArrayList<Juez> listado_jueces) {
         this.listado_jueces = listado_jueces;
     }
+    
+    public void setListado_enfrentamientos(ArrayList<Enfrentamiento> listado_enfrentamientos) {
+        this.listado_enfrentamientos = listado_enfrentamientos;
+    }
+    
     
     
 

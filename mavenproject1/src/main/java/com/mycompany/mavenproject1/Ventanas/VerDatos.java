@@ -42,7 +42,7 @@ public class VerDatos extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         CampoDato5 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        CampoDato6 = new javax.swing.JTextField();
         BotonTablaDePosiciones = new javax.swing.JButton();
         BotonProximosEnfrentamientos = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
@@ -79,15 +79,22 @@ public class VerDatos extends javax.swing.JFrame {
 
         jLabel3.setText("DATO 3");
 
+        CampoDato3.setEditable(false);
+
         jLabel4.setText("DATO 4");
+
+        CampoDato4.setEditable(false);
 
         jLabel5.setText("DATO 5");
 
+        CampoDato5.setEditable(false);
+
         jLabel6.setText("DATO 6");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        CampoDato6.setEditable(false);
+        CampoDato6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                CampoDato6ActionPerformed(evt);
             }
         });
 
@@ -152,7 +159,7 @@ public class VerDatos extends javax.swing.JFrame {
                         .addGroup(PanelDeFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(CampoDato2)
                             .addComponent(CampoDato4)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(CampoDato6, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelDeFondoLayout.createSequentialGroup()
                         .addGap(57, 57, 57)
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -208,7 +215,7 @@ public class VerDatos extends javax.swing.JFrame {
                         .addGap(60, 60, 60)
                         .addGroup(PanelDeFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(CampoDato6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(PanelDeFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelDeFondoLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -231,9 +238,9 @@ public class VerDatos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoDato2ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void CampoDato6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoDato6ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_CampoDato6ActionPerformed
 
     private void BotonProximosEnfrentamientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonProximosEnfrentamientosActionPerformed
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -285,9 +292,10 @@ public class VerDatos extends javax.swing.JFrame {
     private javax.swing.JButton BotonVolver;
     public static javax.swing.JTextField CampoDato1;
     public static javax.swing.JTextField CampoDato2;
-    private javax.swing.JTextField CampoDato3;
-    private javax.swing.JTextField CampoDato4;
-    private javax.swing.JTextField CampoDato5;
+    public static javax.swing.JTextField CampoDato3;
+    public static javax.swing.JTextField CampoDato4;
+    public static javax.swing.JTextField CampoDato5;
+    public static javax.swing.JTextField CampoDato6;
     private javax.swing.JLabel LOGO;
     public javax.swing.JPanel PanelDeFondo;
     private javax.swing.JLabel jLabel1;
@@ -297,7 +305,6 @@ public class VerDatos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel textoUsuario;
     // End of variables declaration//GEN-END:variables
 }

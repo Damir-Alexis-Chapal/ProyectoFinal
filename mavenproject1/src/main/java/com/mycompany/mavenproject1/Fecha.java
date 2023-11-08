@@ -6,6 +6,7 @@ package com.mycompany.mavenproject1;
 
 import java.io.Serializable;
 import javax.swing.*;
+import java.time.*;
 
 /**
  *
@@ -40,6 +41,28 @@ public class Fecha implements Serializable {
 
     public void setAño(int año) {
         this.año = año;
+    }
+    
+    public static Fecha obtener_fecha_actual (){
+        LocalDateTime fecha_sin_formato= LocalDateTime.now();
+        int dia, mes, ano;
+        dia=fecha_sin_formato.getDayOfMonth();
+        mes=fecha_sin_formato.getMonthValue();
+        ano=fecha_sin_formato.getYear();
+        Fecha fecha_buena = new Fecha(dia,mes,ano);
+        return fecha_buena;
+    }
+    
+    public static Fecha arreglar_fecha(Fecha fecha){
+        //usar siempre este método para estar seguro que una fecha no de cosas raras
+        if(fecha.dia>31){
+            fecha.setDia(fecha.dia-31);
+            fecha.setMes(fecha.mes+1);
+        }else if (fecha.mes>12){
+            fecha.setMes(fecha.mes-12);
+            fecha.setAño(fecha.año+1);
+        }
+        return fecha;
     }
     
     
