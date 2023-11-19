@@ -13,12 +13,14 @@ import javax.swing.JOptionPane;
  * @author sano2
  */
 public class FormularioEquipo extends javax.swing.JFrame {
-       
+    //listado de los nombres de quipos, con el se verifica que no se metan equipos repetidos
+    public static ArrayList<String> NombresEQ = new ArrayList();
     //listado de participantes
     public static ArrayList<Persona> ListadoParticipantes = new ArrayList();
     //con esta variable se ha´ra el ciclo de registros de personas
     public static int MiembrosRegistrados = 0;
 //    public  ArrayList<Equipo> ListaTeam = new ArrayList();
+
     /**
      * Creates new form FormularioPersona
      */
@@ -189,45 +191,66 @@ public class FormularioEquipo extends javax.swing.JFrame {
     }//GEN-LAST:event_CampoNombreEquipoActionPerformed
 
     private void BotonRegistrarParticipanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarParticipanteActionPerformed
-        //verifico que los campos de texto no estén vacios 
-        if (CampoNombreEquipo.getText().isEmpty() || CantidadParticipantes.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Por favor llene todos los campos");
-        } else {
+         if (CampoNombreEquipo.getText().isEmpty() || CantidadParticipantes.getText().isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Por favor llene todos los campos");
+    } else {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            // Llamo a la ventana de persona para crear el equipo allá
+            public void run() {
+                Equipo NewTeam = new Equipo();
+                NewTeam.setNombre(CampoNombreEquipo.getText());
 
-            java.awt.EventQueue.invokeLater(new Runnable() {
-                //llamo a la ventana de persona para crear el equipo alla
-                public void run() {
-                   
-                    Equipo NewTeam = new Equipo();
-                    NewTeam.setNombre(CampoNombreEquipo.getText());
-
-                    if (Integer.parseInt(CantidadParticipantes.getText()) == MiembrosRegistrados) {
+                if (Integer.parseInt(CantidadParticipantes.getText()) == MiembrosRegistrados) {
+                    if (NombresEQ.size() == 0) {
                         NewTeam.setListado_participantes(ListadoParticipantes);
                         JOptionPane.showMessageDialog(null, "Registro exitoso de todos los participantes,\nse ha completado la inscripción de su equipo");
                         FormularioTorneo.ListaTeam.add(NewTeam);
                         FormularioTorneo.NumEquiposRegistrados++;
                         MiembrosRegistrados = 0;
-                        ListadoParticipantes= new ArrayList();
+                        ListadoParticipantes = new ArrayList();
+                        NombresEQ.add(NewTeam.nombre);
                         FormularioEquipo.this.dispose();
                     } else {
-                        //creo el formulario persona
-                        FormularioPersona NuevoFormulario = new FormularioPersona(NewTeam);
-                        //con esto indico el numero de participantes que se van a registrar
-                        FormularioPersona.CajaNumeroPersonas.setText(CantidadParticipantes.getText());
-
-                        FormularioPersona.CajaPersonasRegistradas.setText("" + MiembrosRegistrados);
-                        //envio el nombre del equipo para poder setearlo allá
-                        FormularioPersona.NombreEquipoNuevo.setText(CampoNombreEquipo.getText());
-                        NuevoFormulario.setVisible(true);
+                        boolean equipoYaRegistrado = false;
+                        for (int i = 0; i < NombresEQ.size(); i++) {
+                            if (NewTeam.nombre.equals(NombresEQ.get(i))) {
+                                equipoYaRegistrado = true;
+                                break;
+                            }
+                        }
+                        
+                        if (equipoYaRegistrado) {
+                            JOptionPane.showMessageDialog(null, "El equipo ya se encuentra registrado");
+                            FormularioEquipo.this.dispose();
+                        } else {
+                            // Registro exitoso, el equipo no está registrado
+                            NewTeam.setListado_participantes(ListadoParticipantes);
+                            JOptionPane.showMessageDialog(null, "Registro exitoso de todos los participantes,\nse ha completado la inscripción de su equipo");
+                            FormularioTorneo.ListaTeam.add(NewTeam);
+                            FormularioTorneo.NumEquiposRegistrados++;
+                            MiembrosRegistrados = 0;
+                            ListadoParticipantes = new ArrayList();
+                            NombresEQ.add(NewTeam.nombre);
+                            FormularioEquipo.this.dispose();
+                        }
                     }
+                } else {
+                    // Creo el formulario persona
+                    FormularioPersona NuevoFormulario = new FormularioPersona(NewTeam);
+                    // Con esto indico el número de participantes que se van a registrar
+                    FormularioPersona.CajaNumeroPersonas.setText(CantidadParticipantes.getText());
+                    FormularioPersona.CajaPersonasRegistradas.setText("" + MiembrosRegistrados);
+                    // Envío el nombre del equipo para poder setearlo allá
+                    FormularioPersona.NombreEquipoNuevo.setText(CampoNombreEquipo.getText());
+                    NuevoFormulario.setVisible(true);
                 }
+            }
 
-                private void dispose() {
-                    throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-                }
-            });
-
-        }
+            private void dispose() {
+                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            }
+        });
+    }
 
     }//GEN-LAST:event_BotonRegistrarParticipanteActionPerformed
 
