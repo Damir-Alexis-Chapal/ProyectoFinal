@@ -4,6 +4,9 @@
  */
 package com.mycompany.mavenproject1.Ventanas;
 
+import com.mycompany.mavenproject1.Datos;
+import com.mycompany.mavenproject1.*;
+
 /**
  *
  * @author Alexis Chapal
@@ -27,8 +30,6 @@ public class Enfrentamientos extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tablaProximosEnfrentamientos = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -37,32 +38,13 @@ public class Enfrentamientos extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         BotonAtras = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tablaProximosEnfrentamientos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel1.setText("TORNEO X");
-
-        tablaProximosEnfrentamientos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "EQUIPO 1", "EQUIPO 2", "LUGAR", "FECHA", "HORA", "JUEZ", "ESTADO"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(tablaProximosEnfrentamientos);
 
         jLabel2.setText("PROXIMOS ENFRENTAMIENTOS");
 
@@ -70,6 +52,12 @@ public class Enfrentamientos extends javax.swing.JFrame {
 
         tablaEnfrentamientosRecientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -112,6 +100,33 @@ public class Enfrentamientos extends javax.swing.JFrame {
             }
         });
 
+        tablaProximosEnfrentamientos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "EQUIPO 1", "EQUIPO 2", "LUGAR", "FECHA", "HORA", "JUEZ", "ESTADO"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(tablaProximosEnfrentamientos);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -129,8 +144,8 @@ public class Enfrentamientos extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(156, 156, 156)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
-                            .addComponent(jScrollPane3))))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
+                            .addComponent(jScrollPane4))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -160,15 +175,15 @@ public class Enfrentamientos extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(74, 74, 74)
                 .addComponent(jLabel2)
-                .addGap(40, 40, 40)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(59, 59, 59)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
                 .addComponent(jLabel6)
-                .addGap(42, 42, 42)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(BotonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -178,6 +193,47 @@ public class Enfrentamientos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    public static void ver_enfrentamientos(Torneo torneo){
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Enfrentamientos().setVisible(true);
+            
+                //SE SETEAN LOS PROXIMOS ENFRENTAMIENTOS
+                int i=0;
+                for (int j=0;j<torneo.listado_enfrentamientos.size();j++){
+                    Enfrentamiento enfrentamiento=torneo.listado_enfrentamientos.get(j);
+                    
+                    if(enfrentamiento.estado.equals("TERMINADO")==false){
+                        tablaProximosEnfrentamientos.setValueAt(enfrentamiento.equipo1.nombre,i,0);
+                        tablaProximosEnfrentamientos.setValueAt(enfrentamiento.equipo2.nombre,i,1);
+                        tablaProximosEnfrentamientos.setValueAt(enfrentamiento.lugar,i,2);
+                        tablaProximosEnfrentamientos.setValueAt(enfrentamiento.fecha.toString(),i,3);
+                        tablaProximosEnfrentamientos.setValueAt(enfrentamiento.hora,i,4);
+                        tablaProximosEnfrentamientos.setValueAt(enfrentamiento.juez.nombre,i,5);
+                        tablaProximosEnfrentamientos.setValueAt(enfrentamiento.estado,i,6);
+                        i++;
+                    }
+                }
+                //SE SETEAN LOS ENFRENTAMIENTOS TERMINADOS
+                int n=0;
+                for (int k=0;k<torneo.listado_enfrentamientos.size();k++){
+                    Enfrentamiento enfrentamiento=torneo.listado_enfrentamientos.get(k);
+                    if(enfrentamiento.estado.equals("TERMINADO")){
+                        tablaEnfrentamientosRecientes.setValueAt(enfrentamiento.equipo1.nombre,n,0);
+                        tablaEnfrentamientosRecientes.setValueAt(enfrentamiento.equipo2.nombre,n,1);
+                        tablaEnfrentamientosRecientes.setValueAt(enfrentamiento.lugar,n,2);
+                        tablaEnfrentamientosRecientes.setValueAt(enfrentamiento.fecha.toString(),n,3);
+                        tablaEnfrentamientosRecientes.setValueAt(enfrentamiento.hora,n,4);
+                        tablaEnfrentamientosRecientes.setValueAt(enfrentamiento.juez.nombre,n,5);
+                        tablaEnfrentamientosRecientes.setValueAt(enfrentamiento.resultado.toString(),n,6);
+                        n++;
+                    }
+                }
+                
+                
+            }
+        });
+    }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -199,9 +255,9 @@ public class Enfrentamientos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable tablaEnfrentamientosRecientes;
-    private javax.swing.JTable tablaProximosEnfrentamientos;
+    private javax.swing.JScrollPane jScrollPane4;
+    public static javax.swing.JTable tablaEnfrentamientosRecientes;
+    public static javax.swing.JTable tablaProximosEnfrentamientos;
     // End of variables declaration//GEN-END:variables
 }

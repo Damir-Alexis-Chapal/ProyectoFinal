@@ -17,9 +17,10 @@ public class Equipo implements Serializable {
     ArrayList<Persona> listado_participantes;
     
     
-    String nombre, genero;
-    Persona lider, tecnico;
-    int cant_participantes;
+    public String nombre, genero;
+    public Persona lider, tecnico;
+    public int cant_participantes;
+    public int puntos=0;
     
     public Equipo(){
     

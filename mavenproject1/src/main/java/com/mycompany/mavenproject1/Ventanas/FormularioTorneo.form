@@ -760,10 +760,14 @@
         <Component class="javax.swing.JButton" name="BotonRegistrarEquipos">
           <Properties>
             <Property name="text" type="java.lang.String" value="REGISTRAR EQUIPOS"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonRegistrarEquiposActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="BotonGuardarDatos">
           <Properties>

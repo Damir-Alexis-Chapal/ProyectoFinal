@@ -56,6 +56,12 @@ public class FormularioJuez extends javax.swing.JFrame {
 
         jLabel1.setText("INGRESE NOMBRE COMPLETO DEL PARTICIPANTE");
 
+        CampoCedula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoCedulaActionPerformed(evt);
+            }
+        });
+
         jLabel2.setText("INGRESE LA CÉDULA DEL PARTICIPANTE");
 
         jLabel3.setText("INGRESE NÚMERO DE TELÉFONO DEL PARTICIPANTE");
@@ -63,6 +69,11 @@ public class FormularioJuez extends javax.swing.JFrame {
         jLabel4.setText("INGRESE CORREO ELECTRÓNICO DEL PARTICIPANTE");
 
         CajaGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Femenino", "Masculino" }));
+        CajaGenero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CajaGeneroActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("GÉNERO DEL PARTICIPANTE");
 
@@ -215,7 +226,30 @@ public class FormularioJuez extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonFinalizarActionPerformed
-        // TODO add your handling code here:
+        Juez juez= new Juez();
+        juez.setCedula(CampoCedula.getText());
+        juez.setNombre(CampoNombre.getText());
+        
+        Fecha fecha_nacimiento=new Fecha();
+        fecha_nacimiento.setAño(Integer.parseInt((String)CajaAñoNacimiento.getSelectedItem()));
+        fecha_nacimiento.setMes(Fecha.transformar_StringMes((String)CajaMesNacimiento.getSelectedItem()));
+        fecha_nacimiento.setDia(Integer.parseInt((String)CajaDiaNacimiento.getSelectedItem()));
+        
+        juez.setFecha_nacimiento(fecha_nacimiento);
+        juez.setGenero((String)CajaGenero.getSelectedItem());
+        juez.setTelefono(CampoTelefono.getText());
+        juez.setCorreo(CampoCorreo.getText());
+        juez.setLicencia(CampoLicencia.getText());
+        
+        FormularioTorneo.ListaJueces.add(juez);
+        FormularioTorneo.n_jueces++;
+        if(FormularioTorneo.n_jueces==3){
+            FormularioTorneo.BotonRegistrarEquipos.setEnabled(true);
+            
+        }
+        //JOptionPane.showMessageDialog(null, FormularioTorneo.ListaJueces.size());
+        //this.dispose();
+        
         
     }//GEN-LAST:event_BotonFinalizarActionPerformed
 
@@ -223,6 +257,14 @@ public class FormularioJuez extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_BotonAtrasActionPerformed
+
+    private void CampoCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoCedulaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CampoCedulaActionPerformed
+
+    private void CajaGeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CajaGeneroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CajaGeneroActionPerformed
 
     /**
      * @param args the command line arguments

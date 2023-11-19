@@ -26,8 +26,13 @@ public class FormularioTorneo extends javax.swing.JFrame {
     //variables para validar las personas
     public static int LimiteEdad;
     public static String generoTorneo;
+    
+    public static int n_jueces=0;
+    
+    Torneo NuevoTorneo = new Torneo();
 
     public static ArrayList<Equipo> ListaTeam = new ArrayList();
+    public static ArrayList<Juez> ListaJueces = new ArrayList();
 
     public FormularioTorneo() {
         initComponents();
@@ -185,6 +190,7 @@ public class FormularioTorneo extends javax.swing.JFrame {
         });
 
         BotonRegistrarEquipos.setText("REGISTRAR EQUIPOS");
+        BotonRegistrarEquipos.setEnabled(false);
         BotonRegistrarEquipos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonRegistrarEquiposActionPerformed(evt);
@@ -432,8 +438,8 @@ public class FormularioTorneo extends javax.swing.JFrame {
             LimiteEdad = Integer.parseInt(CampoLimiteEdad.getText());
             generoTorneo = (String) CajaGenero.getSelectedItem();
 
-            //creo un nuevo torneo usando los campos del formulario
-            Torneo NuevoTorneo = new Torneo();
+            //creo un nuevo torneo usando los campos del formulario (LO SAQUÉ COMO ATRIBUTO PARA QIE FUNCIONE LO DE JUECES)
+            
             //seteo los datos del torneo
             NuevoTorneo.setNombre("" + CampoNombreTorneo.getText());
             NuevoTorneo.setGenero("" + CajaGenero.getSelectedItem());
@@ -466,6 +472,8 @@ public class FormularioTorneo extends javax.swing.JFrame {
             FechaInicioTorneo.setMes(FechaInicioTorneo.transformar_StringMes((String) CajaMesInicioTorneo.getSelectedItem()));
 
             NuevoTorneo.setFecha_inicio_torneo(FechaInicioTorneo);
+            
+            
 
             //una vez guardados los datos continuamos a la ventana de registrar equipos para el torneo
             //envio y seteo en la siguiente ventana el nombre del torneo para que se vea mejor
@@ -477,10 +485,15 @@ public class FormularioTorneo extends javax.swing.JFrame {
                         NuevoTorneo.setListado_equipos(ListaTeam);
                         //guardo el torneo según el tipo que sea
                         
-                        //TODA CREACIÓN DE ENFRENTAMIENTOS EN EL TORNEO SE CREARÁ ACÁ
+                       
+                        
+                        //Se agrega la lista de jueces
+                        NuevoTorneo.setListado_jueces(ListaJueces);
                          
+                         //TODA CREACIÓN DE ENFRENTAMIENTOS EN EL TORNEO SE CREARÁ ACÁ
                         ArrayList<Enfrentamiento>enfrentamientos=Enfrentamiento.generarEnfrentamientos(NuevoTorneo.listado_equipos, NuevoTorneo);
                         NuevoTorneo.setListado_enfrentamientos(enfrentamientos);
+                        
                         
                         
                         if (CajaTipoTorneo.getSelectedItem().equals("Fútbol Sala")) {
@@ -499,6 +512,9 @@ public class FormularioTorneo extends javax.swing.JFrame {
                         datos.imprimirListado(datos.listado_torneos_basket);
                         datos.imprimirListado(datos.listado_torneos_ajedrez);
                         datos.imprimirListado(datos.listado_torneos_volley);
+                        ListaTeam.clear();
+                        ListaJueces.clear();
+                        n_jueces=0;
                         NumEquiposRegistrados = 0;
                         FormularioTorneo.this.dispose();
 
@@ -517,6 +533,11 @@ public class FormularioTorneo extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonRegistrarEquiposActionPerformed
 
     private void BotonRegistrarJuecesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarJuecesActionPerformed
+        
+        if(n_jueces==0){
+            JOptionPane.showMessageDialog(null, "A continuación ingrese mínimo 3 jueces, por favor");
+        }
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new FormularioJuez().setVisible(true);
@@ -543,7 +564,7 @@ public class FormularioTorneo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonAtras;
     private javax.swing.JButton BotonGuardarDatos;
-    private javax.swing.JButton BotonRegistrarEquipos;
+    public static javax.swing.JButton BotonRegistrarEquipos;
     private javax.swing.JButton BotonRegistrarJueces;
     private javax.swing.JComboBox<String> CajaAñoCierreInscripciones;
     private javax.swing.JComboBox<String> CajaAñoInicioInscripciones;

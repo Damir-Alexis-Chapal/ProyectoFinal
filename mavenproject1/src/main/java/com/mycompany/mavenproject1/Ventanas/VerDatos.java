@@ -11,6 +11,9 @@ import com.mycompany.mavenproject1.*;
  * @author angel
  */
 public class VerDatos extends javax.swing.JFrame {
+    
+    //Se crea atributo torneo para poder llamarla cuando se desee
+    static Torneo torneo_en_cuestion;
 
     /**
      * Creates new form VerDatos
@@ -243,11 +246,7 @@ public class VerDatos extends javax.swing.JFrame {
     }//GEN-LAST:event_CampoDato6ActionPerformed
 
     private void BotonProximosEnfrentamientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonProximosEnfrentamientosActionPerformed
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Enfrentamientos().setVisible(true);
-            }
-        });
+        Enfrentamientos.ver_enfrentamientos(torneo_en_cuestion);
     }//GEN-LAST:event_BotonProximosEnfrentamientosActionPerformed
 
     private void BotonCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCerrarActionPerformed
@@ -271,6 +270,7 @@ public class VerDatos extends javax.swing.JFrame {
     }//GEN-LAST:event_CampoDato1ActionPerformed
     
     public static void ver_datos(Torneo torneo){ //le llega como parámetro el torneo que queremos consultar
+        torneo_en_cuestion=torneo;
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 
@@ -278,8 +278,10 @@ public class VerDatos extends javax.swing.JFrame {
                 
                 CampoDato1.setText(torneo.nombre);
                 CampoDato2.setText(torneo.genero);
+                
             }
         });
+        
     }
     /**
      * @param args the command line arguments

@@ -7,6 +7,7 @@ package com.mycompany.mavenproject1;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.time.*;
+import java.util.Random;
 
 /**
  *
@@ -14,13 +15,13 @@ import java.time.*;
  */
 public class Enfrentamiento implements Serializable {
     
-    Equipo equipo1, equipo2;
-    Fecha fecha;
-    LocalTime hora;
-    String lugar;
-    Juez juez;
-    String estado;
-    Resultado resultado;
+    public Equipo equipo1, equipo2;
+    public Fecha fecha;
+    public LocalTime hora;
+    public String lugar;
+    public Juez juez;
+    public String estado;
+    public Resultado resultado;
     //la clase Resultado es una clase anónima definida en esta misma
     //clase (abajo del todo)
     
@@ -99,6 +100,11 @@ public class Enfrentamiento implements Serializable {
         }
         
         
+        public String toString(){
+            return puntaje1+" - "+ puntaje2;
+        }
+        
+        
     }
     
     //
@@ -110,6 +116,7 @@ public class Enfrentamiento implements Serializable {
         for (int i = 0; i < equipos.size(); i++) {
         // Obtener el equipo actual
         Equipo equipo1 = equipos.get(i);
+            
             // Recorrer el ArrayList de equipos desde el siguiente índice con otro bucle for
             for (int j = i + 1; j < equipos.size(); j++) {
                 // Obtener el otro equipo
@@ -120,17 +127,28 @@ public class Enfrentamiento implements Serializable {
                 enfrentamiento.setEquipo2(equipo2);
                 enfrentamiento.setEstado("ACTIVO");
                 enfrentamiento.setLugar(torneo.lugar);
-                Fecha fecha=torneo.fecha_inicio_torneo;
                 
-                //+j para que los dias no sean iguales siempre
-                fecha.setDia(fecha.dia+j);
+                //n siendo un numero random entre el size del listado y 0
+                Random r=new Random();
+                int n=r.nextInt(torneo.listado_jueces.size());
+                enfrentamiento.juez=torneo.listado_jueces.get(n);
                 
-                //lo más probable es que se descuadre la fecha por lo que la arreglo con el métofo arreglar_fecha
+                Fecha fecha=new Fecha();
+                //random para el dia de enfrentamiento entre 7 y 1 para sumarlo a la fecha de inicio
+                int d=r.nextInt(7-1)+1;
+                
+                fecha.setDia(torneo.fecha_inicio_torneo.dia+d);
+                fecha.setMes(torneo.fecha_inicio_torneo.mes);
+                fecha.setAño(2023);
                 fecha=Fecha.arreglar_fecha(fecha);
+                
+                
+                
                 enfrentamiento.setFecha(fecha);
                 
-                //+j para que las horas no sean iguales siempre
-                LocalTime hora= LocalTime.of(7+j, 0);
+                //h hora aleatoria entre las 20 y las 7
+                int h=r.nextInt(20-7)+7;
+                LocalTime hora= LocalTime.of(h, 0);
                 enfrentamiento.setHora(hora);
                 // Añadir el enfrentamiento al ArrayList de enfrentamientos
                 enfrentamientos.add(enfrentamiento);

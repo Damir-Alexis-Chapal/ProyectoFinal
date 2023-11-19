@@ -65,6 +65,11 @@ public class Fecha implements Serializable {
         return fecha;
     }
     
+    @Override
+    public String toString(){
+        return this.dia+"/"+this.mes+"/"+this.año;
+    }
+    
     
     public static boolean verificar_fecha(int dia, int mes, int año){
         //método que recibe dia, mes, año EN FORMA INTEGER como parámetros y retorna true si la fecha ingresada es válida

@@ -14,9 +14,9 @@ public class Persona implements Serializable {
 
     //se definen atributos
     
-    String tipo, nombre, cedula, genero, telefono, correo;
-    int edad;
-    Fecha fecha_nacimiento;
+    public String tipo, nombre, cedula, genero, telefono, correo;
+    public int edad;
+    public Fecha fecha_nacimiento;
 
     public Persona() {
 
