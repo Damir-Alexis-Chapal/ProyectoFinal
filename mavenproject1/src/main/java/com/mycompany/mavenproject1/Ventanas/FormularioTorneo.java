@@ -162,6 +162,11 @@ public class FormularioTorneo extends javax.swing.JFrame {
         jLabel17.setText("DEPORTE AL QUE SE JUGARÁ");
 
         CajaTipoTorneo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fútbol Sala", "VolleyBall", "Baloncesto", "Ajedrez" }));
+        CajaTipoTorneo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CajaTipoTorneoActionPerformed(evt);
+            }
+        });
 
         jLabel18.setText("NUMERO DE EQUIPOS");
 
@@ -556,6 +561,10 @@ public class FormularioTorneo extends javax.swing.JFrame {
     private void CajaNumeroEquiposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CajaNumeroEquiposActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CajaNumeroEquiposActionPerformed
+
+    private void CajaTipoTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CajaTipoTorneoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CajaTipoTorneoActionPerformed
 
     /**
      * @param args the command line arguments

@@ -6,16 +6,20 @@ package com.mycompany.mavenproject1.Ventanas;
 
 import com.mycompany.mavenproject1.Datos;
 import com.mycompany.mavenproject1.*;
+import java.io.Serializable;
+import java.util.Collections;
 
 /**
  *
  * @author Alexis Chapal
  */
-public class Enfrentamientos extends javax.swing.JFrame {
+public class Enfrentamientos extends javax.swing.JFrame implements Serializable {
 
     /**
      * Creates new form Enfrentamientos
      */
+    public static Torneo torneo_cuestion;
+    static int x=0;
     public Enfrentamientos() {
         initComponents();
     }
@@ -40,6 +44,7 @@ public class Enfrentamientos extends javax.swing.JFrame {
         BotonAtras = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         tablaProximosEnfrentamientos = new javax.swing.JTable();
+        BotonSimular = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,6 +57,12 @@ public class Enfrentamientos extends javax.swing.JFrame {
 
         tablaEnfrentamientosRecientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -111,6 +122,12 @@ public class Enfrentamientos extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null}
             },
             new String [] {
@@ -126,6 +143,13 @@ public class Enfrentamientos extends javax.swing.JFrame {
             }
         });
         jScrollPane4.setViewportView(tablaProximosEnfrentamientos);
+
+        BotonSimular.setText("SIMULAR ENFRENTAMIENTOS");
+        BotonSimular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonSimularActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -152,14 +176,15 @@ public class Enfrentamientos extends javax.swing.JFrame {
                 .addComponent(jButton2)
                 .addGap(9, 9, 9))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(382, 382, 382)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(BotonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(382, 382, 382)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(87, 87, 87)
+                .addComponent(BotonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BotonSimular)
+                .addGap(50, 50, 50))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,13 +202,19 @@ public class Enfrentamientos extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(59, 59, 59)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(BotonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(BotonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BotonSimular, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14))))
         );
 
         pack();
@@ -194,14 +225,23 @@ public class Enfrentamientos extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void ver_enfrentamientos(Torneo torneo){
+        torneo_cuestion=torneo;
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Enfrentamientos().setVisible(true);
-            
-                //SE SETEAN LOS PROXIMOS ENFRENTAMIENTOS
+                settear_tablas();
+                
+                
+                 
+                
+            }
+        });
+    }
+    public static void settear_tablas(){
+        //SE SETEAN LOS PROXIMOS ENFRENTAMIENTOS
                 int i=0;
-                for (int j=0;j<torneo.listado_enfrentamientos.size();j++){
-                    Enfrentamiento enfrentamiento=torneo.listado_enfrentamientos.get(j);
+                for (int j=0;j<torneo_cuestion.listado_enfrentamientos.size();j++){
+                    Enfrentamiento enfrentamiento=torneo_cuestion.listado_enfrentamientos.get(j);
                     
                     if(enfrentamiento.estado.equals("TERMINADO")==false){
                         tablaProximosEnfrentamientos.setValueAt(enfrentamiento.equipo1.nombre,i,0);
@@ -211,13 +251,21 @@ public class Enfrentamientos extends javax.swing.JFrame {
                         tablaProximosEnfrentamientos.setValueAt(enfrentamiento.hora,i,4);
                         tablaProximosEnfrentamientos.setValueAt(enfrentamiento.juez.nombre,i,5);
                         tablaProximosEnfrentamientos.setValueAt(enfrentamiento.estado,i,6);
-                        i++;
-                    }
+                        
+                    }else{
+                        tablaProximosEnfrentamientos.setValueAt("",i,0);
+                        tablaProximosEnfrentamientos.setValueAt("",i,1);
+                        tablaProximosEnfrentamientos.setValueAt("",i,2);
+                        tablaProximosEnfrentamientos.setValueAt("",i,3);
+                        tablaProximosEnfrentamientos.setValueAt("",i,4);
+                        tablaProximosEnfrentamientos.setValueAt("",i,5);
+                        tablaProximosEnfrentamientos.setValueAt("",i,6);
+                    }i++;
                 }
                 //SE SETEAN LOS ENFRENTAMIENTOS TERMINADOS
                 int n=0;
-                for (int k=0;k<torneo.listado_enfrentamientos.size();k++){
-                    Enfrentamiento enfrentamiento=torneo.listado_enfrentamientos.get(k);
+                for (int k=0;k<torneo_cuestion.listado_enfrentamientos.size();k++){
+                    Enfrentamiento enfrentamiento=torneo_cuestion.listado_enfrentamientos.get(k);
                     if(enfrentamiento.estado.equals("TERMINADO")){
                         tablaEnfrentamientosRecientes.setValueAt(enfrentamiento.equipo1.nombre,n,0);
                         tablaEnfrentamientosRecientes.setValueAt(enfrentamiento.equipo2.nombre,n,1);
@@ -226,13 +274,17 @@ public class Enfrentamientos extends javax.swing.JFrame {
                         tablaEnfrentamientosRecientes.setValueAt(enfrentamiento.hora,n,4);
                         tablaEnfrentamientosRecientes.setValueAt(enfrentamiento.juez.nombre,n,5);
                         tablaEnfrentamientosRecientes.setValueAt(enfrentamiento.resultado.toString(),n,6);
-                        n++;
-                    }
+                        
+                    }else{
+                        tablaEnfrentamientosRecientes.setValueAt("",i,0);
+                        tablaEnfrentamientosRecientes.setValueAt("",i,1);
+                        tablaEnfrentamientosRecientes.setValueAt("",i,2);
+                        tablaEnfrentamientosRecientes.setValueAt("",i,3);
+                        tablaEnfrentamientosRecientes.setValueAt("",i,4);
+                        tablaEnfrentamientosRecientes.setValueAt("",i,5);
+                        tablaEnfrentamientosRecientes.setValueAt("",i,6);
+                    }n++;
                 }
-                
-                
-            }
-        });
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -242,6 +294,46 @@ public class Enfrentamientos extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_BotonAtrasActionPerformed
 
+    private void BotonSimularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSimularActionPerformed
+        
+            Enfrentamiento enfrentamiento=torneo_cuestion.listado_enfrentamientos.get(x);
+            
+            if(enfrentamiento.estado.equals("ACTIVO")){
+                if(Datos.obtenerInstancia().listado_torneos_futbol.contains(torneo_cuestion)){
+                    enfrentamiento.generarResultadoFutbol();
+                    enfrentamiento.estado="TERMINADO";
+                }else{
+                //else ifs paara los otros tipos de deporte
+                }
+                
+                if(enfrentamiento.resultado.puntaje1-enfrentamiento.resultado.puntaje2==0){
+                    
+                    enfrentamiento.equipo1.puntos++;
+                    enfrentamiento.equipo2.puntos++;
+                }else if(enfrentamiento.resultado.puntaje1-enfrentamiento.resultado.puntaje2<0){
+                    enfrentamiento.equipo2.puntos=enfrentamiento.equipo2.puntos+3;
+                    
+                }else{
+                    enfrentamiento.equipo1.puntos=enfrentamiento.equipo1.puntos+3;
+                }
+                //seteamos el enfrentamiento en la lista de enfrentamientos
+                torneo_cuestion.listado_enfrentamientos.set(x, enfrentamiento);
+                
+                //seteamos los equipos en la lista de Datos
+                if(Datos.obtenerInstancia().listado_torneos_futbol.contains(torneo_cuestion)){
+                    for(int j=0;j<Datos.obtenerInstancia().listado_torneos_futbol.size();j++){
+                        if(Datos.obtenerInstancia().listado_torneos_futbol.get(j).nombre.equals(torneo_cuestion.nombre)){
+                        
+                            Datos.obtenerInstancia().listado_torneos_futbol.set(j, torneo_cuestion);
+                        }
+                    }
+                    
+                }
+                settear_tablas();
+            }
+        x++;
+    }//GEN-LAST:event_BotonSimularActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -249,6 +341,7 @@ public class Enfrentamientos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonAtras;
+    private javax.swing.JButton BotonSimular;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;

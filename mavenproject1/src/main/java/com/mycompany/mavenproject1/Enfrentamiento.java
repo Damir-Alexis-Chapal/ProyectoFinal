@@ -7,6 +7,7 @@ package com.mycompany.mavenproject1;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.time.*;
+import java.util.Collections;
 import java.util.Random;
 
 /**
@@ -68,19 +69,27 @@ public class Enfrentamiento implements Serializable {
         this.estado = estado;
     }
 
-    public void generarResultado() {
+    public void generarResultadoFutbol() {
         //método para generar un resultado aleatorio que se seteará en
         //el enfrentamiento que estamos trabajando
         Resultado resultado=new Resultado();
-        //cosas aleatorias...guau (proceso para generar un resultado aleatorio)
+        int puntos1=0,puntos2=0;
+        
+        Random r=new Random();
+        puntos1=r.nextInt(5);
+        puntos2=r.nextInt(5);
+        resultado.puntaje1=puntos1;
+        resultado.puntaje2=puntos2;
+        
+        
         this.resultado=resultado;
     }
     
     //clase anónima Resultado propia de la clase Enfrentamiento
     //solo se pueden crear objetos tipo Resultado dentro de esta clase
-    public class Resultado{
+    public class Resultado implements Serializable{
     
-        int puntaje1, puntaje2;
+        public int puntaje1, puntaje2;
         
         public Resultado(){
         
@@ -156,6 +165,7 @@ public class Enfrentamiento implements Serializable {
                 //
             }
         }
+        Collections.sort(enfrentamientos, new CompararFechaHora());
         //retorna la lista de enfrentamientos para el torneo
         return enfrentamientos;
     }
