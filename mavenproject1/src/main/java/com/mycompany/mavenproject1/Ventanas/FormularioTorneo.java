@@ -540,7 +540,7 @@ public class FormularioTorneo extends javax.swing.JFrame {
     private void BotonRegistrarJuecesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarJuecesActionPerformed
         
         if(n_jueces==0){
-            JOptionPane.showMessageDialog(null, "A continuación ingrese mínimo 3 jueces, por favor");
+           
         }
         
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -574,7 +574,7 @@ public class FormularioTorneo extends javax.swing.JFrame {
     private javax.swing.JButton BotonAtras;
     private javax.swing.JButton BotonGuardarDatos;
     public static javax.swing.JButton BotonRegistrarEquipos;
-    private javax.swing.JButton BotonRegistrarJueces;
+    public static javax.swing.JButton BotonRegistrarJueces;
     private javax.swing.JComboBox<String> CajaAñoCierreInscripciones;
     private javax.swing.JComboBox<String> CajaAñoInicioInscripciones;
     private javax.swing.JComboBox<String> CajaAñoInicioTorneo;

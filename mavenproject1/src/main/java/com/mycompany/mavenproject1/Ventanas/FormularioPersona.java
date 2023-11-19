@@ -148,7 +148,6 @@ public class FormularioPersona extends javax.swing.JFrame {
 
         jLabel9.setText("EDAD");
 
-        CampoEdad.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         CampoEdad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoEdadActionPerformed(evt);
