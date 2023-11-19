@@ -6,6 +6,7 @@ package com.mycompany.mavenproject1;
 
 
 import com.mycompany.mavenproject1.Ventanas.InterfazPrincipal;
+import com.mycompany.mavenproject1.Ventanas.tablaDePosiciones;
 import java.io.Serializable;
 import javax.swing.JOptionPane;
 
@@ -22,6 +23,8 @@ public class Mavenproject1 implements Serializable {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new InterfazPrincipal().setVisible(true);
+                //tablaDePosiciones.ver_ventana();
+                
             }
         });
     }

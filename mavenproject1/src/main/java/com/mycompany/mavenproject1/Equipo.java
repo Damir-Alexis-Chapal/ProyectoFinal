@@ -33,6 +33,9 @@ public class Equipo implements Serializable {
         this.tecnico = tecnico;
         this.cant_participantes = cant_participantes;
     }
+    public void setPuntaje(int puntaje){
+        this.puntos=puntaje;
+    }
 
     public void setListado_participantes(ArrayList<Persona> listado_participantes) {
         this.listado_participantes = listado_participantes;

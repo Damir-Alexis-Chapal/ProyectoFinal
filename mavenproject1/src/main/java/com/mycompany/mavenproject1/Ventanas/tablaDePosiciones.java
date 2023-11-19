@@ -4,13 +4,23 @@
  */
 package com.mycompany.mavenproject1.Ventanas;
 
+import com.mycompany.mavenproject1.CompararPuntos;
+import com.mycompany.mavenproject1.Datos;
+import com.mycompany.mavenproject1.Enfrentamiento;
+import com.mycompany.mavenproject1.Equipo;
+import com.mycompany.mavenproject1.Torneo;
+import java.util.ArrayList;
+import java.util.Collections;
+
 /**
  *
  * @author Alexis Chapal
  */
 public class tablaDePosiciones extends javax.swing.JFrame {
 
+    static Torneo torneo_cuestion;
     /**
+     * 
      * Creates new form tablaDePosiciones
      */
     public tablaDePosiciones() {
@@ -48,7 +58,18 @@ public class tablaDePosiciones extends javax.swing.JFrame {
                 {"6", null, null, null, null, null},
                 {"7", null, null, null, null, null},
                 {"8", null, null, null, null, null},
-                {"9", null, null, null, null, null}
+                {"9", null, null, null, null, null},
+                {"10", null, null, null, null, null},
+                {"11", null, null, null, null, null},
+                {"12", null, null, null, null, null},
+                {"13", null, null, null, null, null},
+                {"14", null, null, null, null, null},
+                {"15", null, null, null, null, null},
+                {"16", null, null, null, null, null},
+                {"17", null, null, null, null, null},
+                {"18", null, null, null, null, null},
+                {"19", null, null, null, null, null},
+                {"20", null, null, null, null, null}
             },
             new String [] {
                 "POSICIÓN", "EQUIPO", "PUNTOS", "GANADOS", "EMPATADOS", "PERDIDOS"
@@ -107,10 +128,10 @@ public class tablaDePosiciones extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel2)))
                 .addGap(100, 100, 100)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(104, 104, 104)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(BotonAtras)
                 .addGap(62, 62, 62))
         );
@@ -121,11 +142,62 @@ public class tablaDePosiciones extends javax.swing.JFrame {
     private void BotonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAtrasActionPerformed
         this.dispose();
     }//GEN-LAST:event_BotonAtrasActionPerformed
-
+    public static void ver_ventana(Torneo torneo){
+        torneo_cuestion=torneo;
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new tablaDePosiciones().setVisible(true);
+                
+                for(int i=0;i<Datos.obtenerInstancia().listado_torneos_futbol.size();i++){
+                    Torneo torneo=Datos.obtenerInstancia().listado_torneos_futbol.get(i);
+                    
+                    if(Datos.obtenerInstancia().listado_torneos_futbol.get(i).nombre.equals(torneo.nombre)){
+                        ArrayList<Equipo>lista_equipos=Datos.obtenerInstancia().listado_torneos_futbol.get(i).listado_equipos;
+                        ArrayList<Enfrentamiento>lista_enfrentamientos=Datos.obtenerInstancia().listado_torneos_futbol.get(i).listado_enfrentamientos;
+                        for(int j=0;j<lista_equipos.size();j++){
+                            for(int z=0;z<lista_enfrentamientos.size();z++){
+                                if(lista_equipos.get(j).nombre.equals(lista_enfrentamientos.get(z).equipo1.nombre)){
+                                    Equipo equipo1=lista_equipos.get(j);
+                                    equipo1.setPuntaje(equipo1.puntos+lista_enfrentamientos.get(z).equipo1.puntos);
+                                    
+                                    lista_equipos.set(j, equipo1);
+                                    
+                                }else if(lista_equipos.get(j).nombre.equals(lista_enfrentamientos.get(z).equipo2.nombre)){
+                                    Equipo equipo2=lista_equipos.get(j);
+                                    equipo2.setPuntaje(equipo2.puntos+lista_enfrentamientos.get(z).equipo2.puntos);
+                                    
+                                    lista_equipos.set(j, equipo2);
+                                }
+                                Collections.sort(lista_equipos, new CompararPuntos());
+                                torneo_cuestion.setListado_equipos(lista_equipos);
+                                
+                                torneo.setListado_equipos(lista_equipos);
+                            }
+                            
+                        }
+                        Datos.obtenerInstancia().listado_torneos_futbol.set(i, torneo);
+                    }
+                    
+                }
+                
+                settear_tabla();
+                
+            }
+        });
+    }
     /**
      * @param args the command line arguments
      */
-    
+    public static void settear_tabla(){
+        //HACER VERIFICACION POR SI ESTÁ VACÍO
+        for(int i=0;i<torneo_cuestion.listado_equipos.size();i++){
+            tablaDePosiciones.setValueAt(torneo_cuestion.listado_equipos.get(i).nombre,i ,1 );
+            tablaDePosiciones.setValueAt("HOLA",1,2 );
+            
+        }
+        
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonAtras;
@@ -133,6 +205,6 @@ public class tablaDePosiciones extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable tablaDePosiciones;
+    public static javax.swing.JTable tablaDePosiciones;
     // End of variables declaration//GEN-END:variables
 }

@@ -258,11 +258,7 @@ public class VerDatos extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonVolverActionPerformed
 
     private void BotonTablaDePosicionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonTablaDePosicionesActionPerformed
-       java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new tablaDePosiciones().setVisible(true);
-            }
-        });
+        tablaDePosiciones.ver_ventana(torneo_en_cuestion);
     }//GEN-LAST:event_BotonTablaDePosicionesActionPerformed
 
     private void CampoDato1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoDato1ActionPerformed
