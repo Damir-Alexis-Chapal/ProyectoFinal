@@ -9,6 +9,7 @@ import com.mycompany.mavenproject1.Datos;
 import com.mycompany.mavenproject1.Enfrentamiento;
 import com.mycompany.mavenproject1.Equipo;
 import com.mycompany.mavenproject1.Torneo;
+import static com.mycompany.mavenproject1.Ventanas.Enfrentamientos.torneo_cuestion;
 import java.util.ArrayList;
 import java.util.Collections;
 import javax.swing.JOptionPane;
@@ -152,26 +153,17 @@ public class tablaDePosiciones extends javax.swing.JFrame {
                 for(int i=0;i<Datos.obtenerInstancia().listado_torneos_futbol.size();i++){
                     
                     if(Datos.obtenerInstancia().listado_torneos_futbol.get(i).nombre.equals(torneo_cuestion.nombre)){
+                        
                         ArrayList<Equipo>lista_equipos=Datos.obtenerInstancia().listado_torneos_futbol.get(i).listado_equipos;
                         ArrayList<Enfrentamiento>lista_enfrentamientos=Datos.obtenerInstancia().listado_torneos_futbol.get(i).listado_enfrentamientos;
+                        
+                                    
                         for(int j=0;j<lista_equipos.size();j++){
                             for(int z=0;z<lista_enfrentamientos.size();z++){
-                                if(lista_equipos.get(j).nombre.equals(lista_enfrentamientos.get(z).equipo1.nombre)){
-                                    Equipo equipo1=lista_equipos.get(j);
-                                    equipo1.setPuntaje(equipo1.puntos+lista_enfrentamientos.get(z).equipo1.puntos);
-                                    
-                                    lista_equipos.set(j, equipo1);
-                                    
-                                }else if(lista_equipos.get(j).nombre.equals(lista_enfrentamientos.get(z).equipo2.nombre)){
-                                    Equipo equipo2=lista_equipos.get(j);
-                                    equipo2.setPuntaje(equipo2.puntos+lista_enfrentamientos.get(z).equipo2.puntos);
-                                    
-                                    lista_equipos.set(j, equipo2);
-                                }
+                                
                                 Collections.sort(lista_equipos, new CompararPuntos());
                                 torneo_cuestion.setListado_equipos(lista_equipos);
-                                
-                                torneo_cuestion.setListado_equipos(lista_equipos);
+                               
                             }
                             
                         }
@@ -197,7 +189,9 @@ public class tablaDePosiciones extends javax.swing.JFrame {
         for(int i=0;i<torneo_cuestion.listado_equipos.size();i++){
             tablaDePosiciones.setValueAt(torneo_cuestion.listado_equipos.get(i).nombre,i ,1 );
             tablaDePosiciones.setValueAt(torneo_cuestion.listado_equipos.get(i).puntos,i ,2 );
-            
+            tablaDePosiciones.setValueAt(torneo_cuestion.listado_equipos.get(i).ganados,i ,3 );
+            tablaDePosiciones.setValueAt(torneo_cuestion.listado_equipos.get(i).empatados,i ,4 );
+            tablaDePosiciones.setValueAt(torneo_cuestion.listado_equipos.get(i).perdidos,i ,5);
             
         }
         

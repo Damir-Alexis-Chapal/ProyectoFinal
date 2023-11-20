@@ -13,7 +13,7 @@ import com.mycompany.mavenproject1.*;
 public class VerDatos extends javax.swing.JFrame {
     
     //Se crea atributo torneo para poder llamarla cuando se desee
-    static Torneo torneo_en_cuestion;
+    public static Torneo torneo_en_cuestion;
 
     /**
      * Creates new form VerDatos

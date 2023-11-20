@@ -20,7 +20,7 @@ public class Equipo implements Serializable {
     public String nombre, genero;
     public Persona lider, tecnico;
     public int cant_participantes;
-    public int puntos=0;
+    public int puntos=0, ganados=0,empatados=0,perdidos=0;
     
     public Equipo(){
     

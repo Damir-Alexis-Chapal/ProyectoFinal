@@ -8,6 +8,7 @@ import com.mycompany.mavenproject1.Datos;
 import com.mycompany.mavenproject1.*;
 import java.io.Serializable;
 import java.util.Collections;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -297,25 +298,54 @@ public class Enfrentamientos extends javax.swing.JFrame implements Serializable 
     private void BotonSimularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSimularActionPerformed
         
             Enfrentamiento enfrentamiento=torneo_cuestion.listado_enfrentamientos.get(x);
-            
+
             if(enfrentamiento.estado.equals("ACTIVO")){
                 if(Datos.obtenerInstancia().listado_torneos_futbol.contains(torneo_cuestion)){
                     enfrentamiento.generarResultadoFutbol();
                     enfrentamiento.estado="TERMINADO";
-                }else{
-                //else ifs paara los otros tipos de deporte
+                    
+                    if(enfrentamiento.resultado.puntaje1-enfrentamiento.resultado.puntaje2==0){
+                    
+                        enfrentamiento.equipo1.puntos=enfrentamiento.equipo1.puntos+1;
+                        enfrentamiento.equipo2.puntos=enfrentamiento.equipo2.puntos+1;
+                    
+                        enfrentamiento.equipo1.empatados=enfrentamiento.equipo1.empatados+1;
+                        enfrentamiento.equipo2.empatados=enfrentamiento.equipo2.empatados+1;
+                    }else if(enfrentamiento.resultado.puntaje1-enfrentamiento.resultado.puntaje2<0){
+                        enfrentamiento.equipo2.puntos=enfrentamiento.equipo2.puntos+3;
+                    
+                        enfrentamiento.equipo1.perdidos=enfrentamiento.equipo1.perdidos+1;
+                        enfrentamiento.equipo2.ganados=enfrentamiento.equipo2.ganados+1;
+                    
+                    }else{
+                        enfrentamiento.equipo1.puntos=enfrentamiento.equipo1.puntos+3;
+                    
+                        enfrentamiento.equipo1.ganados=enfrentamiento.equipo1.ganados+1;
+                        enfrentamiento.equipo2.perdidos=enfrentamiento.equipo2.perdidos+1;
+                    }
+                    
+                }else if (Datos.obtenerInstancia().listado_torneos_ajedrez.contains(torneo_cuestion)){
+                    enfrentamiento.generarResultadoAjedrez();
+                    enfrentamiento.estado="TERMINADO";
+                    
+                    if(enfrentamiento.resultado.puntaje1-enfrentamiento.resultado.puntaje2<0){
+                        enfrentamiento.equipo2.puntos=enfrentamiento.equipo2.puntos+1;
+                    
+                        enfrentamiento.equipo1.perdidos=enfrentamiento.equipo1.perdidos+1;
+                        enfrentamiento.equipo2.ganados=enfrentamiento.equipo2.ganados+1;
+                    
+                    }else{
+                        enfrentamiento.equipo1.puntos=enfrentamiento.equipo1.puntos+1;
+                    
+                        enfrentamiento.equipo1.ganados=enfrentamiento.equipo1.ganados+1;
+                        enfrentamiento.equipo2.perdidos=enfrentamiento.equipo2.perdidos+1;
+                    }
+                    
+                    
+                    
                 }
                 
-                if(enfrentamiento.resultado.puntaje1-enfrentamiento.resultado.puntaje2==0){
-                    
-                    enfrentamiento.equipo1.puntos=1;
-                    enfrentamiento.equipo2.puntos=1;
-                }else if(enfrentamiento.resultado.puntaje1-enfrentamiento.resultado.puntaje2<0){
-                    enfrentamiento.equipo2.puntos=3;
-                    
-                }else{
-                    enfrentamiento.equipo1.puntos=3;
-                }
+                
                 //seteamos el enfrentamiento en la lista de enfrentamientos
                 torneo_cuestion.listado_enfrentamientos.set(x, enfrentamiento);
                 
@@ -329,6 +359,7 @@ public class Enfrentamientos extends javax.swing.JFrame implements Serializable 
                     }
                     
                 }
+                
                 settear_tablas();
             }
         if(x==torneo_cuestion.listado_enfrentamientos.size()){
