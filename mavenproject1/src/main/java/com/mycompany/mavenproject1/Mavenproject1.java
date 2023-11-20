@@ -23,7 +23,6 @@ public class Mavenproject1 implements Serializable {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new InterfazPrincipal().setVisible(true);
-                //tablaDePosiciones.ver_ventana();
                 
             }
         });

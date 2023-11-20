@@ -275,15 +275,16 @@ public class FormularioJuez extends javax.swing.JFrame {
                 FormularioTorneo.BotonRegistrarEquipos.setEnabled(true);
                 FormularioTorneo.BotonRegistrarJueces.setEnabled(false);
                 this.dispose();
-            } else {
-                CampoCedula.setText("");
-                CampoNombre.setText("");
-                CampoTelefono.setText("");
-                CampoCorreo.setText("");
-                CampoLicencia.setText("");
-
-                JOptionPane.showMessageDialog(null, "Ingrese al siguiente Juez");
-            }
+           }
+//else {
+//                CampoCedula.setText("");
+//                CampoNombre.setText("");
+//                CampoTelefono.setText("");
+//                CampoCorreo.setText("");
+//                CampoLicencia.setText("");
+//
+//                JOptionPane.showMessageDialog(null, "Ingrese al siguiente Juez");
+//            }
         }
         //JOptionPane.showMessageDialog(null, FormularioTorneo.ListaJueces.size());
         //this.dispose();

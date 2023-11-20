@@ -499,6 +499,8 @@ public class FormularioTorneo extends javax.swing.JFrame {
                         ArrayList<Enfrentamiento>enfrentamientos=Enfrentamiento.generarEnfrentamientos(NuevoTorneo.listado_equipos, NuevoTorneo);
                         NuevoTorneo.setListado_enfrentamientos(enfrentamientos);
                         
+                        JOptionPane.showMessageDialog(null, NuevoTorneo.listado_enfrentamientos.size());
+                        JOptionPane.showMessageDialog(null, NuevoTorneo.listado_equipos.size());
                         
                         
                         if (CajaTipoTorneo.getSelectedItem().equals("Fútbol Sala")) {
@@ -510,6 +512,10 @@ public class FormularioTorneo extends javax.swing.JFrame {
                         } else if (CajaTipoTorneo.getSelectedItem().equals("Ajedrez")) {
                             Datos.obtenerInstancia().listado_torneos_ajedrez.add(NuevoTorneo);
                         }
+                        
+                        JOptionPane.showMessageDialog(null, Datos.obtenerInstancia().listado_torneos_futbol.get(0).listado_enfrentamientos.size());
+                        JOptionPane.showMessageDialog(null, Datos.obtenerInstancia().listado_torneos_futbol.get(0).listado_equipos.size());
+                        
                         JOptionPane.showMessageDialog(null, "¡Registro exitoso de todos los equipos participantes"
                                 + "\n El torneo " + CampoNombreTorneo.getText() + " ha sido creado con exito!");
                         Datos datos = Datos.obtenerInstancia();
@@ -517,10 +523,14 @@ public class FormularioTorneo extends javax.swing.JFrame {
                         datos.imprimirListado(datos.listado_torneos_basket);
                         datos.imprimirListado(datos.listado_torneos_ajedrez);
                         datos.imprimirListado(datos.listado_torneos_volley);
-                        ListaTeam.clear();
-                        ListaJueces.clear();
+                        ListaTeam=new ArrayList();
+                        ListaJueces=new ArrayList();
                         n_jueces=0;
                         NumEquiposRegistrados = 0;
+                        
+                        JOptionPane.showMessageDialog(null, Datos.obtenerInstancia().listado_torneos_futbol.get(0).listado_enfrentamientos.size());
+                        JOptionPane.showMessageDialog(null, Datos.obtenerInstancia().listado_torneos_futbol.get(0).listado_equipos.size());
+                        
                         FormularioTorneo.this.dispose();
 
                     } else {

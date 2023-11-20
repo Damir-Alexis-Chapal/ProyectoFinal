@@ -19,7 +19,7 @@ public class Enfrentamientos extends javax.swing.JFrame implements Serializable 
      * Creates new form Enfrentamientos
      */
     public static Torneo torneo_cuestion;
-    static int x=0;
+    int x=0;
     public Enfrentamientos() {
         initComponents();
     }
@@ -308,13 +308,13 @@ public class Enfrentamientos extends javax.swing.JFrame implements Serializable 
                 
                 if(enfrentamiento.resultado.puntaje1-enfrentamiento.resultado.puntaje2==0){
                     
-                    enfrentamiento.equipo1.puntos++;
-                    enfrentamiento.equipo2.puntos++;
+                    enfrentamiento.equipo1.puntos=1;
+                    enfrentamiento.equipo2.puntos=1;
                 }else if(enfrentamiento.resultado.puntaje1-enfrentamiento.resultado.puntaje2<0){
-                    enfrentamiento.equipo2.puntos=enfrentamiento.equipo2.puntos+3;
+                    enfrentamiento.equipo2.puntos=3;
                     
                 }else{
-                    enfrentamiento.equipo1.puntos=enfrentamiento.equipo1.puntos+3;
+                    enfrentamiento.equipo1.puntos=3;
                 }
                 //seteamos el enfrentamiento en la lista de enfrentamientos
                 torneo_cuestion.listado_enfrentamientos.set(x, enfrentamiento);
@@ -331,7 +331,12 @@ public class Enfrentamientos extends javax.swing.JFrame implements Serializable 
                 }
                 settear_tablas();
             }
-        x++;
+        if(x==torneo_cuestion.listado_enfrentamientos.size()){
+            x=0;
+        }else{
+            x++;
+        }
+        
     }//GEN-LAST:event_BotonSimularActionPerformed
 
     /**

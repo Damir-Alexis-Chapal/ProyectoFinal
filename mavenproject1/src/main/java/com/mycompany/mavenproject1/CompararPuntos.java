@@ -13,7 +13,7 @@ import java.util.Comparator;
 public class CompararPuntos implements Comparator<Equipo>{
     @Override
     public int compare(Equipo equipo1, Equipo equipo2){
-        return equipo1.puntos-equipo2.puntos;
+        return equipo2.puntos-equipo1.puntos;
         
     }
     
