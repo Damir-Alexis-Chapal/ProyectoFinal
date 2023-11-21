@@ -68,6 +68,56 @@ public class Enfrentamiento implements Serializable {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+    
+    public void generarResultadoBasket() {
+        //método para generar un resultado aleatorio que se seteará en
+        //el enfrentamiento que estamos trabajando
+        Resultado resultado=new Resultado();
+        int puntos1=0,puntos2=0;
+        
+        Random r=new Random();
+        puntos1=r.nextInt(55);
+        puntos2=r.nextInt(55);
+        resultado.puntaje1=puntos1;
+        resultado.puntaje2=puntos2;
+        
+        
+        this.resultado=resultado;
+    }
+    
+    
+    public void generarResultadoVolley(){
+        
+        Resultado resultado=new Resultado();
+        int puntos1=0,puntos2=0;
+        boolean repita=false;
+        
+        do{
+            Random r=new Random();
+            puntos1=r.nextInt(4);
+            puntos2=r.nextInt(4);
+            
+            
+            if(puntos1==3||puntos2==3){
+                repita=false;
+            }else{
+                repita=true;
+            }
+            
+            if(puntos1==puntos2){
+                repita=true;
+            }
+        }while(repita==true);
+        
+        
+        
+        
+        resultado.puntaje1=puntos1;
+        resultado.puntaje2=puntos2;
+        
+        
+        this.resultado=resultado;
+    }
 
     public void generarResultadoFutbol() {
         //método para generar un resultado aleatorio que se seteará en

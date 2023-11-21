@@ -132,7 +132,8 @@ public class tablaDePosiciones extends javax.swing.JFrame {
             public void run() {
                 new tablaDePosiciones().setVisible(true);
                 
-                for(int i=0;i<Datos.obtenerInstancia().listado_torneos_futbol.size();i++){
+                if(Datos.obtenerInstancia().listado_torneos_futbol.contains(torneo_cuestion)){
+                    for(int i=0;i<Datos.obtenerInstancia().listado_torneos_futbol.size();i++){
                     
                     if(Datos.obtenerInstancia().listado_torneos_futbol.get(i).nombre.equals(torneo_cuestion.nombre)){
                         
@@ -153,6 +154,74 @@ public class tablaDePosiciones extends javax.swing.JFrame {
                     }
                     
                 }
+                }else if(Datos.obtenerInstancia().listado_torneos_volley.contains(torneo_cuestion)){
+                    for(int i=0;i<Datos.obtenerInstancia().listado_torneos_volley.size();i++){
+                    
+                    if(Datos.obtenerInstancia().listado_torneos_volley.get(i).nombre.equals(torneo_cuestion.nombre)){
+                        
+                        ArrayList<Equipo>lista_equipos=Datos.obtenerInstancia().listado_torneos_volley.get(i).listado_equipos;
+                        ArrayList<Enfrentamiento>lista_enfrentamientos=Datos.obtenerInstancia().listado_torneos_volley.get(i).listado_enfrentamientos;
+                        
+                                    
+                        for(int j=0;j<lista_equipos.size();j++){
+                            for(int z=0;z<lista_enfrentamientos.size();z++){
+                                
+                                Collections.sort(lista_equipos, new CompararPuntos());
+                                torneo_cuestion.setListado_equipos(lista_equipos);
+                               
+                            }
+                            
+                        }
+                        Datos.obtenerInstancia().listado_torneos_volley.set(i, torneo_cuestion);
+                    }
+                    
+                }
+                }else if(Datos.obtenerInstancia().listado_torneos_ajedrez.contains(torneo_cuestion)){
+                    for(int i=0;i<Datos.obtenerInstancia().listado_torneos_ajedrez.size();i++){
+                    
+                    if(Datos.obtenerInstancia().listado_torneos_ajedrez.get(i).nombre.equals(torneo_cuestion.nombre)){
+                        
+                        ArrayList<Equipo>lista_equipos=Datos.obtenerInstancia().listado_torneos_ajedrez.get(i).listado_equipos;
+                        ArrayList<Enfrentamiento>lista_enfrentamientos=Datos.obtenerInstancia().listado_torneos_ajedrez.get(i).listado_enfrentamientos;
+                        
+                                    
+                        for(int j=0;j<lista_equipos.size();j++){
+                            for(int z=0;z<lista_enfrentamientos.size();z++){
+                                
+                                Collections.sort(lista_equipos, new CompararPuntos());
+                                torneo_cuestion.setListado_equipos(lista_equipos);
+                               
+                            }
+                            
+                        }
+                        Datos.obtenerInstancia().listado_torneos_ajedrez.set(i, torneo_cuestion);
+                    }
+                    
+                }
+                }else if(Datos.obtenerInstancia().listado_torneos_basket.contains(torneo_cuestion)){
+                    for(int i=0;i<Datos.obtenerInstancia().listado_torneos_basket.size();i++){
+                    
+                    if(Datos.obtenerInstancia().listado_torneos_basket.get(i).nombre.equals(torneo_cuestion.nombre)){
+                        
+                        ArrayList<Equipo>lista_equipos=Datos.obtenerInstancia().listado_torneos_basket.get(i).listado_equipos;
+                        ArrayList<Enfrentamiento>lista_enfrentamientos=Datos.obtenerInstancia().listado_torneos_basket.get(i).listado_enfrentamientos;
+                        
+                                    
+                        for(int j=0;j<lista_equipos.size();j++){
+                            for(int z=0;z<lista_enfrentamientos.size();z++){
+                                
+                                Collections.sort(lista_equipos, new CompararPuntos());
+                                torneo_cuestion.setListado_equipos(lista_equipos);
+                               
+                            }
+                            
+                        }
+                        Datos.obtenerInstancia().listado_torneos_basket.set(i, torneo_cuestion);
+                    }
+                    
+                }
+                }
+                
                 
                 settear_tabla();
                 

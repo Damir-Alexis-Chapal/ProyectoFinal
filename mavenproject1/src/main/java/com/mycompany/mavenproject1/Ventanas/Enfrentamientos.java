@@ -369,6 +369,49 @@ public class Enfrentamientos extends javax.swing.JFrame implements Serializable 
                     
                     
                     
+                }else if(Datos.obtenerInstancia().listado_torneos_volley.contains(torneo_cuestion)){
+                    enfrentamiento.generarResultadoVolley();
+                    enfrentamiento.estado="TERMINADO";
+                    
+                    
+                    
+                        enfrentamiento.equipo1.puntos=enfrentamiento.equipo1.puntos+enfrentamiento.resultado.puntaje1;
+                        enfrentamiento.equipo2.puntos=enfrentamiento.equipo2.puntos+enfrentamiento.resultado.puntaje2;
+                    
+                        enfrentamiento.equipo1.empatados=0;
+                        enfrentamiento.equipo2.empatados=0;
+                                            
+                        enfrentamiento.equipo1.perdidos=enfrentamiento.equipo1.perdidos+enfrentamiento.resultado.puntaje2;
+                        enfrentamiento.equipo2.perdidos=enfrentamiento.equipo2.perdidos+enfrentamiento.resultado.puntaje1;
+                        
+                        enfrentamiento.equipo2.ganados=enfrentamiento.equipo2.ganados+enfrentamiento.resultado.puntaje2;                    
+                        enfrentamiento.equipo1.ganados=enfrentamiento.equipo1.ganados+enfrentamiento.resultado.puntaje1;
+                        
+                    
+                    
+                }else if(Datos.obtenerInstancia().listado_torneos_basket.contains(torneo_cuestion)){
+                    enfrentamiento.generarResultadoBasket();
+                    enfrentamiento.estado="TERMINADO";
+                    
+                    if(enfrentamiento.resultado.puntaje1-enfrentamiento.resultado.puntaje2==0){
+                    
+                        enfrentamiento.equipo1.puntos=enfrentamiento.equipo1.puntos+1;
+                        enfrentamiento.equipo2.puntos=enfrentamiento.equipo2.puntos+1;
+                    
+                        enfrentamiento.equipo1.empatados=enfrentamiento.equipo1.empatados+1;
+                        enfrentamiento.equipo2.empatados=enfrentamiento.equipo2.empatados+1;
+                    }else if(enfrentamiento.resultado.puntaje1-enfrentamiento.resultado.puntaje2<0){
+                        enfrentamiento.equipo2.puntos=enfrentamiento.equipo2.puntos+3;
+                    
+                        enfrentamiento.equipo1.perdidos=enfrentamiento.equipo1.perdidos+1;
+                        enfrentamiento.equipo2.ganados=enfrentamiento.equipo2.ganados+1;
+                    
+                    }else{
+                        enfrentamiento.equipo1.puntos=enfrentamiento.equipo1.puntos+3;
+                    
+                        enfrentamiento.equipo1.ganados=enfrentamiento.equipo1.ganados+1;
+                        enfrentamiento.equipo2.perdidos=enfrentamiento.equipo2.perdidos+1;
+                    }
                 }
                 
                 
