@@ -46,11 +46,11 @@ public class FormularioJuez extends javax.swing.JFrame {
         CajaMesNacimiento = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        CajaAñoNacimiento = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         CampoLicencia = new javax.swing.JTextField();
         BotonFinalizar = new javax.swing.JButton();
         BotonAtras = new javax.swing.JButton();
+        CajaAñoNacimiento = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -89,8 +89,6 @@ public class FormularioJuez extends javax.swing.JFrame {
 
         jLabel13.setText("AÑO");
 
-        CajaAñoNacimiento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033" }));
-
         jLabel7.setText("INGRESE LA LICENCIA DE JUEZ");
 
         BotonFinalizar.setText("FINALIZAR");
@@ -106,6 +104,8 @@ public class FormularioJuez extends javax.swing.JFrame {
                 BotonAtrasActionPerformed(evt);
             }
         });
+
+        CajaAñoNacimiento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -136,7 +136,7 @@ public class FormularioJuez extends javax.swing.JFrame {
                                 .addGap(98, 98, 98)
                                 .addComponent(jLabel13))
                             .addComponent(jLabel5))))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 100, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -170,9 +170,9 @@ public class FormularioJuez extends javax.swing.JFrame {
                         .addComponent(CajaDiaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(CajaMesNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(CajaAñoNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 46, Short.MAX_VALUE))))
+                        .addGap(36, 36, 36))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

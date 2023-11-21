@@ -52,6 +52,23 @@ public class Fecha implements Serializable {
         Fecha fecha_buena = new Fecha(dia,mes,ano);
         return fecha_buena;
     }
+    public static int calcular_edad(Fecha fecha_nacimiento){
+        int edad=0;
+        Fecha fecha_actual=obtener_fecha_actual();
+        
+        if(fecha_actual.mes-fecha_nacimiento.mes==0){
+            if(fecha_actual.dia-fecha_nacimiento.dia>=0){
+                edad=fecha_actual.año-fecha_nacimiento.año;
+            }else{
+                edad=fecha_actual.año-fecha_nacimiento.año-1;
+            }
+        }else if(fecha_actual.mes-fecha_nacimiento.mes>0){
+            edad=fecha_actual.año-fecha_nacimiento.año;
+        }else{
+            edad=fecha_actual.año-fecha_nacimiento.año-1;
+        }
+        return edad;
+    }
     
     public static Fecha arreglar_fecha(Fecha fecha){
         //usar siempre este método para estar seguro que una fecha no de cosas raras

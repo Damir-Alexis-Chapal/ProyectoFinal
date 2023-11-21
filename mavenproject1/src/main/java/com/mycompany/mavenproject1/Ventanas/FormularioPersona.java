@@ -68,8 +68,6 @@ public class FormularioPersona extends javax.swing.JFrame {
         CajaPersonasRegistradas = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         NombreEquipoNuevo = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        CampoEdad = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -108,7 +106,7 @@ public class FormularioPersona extends javax.swing.JFrame {
 
         jLabel13.setText("AÑO");
 
-        CajaAñoNacimiento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033" }));
+        CajaAñoNacimiento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960" }));
 
         BotonContinuar.setText("CONTINUAR");
         BotonContinuar.addActionListener(new java.awt.event.ActionListener() {
@@ -146,14 +144,6 @@ public class FormularioPersona extends javax.swing.JFrame {
 
         NombreEquipoNuevo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        jLabel9.setText("EDAD");
-
-        CampoEdad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoEdadActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -161,7 +151,6 @@ public class FormularioPersona extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(CampoEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(CampoCorreo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CampoTelefono, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -204,9 +193,7 @@ public class FormularioPersona extends javax.swing.JFrame {
                         .addComponent(jLabel6)
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(332, 332, 332)
+                .addGap(375, 375, 375)
                 .addComponent(jLabel11)
                 .addGap(106, 106, 106)
                 .addComponent(jLabel12)
@@ -272,15 +259,12 @@ public class FormularioPersona extends javax.swing.JFrame {
                         .addComponent(CampoCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel9)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel12)
-                        .addComponent(jLabel13)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CampoEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CajaDiaNacimiento)
                     .addComponent(CajaMesNacimiento)
                     .addComponent(CajaAñoNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -325,14 +309,10 @@ public class FormularioPersona extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CajaPersonasRegistradasActionPerformed
 
-    private void CampoEdadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoEdadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CampoEdadActionPerformed
-
     private void BotonContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonContinuarActionPerformed
 //      
         //verifico que los campos de texto no estén vacios 
-        if (CampoNombre.getText().isEmpty() || CampoEdad.getText().isEmpty() || CampoCedula.getText().isEmpty()
+        if (CampoNombre.getText().isEmpty()  || CampoCedula.getText().isEmpty()
                 || CampoTelefono.getText().isEmpty() || CampoCorreo.getText().isEmpty() || buttonGroup1.getSelection() == null) {
 
             JOptionPane.showMessageDialog(null, "Por favor llene todos los campos y seleccione las opciones");
@@ -355,20 +335,24 @@ public class FormularioPersona extends javax.swing.JFrame {
 
             NuevoParticipante.setTelefono((String) CampoTelefono.getText());
             NuevoParticipante.setCorreo((String) CampoCorreo.getText());
+            
+            Fecha FechaNacimientoPersona = new Fecha();
+            FechaNacimientoPersona.setDia(Integer.parseInt((String) CajaDiaNacimiento.getSelectedItem()));
+            FechaNacimientoPersona.setAño(Integer.parseInt((String) CajaAñoNacimiento.getSelectedItem()));
+            FechaNacimientoPersona.setMes(FechaNacimientoPersona.transformar_StringMes((String) CajaMesNacimiento.getSelectedItem()));
+            int edad=Fecha.calcular_edad(FechaNacimientoPersona);
+            
 
-            if (FormularioTorneo.LimiteEdad >= Integer.parseInt(CampoEdad.getText())) {
+            if (FormularioTorneo.LimiteEdad >= edad) {
 
-                NuevoParticipante.setEdad(Integer.parseInt(CampoEdad.getText()));
+                NuevoParticipante.setEdad(edad);
 
             } else {
                 cantErrores++;
             }
 
             //atributo fecha, en el formulario torneo explico su funcionamiento
-            Fecha FechaNacimientoPersona = new Fecha();
-            FechaNacimientoPersona.setDia(Integer.parseInt((String) CajaDiaNacimiento.getSelectedItem()));
-            FechaNacimientoPersona.setAño(Integer.parseInt((String) CajaAñoNacimiento.getSelectedItem()));
-            FechaNacimientoPersona.setMes(FechaNacimientoPersona.transformar_StringMes((String) CajaMesNacimiento.getSelectedItem()));
+            
 
             //creo if´s anidados para verificar si la persona a ingresar es tecnico, jugador o lider
             NuevoParticipante.setFecha_nacimiento(FechaNacimientoPersona);
@@ -416,7 +400,6 @@ public class FormularioPersona extends javax.swing.JFrame {
     public static javax.swing.JTextField CajaPersonasRegistradas;
     private javax.swing.JTextField CampoCedula;
     private javax.swing.JTextField CampoCorreo;
-    public static javax.swing.JTextField CampoEdad;
     private javax.swing.JTextField CampoNombre;
     private javax.swing.JTextField CampoTelefono;
     public static javax.swing.JLabel NombreEquipoNuevo;
@@ -433,7 +416,6 @@ public class FormularioPersona extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
