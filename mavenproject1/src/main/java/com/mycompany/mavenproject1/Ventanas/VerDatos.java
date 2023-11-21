@@ -5,6 +5,8 @@
 package com.mycompany.mavenproject1.Ventanas;
 
 import com.mycompany.mavenproject1.*;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,6 +16,7 @@ public class VerDatos extends javax.swing.JFrame {
     
     //Se crea atributo torneo para poder llamarla cuando se desee
     public static Torneo torneo_en_cuestion;
+    public static int numero_torneo;
 
     /**
      * Creates new form VerDatos
@@ -45,18 +48,11 @@ public class VerDatos extends javax.swing.JFrame {
         BotonProximosEnfrentamientos = new javax.swing.JButton();
         BotonCerrar = new javax.swing.JButton();
         BotonVolver = new javax.swing.JButton();
-        MesInicioInscripciones = new javax.swing.JComboBox<>();
-        DiaInicioInscripciones = new javax.swing.JComboBox<>();
-        AñoInicioInscripciones = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
-        DiaCierreInscripciones = new javax.swing.JComboBox<>();
-        MesCierreInscripciones = new javax.swing.JComboBox<>();
-        AñoCierreInscripciones = new javax.swing.JComboBox<>();
-        jLabel6 = new javax.swing.JLabel();
         DiaInicioTorneo = new javax.swing.JComboBox<>();
         MesInicioTorneo = new javax.swing.JComboBox<>();
         AñoInicioTorneo = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
+        BotonEditarFecha = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -121,29 +117,25 @@ public class VerDatos extends javax.swing.JFrame {
             }
         });
 
-        MesInicioInscripciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
-
-        DiaInicioInscripciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
-
-        AñoInicioInscripciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033" }));
-
-        jLabel1.setText("FECHA INICIO INSCRIPCIONES");
-
-        DiaCierreInscripciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
-
-        MesCierreInscripciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
-
-        AñoCierreInscripciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033" }));
-
-        jLabel6.setText("FECHA CIERRE INSCRIPCIONES");
-
         DiaInicioTorneo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        DiaInicioTorneo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DiaInicioTorneoActionPerformed(evt);
+            }
+        });
 
         MesInicioTorneo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
 
         AñoInicioTorneo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033" }));
 
         jLabel7.setText("FECHA INICIO TORNEO");
+
+        BotonEditarFecha.setText("EDITAR FECHA");
+        BotonEditarFecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonEditarFechaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelDeFondoLayout = new javax.swing.GroupLayout(PanelDeFondo);
         PanelDeFondo.setLayout(PanelDeFondoLayout);
@@ -160,11 +152,9 @@ public class VerDatos extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PanelDeFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addGroup(PanelDeFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(CampoDato3, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                                .addComponent(CampoDato5)))
+                        .addGroup(PanelDeFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(CampoDato3, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                            .addComponent(CampoDato5))
                         .addGroup(PanelDeFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelDeFondoLayout.createSequentialGroup()
                                 .addGap(50, 50, 50)
@@ -176,37 +166,19 @@ public class VerDatos extends javax.swing.JFrame {
                                     .addGroup(PanelDeFondoLayout.createSequentialGroup()
                                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(PanelDeFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(CampoDato4)
-                                            .addGroup(PanelDeFondoLayout.createSequentialGroup()
-                                                .addComponent(jLabel6)
-                                                .addGap(0, 0, Short.MAX_VALUE))))))
+                                        .addComponent(CampoDato4))))
                             .addGroup(PanelDeFondoLayout.createSequentialGroup()
-                                .addGap(251, 251, 251)
-                                .addGroup(PanelDeFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(AñoCierreInscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(BotonVolver))
+                                .addGap(289, 289, 289)
+                                .addComponent(BotonVolver)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(BotonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(PanelDeFondoLayout.createSequentialGroup()
                         .addGap(60, 60, 60)
-                        .addGroup(PanelDeFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(DiaInicioTorneo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(DiaInicioInscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(DiaInicioTorneo, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(PanelDeFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PanelDeFondoLayout.createSequentialGroup()
-                                .addComponent(MesInicioInscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(AñoInicioInscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(58, 58, 58)
-                                .addComponent(DiaCierreInscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(26, 26, 26)
-                                .addComponent(MesCierreInscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(PanelDeFondoLayout.createSequentialGroup()
-                                .addComponent(MesInicioTorneo, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(AñoInicioTorneo, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(MesInicioTorneo, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(AñoInicioTorneo, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelDeFondoLayout.createSequentialGroup()
                         .addGap(102, 102, 102)
                         .addComponent(jLabel7))
@@ -214,7 +186,9 @@ public class VerDatos extends javax.swing.JFrame {
                         .addGap(97, 97, 97)
                         .addComponent(BotonTablaDePosiciones)
                         .addGap(110, 110, 110)
-                        .addComponent(BotonProximosEnfrentamientos)))
+                        .addGroup(PanelDeFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(BotonEditarFecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BotonProximosEnfrentamientos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
         PanelDeFondoLayout.setVerticalGroup(
@@ -238,33 +212,23 @@ public class VerDatos extends javax.swing.JFrame {
                     .addGroup(PanelDeFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel4)
                         .addComponent(CampoDato4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(81, 81, 81)
+                .addComponent(jLabel7)
                 .addGroup(PanelDeFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelDeFondoLayout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(PanelDeFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(DiaInicioTorneo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(MesInicioTorneo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AñoInicioTorneo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelDeFondoLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelDeFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(MesInicioInscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DiaInicioInscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AñoInicioInscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DiaCierreInscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(MesCierreInscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AñoCierreInscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PanelDeFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(DiaInicioTorneo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(MesInicioTorneo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AñoInicioTorneo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(4, 4, 4)
+                        .addComponent(BotonEditarFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(38, 38, 38)
                 .addGroup(PanelDeFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BotonTablaDePosiciones)
-                    .addComponent(BotonProximosEnfrentamientos))
-                .addContainerGap(47, Short.MAX_VALUE))
+                    .addComponent(BotonTablaDePosiciones, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotonProximosEnfrentamientos, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         getContentPane().add(PanelDeFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 380));
@@ -297,9 +261,73 @@ public class VerDatos extends javax.swing.JFrame {
     private void CampoDato1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoDato1ActionPerformed
 
     }//GEN-LAST:event_CampoDato1ActionPerformed
+
+    private void BotonEditarFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEditarFechaActionPerformed
+        if(Datos.obtenerInstancia().listado_torneos_futbol.contains(torneo_en_cuestion)){
+            Torneo remplazo=Datos.obtenerInstancia().listado_torneos_futbol.get(numero_torneo);
+            Fecha fecha_remplazo=new Fecha();
+            fecha_remplazo.setDia(Integer.parseInt((String)DiaInicioTorneo.getSelectedItem()));
+            
+            fecha_remplazo.setMes(Fecha.transformar_StringMes((String)MesInicioTorneo.getSelectedItem()));
+            fecha_remplazo.setAño(Integer.parseInt((String)AñoInicioTorneo.getSelectedItem()));
+            
+            remplazo.setFecha_inicio_torneo(fecha_remplazo);
+            
+            ArrayList<Enfrentamiento>nuevos_enfrentamientos=Enfrentamiento.generarEnfrentamientos(remplazo.listado_equipos, remplazo);
+            JOptionPane.showMessageDialog(null, "Se modificó la fecha de inicio de torneo y por ende se generaron de nuevo los enfrentamientos");
+            remplazo.setListado_enfrentamientos(nuevos_enfrentamientos);
+            Datos.obtenerInstancia().listado_torneos_futbol.set(numero_torneo, remplazo);
+            
+            
+        }else if(Datos.obtenerInstancia().listado_torneos_volley.contains(torneo_en_cuestion)){
+            Torneo remplazo=Datos.obtenerInstancia().listado_torneos_volley.get(numero_torneo);
+            Fecha fecha_remplazo=new Fecha();
+            fecha_remplazo.setDia(Integer.parseInt((String)DiaInicioTorneo.getSelectedItem()));
+            fecha_remplazo.setMes(Integer.parseInt((String)MesInicioTorneo.getSelectedItem()));
+            fecha_remplazo.setAño(Integer.parseInt((String)AñoInicioTorneo.getSelectedItem()));
+            
+            remplazo.setFecha_inicio_torneo(fecha_remplazo);
+            
+            ArrayList<Enfrentamiento>nuevos_enfrentamientos=Enfrentamiento.generarEnfrentamientos(remplazo.listado_equipos, remplazo);
+            JOptionPane.showMessageDialog(null, "Se modificó la fecha de inicio de torneo y por ende se generaron de nuevo los enfrentamientos");
+            remplazo.setListado_enfrentamientos(nuevos_enfrentamientos);
+            Datos.obtenerInstancia().listado_torneos_volley.set(numero_torneo, remplazo);
+        }else if(Datos.obtenerInstancia().listado_torneos_ajedrez.contains(torneo_en_cuestion)){
+            Torneo remplazo=Datos.obtenerInstancia().listado_torneos_ajedrez.get(numero_torneo);
+            Fecha fecha_remplazo=new Fecha();
+            fecha_remplazo.setDia(Integer.parseInt((String)DiaInicioTorneo.getSelectedItem()));
+            fecha_remplazo.setMes(Integer.parseInt((String)MesInicioTorneo.getSelectedItem()));
+            fecha_remplazo.setAño(Integer.parseInt((String)AñoInicioTorneo.getSelectedItem()));
+            
+            remplazo.setFecha_inicio_torneo(fecha_remplazo);
+            
+            ArrayList<Enfrentamiento>nuevos_enfrentamientos=Enfrentamiento.generarEnfrentamientos(remplazo.listado_equipos, remplazo);
+            JOptionPane.showMessageDialog(null, "Se modificó la fecha de inicio de torneo y por ende se generaron de nuevo los enfrentamientos");
+            remplazo.setListado_enfrentamientos(nuevos_enfrentamientos);
+            Datos.obtenerInstancia().listado_torneos_ajedrez.set(numero_torneo, remplazo);
+        }else if(Datos.obtenerInstancia().listado_torneos_basket.contains(torneo_en_cuestion)){
+            Torneo remplazo=Datos.obtenerInstancia().listado_torneos_basket.get(numero_torneo);
+            Fecha fecha_remplazo=new Fecha();
+            fecha_remplazo.setDia(Integer.parseInt((String)DiaInicioTorneo.getSelectedItem()));
+            fecha_remplazo.setMes(Integer.parseInt((String)MesInicioTorneo.getSelectedItem()));
+            fecha_remplazo.setAño(Integer.parseInt((String)AñoInicioTorneo.getSelectedItem()));
+            
+            remplazo.setFecha_inicio_torneo(fecha_remplazo);
+            
+            ArrayList<Enfrentamiento>nuevos_enfrentamientos=Enfrentamiento.generarEnfrentamientos(remplazo.listado_equipos, remplazo);
+            JOptionPane.showMessageDialog(null, "Se modificó la fecha de inicio de torneo y por ende se generaron de nuevo los enfrentamientos");
+            remplazo.setListado_enfrentamientos(nuevos_enfrentamientos);
+            Datos.obtenerInstancia().listado_torneos_basket.set(numero_torneo, remplazo);
+        }
+    }//GEN-LAST:event_BotonEditarFechaActionPerformed
+
+    private void DiaInicioTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DiaInicioTorneoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DiaInicioTorneoActionPerformed
     
-    public static void ver_datos(Torneo torneo){ //le llega como parámetro el torneo que queremos consultar
+    public static void ver_datos(Torneo torneo, int n_torneo){ //le llega como parámetro el torneo que queremos consultar
         torneo_en_cuestion=torneo;
+        numero_torneo=n_torneo;
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 
@@ -310,6 +338,10 @@ public class VerDatos extends javax.swing.JFrame {
                 CampoDato3.setText(torneo.caracter);
                 CampoDato4.setText(torneo.lugar);
                 CampoDato5.setText(torneo.estado);
+                DiaInicioTorneo.setSelectedItem(torneo.fecha_inicio_torneo.dia);
+                MesInicioTorneo.setSelectedItem(Fecha.transformar_intMes(torneo.fecha_inicio_torneo.mes));
+                AñoInicioTorneo.setSelectedItem(torneo.fecha_inicio_torneo.año);
+                
                 
             }
         });
@@ -320,10 +352,9 @@ public class VerDatos extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> AñoCierreInscripciones;
-    private javax.swing.JComboBox<String> AñoInicioInscripciones;
-    private javax.swing.JComboBox<String> AñoInicioTorneo;
+    public static javax.swing.JComboBox<String> AñoInicioTorneo;
     private javax.swing.JButton BotonCerrar;
+    private javax.swing.JButton BotonEditarFecha;
     private javax.swing.JButton BotonProximosEnfrentamientos;
     private javax.swing.JButton BotonTablaDePosiciones;
     private javax.swing.JButton BotonVolver;
@@ -332,19 +363,13 @@ public class VerDatos extends javax.swing.JFrame {
     public static javax.swing.JTextField CampoDato3;
     public static javax.swing.JTextField CampoDato4;
     public static javax.swing.JTextField CampoDato5;
-    private javax.swing.JComboBox<String> DiaCierreInscripciones;
-    private javax.swing.JComboBox<String> DiaInicioInscripciones;
-    private javax.swing.JComboBox<String> DiaInicioTorneo;
-    private javax.swing.JComboBox<String> MesCierreInscripciones;
-    private javax.swing.JComboBox<String> MesInicioInscripciones;
-    private javax.swing.JComboBox<String> MesInicioTorneo;
+    public static javax.swing.JComboBox<String> DiaInicioTorneo;
+    public static javax.swing.JComboBox<String> MesInicioTorneo;
     public javax.swing.JPanel PanelDeFondo;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     // End of variables declaration//GEN-END:variables
 }

@@ -44,7 +44,6 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         NombreTorneo3 = new javax.swing.JTextField();
         VerDatosTorneo3 = new javax.swing.JButton();
-        EditarTorneosFutbol = new javax.swing.JButton();
         BotonAtras = new javax.swing.JButton();
         BotonSalir = new javax.swing.JButton();
 
@@ -85,7 +84,7 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(49, 49, 49)
                         .addComponent(NombreTorneo1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,9 +126,9 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(84, 84, 84)
                         .addComponent(jLabel4)))
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addContainerGap(78, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 68, Short.MAX_VALUE)
                 .addComponent(NombreTorneo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54))
         );
@@ -239,13 +238,6 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
                 .addGap(59, 59, 59))
         );
 
-        EditarTorneosFutbol.setText("Editar Torneo");
-        EditarTorneosFutbol.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditarTorneosFutbolActionPerformed(evt);
-            }
-        });
-
         BotonAtras.setText("ATRAS");
         BotonAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -275,15 +267,10 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
                     .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(276, 276, 276))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(363, 363, 363)
-                        .addComponent(EditarTorneosFutbol))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(76, 76, 76)
-                        .addComponent(BotonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(308, 308, 308)
-                        .addComponent(BotonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(76, 76, 76)
+                .addComponent(BotonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(308, 308, 308)
+                .addComponent(BotonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -293,9 +280,7 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(EditarTorneosFutbol)
-                .addGap(8, 8, 8)
+                .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -309,15 +294,10 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void EditarTorneosFutbolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarTorneosFutbolActionPerformed
-        //invoco la ventana editar torneo futbol
-        
-    }//GEN-LAST:event_EditarTorneosFutbolActionPerformed
-
     private void VerDatosTorneo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerDatosTorneo1ActionPerformed
         
         
-        VerDatos.ver_datos(Datos.obtenerInstancia().listado_torneos_futbol.get(0));//mandamos como parámetro el torneo que queremos consultar
+        VerDatos.ver_datos(Datos.obtenerInstancia().listado_torneos_futbol.get(0),0);//mandamos como parámetro el torneo que queremos consultar
     }//GEN-LAST:event_VerDatosTorneo1ActionPerformed
 
     private void BotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSalirActionPerformed
@@ -337,15 +317,15 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
     }//GEN-LAST:event_NombreTorneo1ActionPerformed
 
     private void VerDatosTorneo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerDatosTorneo2ActionPerformed
-        VerDatos.ver_datos(Datos.obtenerInstancia().listado_torneos_futbol.get(1));//mandamos como parámetro el torneo que queremos consultar
+        VerDatos.ver_datos(Datos.obtenerInstancia().listado_torneos_futbol.get(1),1);//mandamos como parámetro el torneo que queremos consultar
     }//GEN-LAST:event_VerDatosTorneo2ActionPerformed
 
     private void VerDatosTorneo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerDatosTorneo3ActionPerformed
-        VerDatos.ver_datos(Datos.obtenerInstancia().listado_torneos_futbol.get(2));//mandamos como parámetro el torneo que queremos consultar
+        VerDatos.ver_datos(Datos.obtenerInstancia().listado_torneos_futbol.get(2),2);//mandamos como parámetro el torneo que queremos consultar
     }//GEN-LAST:event_VerDatosTorneo3ActionPerformed
 
     private void VerDatosTorneo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerDatosTorneo4ActionPerformed
-        VerDatos.ver_datos(Datos.obtenerInstancia().listado_torneos_futbol.get(3));//mandamos como parámetro el torneo que queremos consultar
+        VerDatos.ver_datos(Datos.obtenerInstancia().listado_torneos_futbol.get(3),3);//mandamos como parámetro el torneo que queremos consultar
     }//GEN-LAST:event_VerDatosTorneo4ActionPerformed
 
     /**
@@ -356,7 +336,6 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonAtras;
     private javax.swing.JButton BotonSalir;
-    private javax.swing.JButton EditarTorneosFutbol;
     public static javax.swing.JTextField NombreTorneo1;
     public static javax.swing.JTextField NombreTorneo2;
     public static javax.swing.JTextField NombreTorneo3;

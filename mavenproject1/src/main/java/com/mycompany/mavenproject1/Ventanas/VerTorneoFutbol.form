@@ -37,18 +37,10 @@
               <EmptySpace min="-2" pref="276" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="363" max="-2" attributes="0"/>
-                      <Component id="EditarTorneosFutbol" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                      <Component id="BotonAtras" min="-2" pref="144" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="308" max="-2" attributes="0"/>
-                      <Component id="BotonSalir" min="-2" pref="143" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
+              <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+              <Component id="BotonAtras" min="-2" pref="144" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="308" max="-2" attributes="0"/>
+              <Component id="BotonSalir" min="-2" pref="143" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -61,9 +53,7 @@
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                   <Component id="jPanel5" min="-2" pref="187" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="EditarTorneosFutbol" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jPanel7" min="-2" pref="187" max="-2" attributes="0"/>
                   <Component id="jPanel6" min="-2" pref="187" max="-2" attributes="0"/>
@@ -380,14 +370,6 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="EditarTorneosFutbol">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Editar Torneo"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EditarTorneosFutbolActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JButton" name="BotonAtras">
       <Properties>
         <Property name="text" type="java.lang.String" value="ATRAS"/>

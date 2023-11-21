@@ -69,9 +69,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="BotonAtras" min="-2" pref="144" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="EditarTorneosFutbol" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
                           <Component id="BotonSalir" min="-2" pref="143" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -104,7 +102,6 @@
                   </Group>
                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="EditarTorneosFutbol" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="BotonAtras" alignment="3" max="32767" attributes="0"/>
                       <Component id="BotonSalir" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -203,14 +200,6 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
           </AuxValues>
-        </Component>
-        <Component class="javax.swing.JButton" name="EditarTorneosFutbol">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Editar Torneo"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EditarTorneosFutbolActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BotonAtras">
           <Properties>

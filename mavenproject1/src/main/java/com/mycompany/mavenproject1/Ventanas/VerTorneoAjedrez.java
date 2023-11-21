@@ -37,7 +37,6 @@ public class VerTorneoAjedrez extends javax.swing.JFrame {
         VerDatosTorneo2 = new javax.swing.JButton();
         NombreTorneo4 = new javax.swing.JTextField();
         VerDatosTorneo4 = new javax.swing.JButton();
-        EditarTorneosFutbol = new javax.swing.JButton();
         BotonAtras = new javax.swing.JButton();
         BotonSalir = new javax.swing.JButton();
 
@@ -99,13 +98,6 @@ public class VerTorneoAjedrez extends javax.swing.JFrame {
             }
         });
 
-        EditarTorneosFutbol.setText("Editar Torneo");
-        EditarTorneosFutbol.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditarTorneosFutbolActionPerformed(evt);
-            }
-        });
-
         BotonAtras.setText("ATRAS");
         BotonAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,9 +134,7 @@ public class VerTorneoAjedrez extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(13, 13, 13)
                         .addComponent(BotonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(EditarTorneosFutbol)
-                        .addGap(18, 18, 18)
+                        .addGap(124, 124, 124)
                         .addComponent(BotonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(63, Short.MAX_VALUE))
         );
@@ -169,7 +159,6 @@ public class VerTorneoAjedrez extends javax.swing.JFrame {
                     .addComponent(VerDatosTorneo4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EditarTorneosFutbol)
                     .addComponent(BotonAtras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BotonSalir))
                 .addGap(47, 47, 47))
@@ -189,19 +178,10 @@ public class VerTorneoAjedrez extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void EditarTorneosFutbolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarTorneosFutbolActionPerformed
-        //invoco la ventana editar torneo futbol
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new EditarTorneo().setVisible(true);
-            }
-        });
-    }//GEN-LAST:event_EditarTorneosFutbolActionPerformed
-
     private void VerDatosTorneo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerDatosTorneo1ActionPerformed
         
         
-        VerDatos.ver_datos(Datos.obtenerInstancia().listado_torneos_ajedrez.get(0));//mandamos como parámetro el torneo que queremos consultar
+        VerDatos.ver_datos(Datos.obtenerInstancia().listado_torneos_ajedrez.get(0),0);//mandamos como parámetro el torneo que queremos consultar
     }//GEN-LAST:event_VerDatosTorneo1ActionPerformed
 
     private void BotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSalirActionPerformed
@@ -221,15 +201,15 @@ public class VerTorneoAjedrez extends javax.swing.JFrame {
     }//GEN-LAST:event_NombreTorneo1ActionPerformed
 
     private void VerDatosTorneo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerDatosTorneo2ActionPerformed
-        VerDatos.ver_datos(Datos.obtenerInstancia().listado_torneos_ajedrez.get(1));//mandamos como parámetro el torneo que queremos consultar
+        VerDatos.ver_datos(Datos.obtenerInstancia().listado_torneos_ajedrez.get(1),1);//mandamos como parámetro el torneo que queremos consultar
     }//GEN-LAST:event_VerDatosTorneo2ActionPerformed
 
     private void VerDatosTorneo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerDatosTorneo3ActionPerformed
-        VerDatos.ver_datos(Datos.obtenerInstancia().listado_torneos_ajedrez.get(2));//mandamos como parámetro el torneo que queremos consultar
+        VerDatos.ver_datos(Datos.obtenerInstancia().listado_torneos_ajedrez.get(2),2);//mandamos como parámetro el torneo que queremos consultar
     }//GEN-LAST:event_VerDatosTorneo3ActionPerformed
 
     private void VerDatosTorneo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerDatosTorneo4ActionPerformed
-        VerDatos.ver_datos(Datos.obtenerInstancia().listado_torneos_ajedrez.get(3));//mandamos como parámetro el torneo que queremos consultar
+        VerDatos.ver_datos(Datos.obtenerInstancia().listado_torneos_ajedrez.get(3),3);//mandamos como parámetro el torneo que queremos consultar
     }//GEN-LAST:event_VerDatosTorneo4ActionPerformed
 
     /**
@@ -240,7 +220,6 @@ public class VerTorneoAjedrez extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonAtras;
     private javax.swing.JButton BotonSalir;
-    private javax.swing.JButton EditarTorneosFutbol;
     public static javax.swing.JTextField NombreTorneo1;
     public static javax.swing.JTextField NombreTorneo2;
     public static javax.swing.JTextField NombreTorneo3;

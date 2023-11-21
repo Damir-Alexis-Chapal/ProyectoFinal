@@ -14,10 +14,18 @@ public class CompararFechaHora implements Comparator<Enfrentamiento>{
     @Override
     public int compare(Enfrentamiento enfrentamiento1, Enfrentamiento enfrentamiento2){
         int n=0;
+        
         n=enfrentamiento1.fecha.año-enfrentamiento2.fecha.año;
-        n=n+(enfrentamiento1.fecha.mes-enfrentamiento2.fecha.mes);
-        n=n+(enfrentamiento1.fecha.dia-enfrentamiento2.fecha.dia);
-        n=n+(enfrentamiento1.hora.getHour()-enfrentamiento2.hora.getHour());
+        if(n==0){
+            n=enfrentamiento1.fecha.mes-enfrentamiento2.fecha.mes;
+            if(n==0){
+                n=enfrentamiento1.fecha.dia-enfrentamiento2.fecha.dia;
+                if(n==0){
+                   n=enfrentamiento1.hora.getHour()-enfrentamiento2.hora.getHour();
+
+                }
+            }
+        }
         return n;
         
     }

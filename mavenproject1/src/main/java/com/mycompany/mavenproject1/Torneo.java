@@ -24,7 +24,7 @@ public class Torneo implements Serializable {
     public String nombre, genero, lugar, caracter, estado; 
     int cant_equipos, limite_edad, valor_inscripcion;
     int cant_minima_jugadores_equipo;//atributo que solo se puede settear (cuando se cree el objeto se le quema dependiendo del deporte)
-    Fecha fecha_inicio_inscripcion, fecha_fin_inscripcion, fecha_inicio_torneo;
+    public Fecha fecha_inicio_inscripcion, fecha_fin_inscripcion, fecha_inicio_torneo;
     
     public Torneo(){
     

@@ -17,7 +17,7 @@ public class Fecha implements Serializable {
     
     //atributos
     
-    int dia, mes, año; // teniendo en cuenta que haremos operaciones es mejor integer
+    public int dia, mes, año; // teniendo en cuenta que haremos operaciones es mejor integer
     
     public Fecha(){
     
