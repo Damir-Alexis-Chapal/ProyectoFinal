@@ -232,7 +232,7 @@ public class Enfrentamiento implements Serializable {
                 
                 fecha.setDia(torneo.fecha_inicio_torneo.dia+d);
                 fecha.setMes(torneo.fecha_inicio_torneo.mes);
-                fecha.setAño(2023);
+                fecha.setAño(torneo.fecha_inicio_torneo.año);
                 fecha=Fecha.arreglar_fecha(fecha);
                 
                 

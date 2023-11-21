@@ -270,7 +270,6 @@ public class VerDatos extends javax.swing.JFrame {
             
             fecha_remplazo.setMes(Fecha.transformar_StringMes((String)MesInicioTorneo.getSelectedItem()));
             fecha_remplazo.setAño(Integer.parseInt((String)AñoInicioTorneo.getSelectedItem()));
-            
             remplazo.setFecha_inicio_torneo(fecha_remplazo);
             
             ArrayList<Enfrentamiento>nuevos_enfrentamientos=Enfrentamiento.generarEnfrentamientos(remplazo.listado_equipos, remplazo);
