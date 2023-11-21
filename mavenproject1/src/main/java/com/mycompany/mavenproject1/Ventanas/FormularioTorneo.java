@@ -103,6 +103,11 @@ public class FormularioTorneo extends javax.swing.JFrame {
         jLabel2.setText("FECHA DE INICIO DE INSCRIPCIONES");
 
         CajaDiaInicioInscripciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        CajaDiaInicioInscripciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CajaDiaInicioInscripcionesActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("DIA");
 
@@ -568,6 +573,10 @@ public class FormularioTorneo extends javax.swing.JFrame {
     private void CajaTipoTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CajaTipoTorneoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CajaTipoTorneoActionPerformed
+
+    private void CajaDiaInicioInscripcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CajaDiaInicioInscripcionesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CajaDiaInicioInscripcionesActionPerformed
 
     /**
      * @param args the command line arguments
