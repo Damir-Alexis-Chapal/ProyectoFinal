@@ -311,11 +311,7 @@ public class VerTorneoFutbol extends javax.swing.JFrame {
 
     private void EditarTorneosFutbolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarTorneosFutbolActionPerformed
         //invoco la ventana editar torneo futbol
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new EditarTorneo().setVisible(true);
-            }
-        });
+        
     }//GEN-LAST:event_EditarTorneosFutbolActionPerformed
 
     private void VerDatosTorneo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerDatosTorneo1ActionPerformed
