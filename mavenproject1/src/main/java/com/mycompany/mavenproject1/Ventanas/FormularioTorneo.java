@@ -26,9 +26,9 @@ public class FormularioTorneo extends javax.swing.JFrame {
     //variables para validar las personas
     public static int LimiteEdad;
     public static String generoTorneo;
-    
-    public static int n_jueces=0;
-    
+
+    public static int n_jueces = 0;
+
     Torneo NuevoTorneo = new Torneo();
 
     public static ArrayList<Equipo> ListaTeam = new ArrayList();
@@ -444,8 +444,8 @@ public class FormularioTorneo extends javax.swing.JFrame {
             generoTorneo = (String) CajaGenero.getSelectedItem();
 
             //creo un nuevo torneo usando los campos del formulario (LO SAQUÉ COMO ATRIBUTO PARA QIE FUNCIONE LO DE JUECES)
-            
             //seteo los datos del torneo
+            NuevoTorneo.setEstado("ACTIVO");
             NuevoTorneo.setNombre("" + CampoNombreTorneo.getText());
             NuevoTorneo.setGenero("" + CajaGenero.getSelectedItem());
             NuevoTorneo.setLugar("" + CajaLugar.getSelectedItem());
@@ -477,8 +477,6 @@ public class FormularioTorneo extends javax.swing.JFrame {
             FechaInicioTorneo.setMes(FechaInicioTorneo.transformar_StringMes((String) CajaMesInicioTorneo.getSelectedItem()));
 
             NuevoTorneo.setFecha_inicio_torneo(FechaInicioTorneo);
-            
-            
 
             //una vez guardados los datos continuamos a la ventana de registrar equipos para el torneo
             //envio y seteo en la siguiente ventana el nombre del torneo para que se vea mejor
@@ -489,19 +487,14 @@ public class FormularioTorneo extends javax.swing.JFrame {
                         //guardo los equipos
                         NuevoTorneo.setListado_equipos(ListaTeam);
                         //guardo el torneo según el tipo que sea
-                        
-                       
-                        
+
                         //Se agrega la lista de jueces
                         NuevoTorneo.setListado_jueces(ListaJueces);
-                         
-                         //TODA CREACIÓN DE ENFRENTAMIENTOS EN EL TORNEO SE CREARÁ ACÁ
-                        ArrayList<Enfrentamiento>enfrentamientos=Enfrentamiento.generarEnfrentamientos(NuevoTorneo.listado_equipos, NuevoTorneo);
+
+                        //TODA CREACIÓN DE ENFRENTAMIENTOS EN EL TORNEO SE CREARÁ ACÁ
+                        ArrayList<Enfrentamiento> enfrentamientos = Enfrentamiento.generarEnfrentamientos(NuevoTorneo.listado_equipos, NuevoTorneo);
                         NuevoTorneo.setListado_enfrentamientos(enfrentamientos);
-                        
-                        
-                        
-                        
+
                         if (CajaTipoTorneo.getSelectedItem().equals("Fútbol Sala")) {
                             Datos.obtenerInstancia().listado_torneos_futbol.add(NuevoTorneo);
                         } else if (CajaTipoTorneo.getSelectedItem().equals("VolleyBall")) {
@@ -511,8 +504,7 @@ public class FormularioTorneo extends javax.swing.JFrame {
                         } else if (CajaTipoTorneo.getSelectedItem().equals("Ajedrez")) {
                             Datos.obtenerInstancia().listado_torneos_ajedrez.add(NuevoTorneo);
                         }
-                        
-                        
+
                         JOptionPane.showMessageDialog(null, "¡Registro exitoso de todos los equipos participantes"
                                 + "\n El torneo " + CampoNombreTorneo.getText() + " ha sido creado con exito!");
                         Datos datos = Datos.obtenerInstancia();
@@ -520,19 +512,24 @@ public class FormularioTorneo extends javax.swing.JFrame {
                         datos.imprimirListado(datos.listado_torneos_basket);
                         datos.imprimirListado(datos.listado_torneos_ajedrez);
                         datos.imprimirListado(datos.listado_torneos_volley);
-                        ListaTeam=new ArrayList();
-                        ListaJueces=new ArrayList();
-                        n_jueces=0;
+                        ListaTeam = new ArrayList();
+                        ListaJueces = new ArrayList();
+                        n_jueces = 0;
                         NumEquiposRegistrados = 0;
-                        
-                        
-                        
+
                         FormularioTorneo.this.dispose();
 
                     } else {
                         FormularioEquipo NuevoEquipo = new FormularioEquipo(NuevoTorneo);
                         NuevoEquipo.NombreTorneo.setText(CampoNombreTorneo.getText());
-                        NuevoEquipo.setVisible(true);
+
+                        if (CajaTipoTorneo.getSelectedItem().equals("Ajedrez")) {
+                            NuevoEquipo.CantidadParticipantes.setText("2");
+                            NuevoEquipo.CantidadParticipantes.setEnabled(false);
+                            NuevoEquipo.setVisible(true);
+                        } else {
+                            NuevoEquipo.setVisible(true);
+                        }
                     }
                 }
 
@@ -544,11 +541,11 @@ public class FormularioTorneo extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonRegistrarEquiposActionPerformed
 
     private void BotonRegistrarJuecesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarJuecesActionPerformed
-        
-        if(n_jueces==0){
-           
+
+        if (n_jueces == 0) {
+
         }
-        
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new FormularioJuez().setVisible(true);
@@ -594,7 +591,7 @@ public class FormularioTorneo extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> CajaMesInicioInscripciones;
     private javax.swing.JComboBox<String> CajaMesInicioTorneo;
     public static javax.swing.JComboBox<String> CajaNumeroEquipos;
-    private javax.swing.JComboBox<String> CajaTipoTorneo;
+    public static javax.swing.JComboBox<String> CajaTipoTorneo;
     private javax.swing.JTextField CajaValorInscripcion;
     public static javax.swing.JTextField CampoLimiteEdad;
     public static javax.swing.JTextField CampoNombreTorneo;
