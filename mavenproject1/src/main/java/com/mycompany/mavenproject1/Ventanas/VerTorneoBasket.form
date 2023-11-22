@@ -44,36 +44,50 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="BotonAtras" min="-2" pref="144" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                  <Component id="VerDatosTorneo3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="VerDatosTorneo4" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="NombreTorneo1" alignment="0" min="-2" pref="196" max="-2" attributes="0"/>
+                      <Component id="NombreTorneo3" alignment="0" min="-2" pref="204" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                          <Component id="VerDatosTorneo1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="NombreTorneo1" alignment="0" min="-2" pref="196" max="-2" attributes="0"/>
-                              <Component id="VerDatosTorneo1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="NombreTorneo3" alignment="0" min="-2" pref="204" max="-2" attributes="0"/>
-                              <Component id="VerDatosTorneo3" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
                           <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                          <Component id="NombreTorneo2" pref="173" max="32767" attributes="0"/>
+                          <EmptySpace pref="65" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="NombreTorneo2" alignment="0" max="32767" attributes="0"/>
-                              <Component id="NombreTorneo4" alignment="0" max="32767" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="VerDatosTorneo4" min="-2" max="-2" attributes="0"/>
-                                      <Component id="VerDatosTorneo2" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="VerDatosTorneo2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="BotonSalir" min="-2" pref="143" max="-2" attributes="0"/>
+                                      <Component id="NombreTorneo4" min="-2" pref="173" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="BotonAtras" min="-2" pref="144" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
-                          <Component id="BotonSalir" min="-2" pref="143" max="-2" attributes="0"/>
-                      </Group>
                   </Group>
-                  <EmptySpace pref="65" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -85,27 +99,27 @@
                       <Component id="NombreTorneo1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="NombreTorneo2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="VerDatosTorneo1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="VerDatosTorneo2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="VerDatosTorneo1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="NombreTorneo3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="NombreTorneo4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="NombreTorneo3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="VerDatosTorneo3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="VerDatosTorneo4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="VerDatosTorneo3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="BotonAtras" alignment="3" max="32767" attributes="0"/>
                       <Component id="BotonSalir" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="58" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

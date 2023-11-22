@@ -49,89 +49,88 @@ public class InterfazPrincipal extends javax.swing.JFrame implements Serializabl
         BotonGuardarDatos = new javax.swing.JButton();
         BotonCargarDatos = new javax.swing.JButton();
         BotonVerTorneos = new javax.swing.JButton();
-        Logo = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        BotonRegistrarTorneo.setFont(new java.awt.Font("Yu Gothic Medium", 1, 12)); // NOI18N
         BotonRegistrarTorneo.setText("REGISTRAR NUEVO TORNEO");
         BotonRegistrarTorneo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonRegistrarTorneoActionPerformed(evt);
             }
         });
+        jPanel1.add(BotonRegistrarTorneo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 210, 62));
 
+        BotonSalir.setFont(new java.awt.Font("Yu Gothic Medium", 1, 12)); // NOI18N
         BotonSalir.setText("SALIR");
         BotonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonSalirActionPerformed(evt);
             }
         });
+        jPanel1.add(BotonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 80, 39));
 
+        BotonGuardarDatos.setFont(new java.awt.Font("Yu Gothic Medium", 1, 12)); // NOI18N
         BotonGuardarDatos.setText("GUARDAR DATOS");
         BotonGuardarDatos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonGuardarDatosActionPerformed(evt);
             }
         });
+        jPanel1.add(BotonGuardarDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 210, 57));
 
+        BotonCargarDatos.setFont(new java.awt.Font("Yu Gothic Medium", 1, 12)); // NOI18N
         BotonCargarDatos.setText("CARGAR DATOS GUARDADOS");
         BotonCargarDatos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonCargarDatosActionPerformed(evt);
             }
         });
+        jPanel1.add(BotonCargarDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, -1, 57));
 
+        BotonVerTorneos.setFont(new java.awt.Font("Yu Gothic Medium", 1, 12)); // NOI18N
         BotonVerTorneos.setText("VER TORNEOS EN CURSO");
         BotonVerTorneos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonVerTorneosActionPerformed(evt);
             }
         });
+        jPanel1.add(BotonVerTorneos, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 210, 61));
 
-        Logo.setText("LOGO BIEN CRIMINAL");
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setFont(new java.awt.Font("Yu Gothic Medium", 2, 12)); // NOI18N
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addComponent(Logo))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(BotonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BotonVerTorneos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BotonRegistrarTorneo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BotonCargarDatos, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
-                            .addComponent(BotonGuardarDatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(0, 421, Short.MAX_VALUE))
+        jLabel1.setFont(new java.awt.Font("Yu Gothic Medium", 2, 18)); // NOI18N
+        jLabel1.setText("BIENVENIDO SEÑOR USUARI@");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(32, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(Logo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(BotonRegistrarTorneo, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BotonVerTorneos, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BotonCargarDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BotonGuardarDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(BotonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 6, 340, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 390, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,7 +221,8 @@ public class InterfazPrincipal extends javax.swing.JFrame implements Serializabl
     private javax.swing.JButton BotonRegistrarTorneo;
     private javax.swing.JButton BotonSalir;
     private javax.swing.JButton BotonVerTorneos;
-    private javax.swing.JLabel Logo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
