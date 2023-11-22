@@ -148,7 +148,7 @@ public class VerDatos extends javax.swing.JFrame {
                         .addComponent(CampoDato1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelDeFondoLayout.createSequentialGroup()
                         .addGap(29, 29, 29)
-                        .addGroup(PanelDeFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(PanelDeFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelDeFondoLayout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addGap(43, 43, 43)
@@ -183,10 +183,9 @@ public class VerDatos extends javax.swing.JFrame {
                                 .addComponent(BotonProximosEnfrentamientos)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(BotonVolver)
-                                .addGap(29, 29, 29)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BotonCerrar)
-                .addContainerGap())
+                                .addGap(18, 18, 18)
+                                .addComponent(BotonCerrar)))))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
         PanelDeFondoLayout.setVerticalGroup(
             PanelDeFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,7 +220,7 @@ public class VerDatos extends javax.swing.JFrame {
                             .addComponent(BotonEditarFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(AñoInicioTorneo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(PanelDeFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotonTablaDePosiciones, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotonProximosEnfrentamientos, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -240,6 +239,7 @@ public class VerDatos extends javax.swing.JFrame {
     }//GEN-LAST:event_CampoDato2ActionPerformed
 
     private void BotonProximosEnfrentamientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonProximosEnfrentamientosActionPerformed
+        
         Enfrentamientos.ver_enfrentamientos(torneo_en_cuestion);
     }//GEN-LAST:event_BotonProximosEnfrentamientosActionPerformed
 

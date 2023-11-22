@@ -107,7 +107,8 @@ public class tablaDePosiciones extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new tablaDePosiciones().setVisible(true);
-                
+                String n= VerDatos.CampoDato1.getText();
+                NombreTorneoCuestion.setText(n);
                 if(Datos.obtenerInstancia().listado_torneos_futbol.contains(torneo_cuestion)){
                     for(int i=0;i<Datos.obtenerInstancia().listado_torneos_futbol.size();i++){
                     
